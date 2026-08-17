@@ -1,0 +1,1328 @@
+Chunk ID: potassium_intake_chunk_0000
+Text: WHO| Guideline
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0001
+Text: i
+Potassium intake for adults and children WHO| Guideline
+iii Potassium intake for adults and children
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0002
+Text: WHO| Guideline WHO Library Cataloguing-in-Publication Data Guideline 1 : Potassium intake for adults and children.
+1.Potassium. 2.Potassium deficiency - prevention and control. 3.Chronic disease - prevention and control. 4.Guideline. I.World Health Organization.
+ISBN 978 92 4 150482 9
+(NLM classification: WD 105)
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0003
+Text: All  rights  reserved.  Publications  of  the World  Health  Organization  are  available  on  the WHO  web  site (www.who.int)  or  can  be  purchased  from  WHO  Press,  World  Health  Organization,  20  Avenue  Appia, 1211 Geneva 27, Switzerland (tel.: +41 22 791 3264; fax: +41 22 791 4857; e-mail: bookorders@who.int).
+Requests  for  permission  to  reproduce  or  translate  WHO  publications  -  whether  for  sale  or  for noncommercial  distribution  -  should  be  addressed  to  WHO  Press  through  the  WHO  web  site (http://www.who.int/about/licensing/copyright_form/en/index.html).
+The designations employed and the presentation of the material in this publication do not imply the expression  of  any  opinion  whatsoever  on  the  part  of  the World  Health  Organization  concerning  the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries. Dotted lines on maps represent approximate border lines for which there may not yet be full agreement.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0004
+Text: The  mention  of  specific  companies  or  of  certain  manufacturers'  products  does  not  imply  that  they are  endorsed or recommended by the World Health Organization in preference to others of a similar nature that are not mentioned. Errors and omissions excepted, the names of proprietary products are distinguished by initial capital letters.
+All reasonable precautions have been taken by the World Health Organization to verify the information contained in this publication. However, the published material is being distributed without warranty of any kind, either expressed or implied. The responsibility for the interpretation and use of the material lies with the reader. In no event shall the World Health Organization be liable for damages arising from its use.
+Design and layout: Alberto March
+Printed by the WHO Document Production Services, Geneva, Switzerland.
+WHO. Guideline: Potassium intake for adults and children. Geneva, World Health Organization (WHO), 2012.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0005
+Text: 1  This publication is a World Health Organization (WHO) guideline. A WHO guideline is any document, whatever its title, containing WHO recommendations about health interventions, whether they be clinical, public health or policy interventions. A recommendation provides information about what policy-makers, health-care providers or patients should do. It implies a choice between different interventions that have an impact on health and that have ramifications for the use of resources. All publications containing WHO recommendations are approved by the WHO Guidelines Review Committee.
+IV
+Potassium intake for adults and children
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0006
+Text: 
+Contents, 1 = Acknowledgements. Contents, 2 = VII. , 1 = Abbreviations and acronyms. , 2 = VIII. , 1 = Executive summary. , 2 = 1. , 1 = Introduction. , 2 = 4. , 1 = Scope and purpose. , 2 = 4. , 1 = Background. , 2 = 4. , 1 = Justification. , 2 = 6. , 1 = Guideline development process. , 2 = 7. , 1 = Advisory groups. , 2 = 7. , 1 = Advisory guideline group. , 2 = 7. , 1 = Panel. , 2 = 7. , 1 = Scoping of the guideline, evidence appraisal and decision-making. , 2 = 8. , 1 = Management of conflicts of interest. , 2 = 9. , 1 = Summary of evidence. , 2 = 10. , 1 = Evidence base. , 2 = 10. , 1 = Adults. , 2 = 10. , 1 = Blood pressure in adults. , 2 = 10. , 1 = All-cause mortality, cardiovascular disease, stroke, and coronary heart disease in adult s. , 2 = 11. , 1 = Potential adverse effects in adults. , 2 = 12. , 1 =
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0007
+Text:  Children. , 2 = 13. , 1 = Blood pressure in children. , 2 = 13. , 1 = Final considerations of the evidence. , 2 = 14. , 1 = Recommendations and remarks. , 2 = 16. , 1 = Recommendations. , 2 = 16. , 1 = Remarks. , 2 = 16. , 1 = Translation and implementation. , 2 = 18. , 1 = Research gaps and future initiatives. , 2 = 18. , 1 = Implications for future research. , 2 = 18. , 1 = Dissemination. , 2 = 18. , 1 = Updating the guideline. , 2 = 19
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0008
+Text: Annex 1, 1 = GRADE summary of findings tables. Annex 1, 2 = 20. Annex 2, 1 = Examples of foods that contain potassium, and their approximate potassium content. Annex 2, 2 = 23. Annex 3, 1 = WHO Secretariat. Annex 3, 2 = 24. Annex 4, 1 = Members of the WHO Steering Committee for Nutrition Guideline Development 2010 - 2011. Annex 4, 2 = 25. Annex 5, 1 = Members of the NUGAG Subgroup on Diet and Health and external resource persons 2010 - 2011. Annex 5, 2 = 26. Annex 6, 1 = External Expert and Stakeholder Panel. Annex 6, 2 = 28. Annex 7, 1 = Priority questions in the format of population, intervention, control and outcomes (PICO). Annex 7, 2 = 31. Annex 8, 1 = Summary of considerations for determining the strength of the recommendations. Annex 8, 2 = 33. Annex 9, 1 = Management of conflict of interest. Annex 9, 2 = 35. , 1 = References. , 2 = 39
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0009
+Text: Financial support
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0010
+Text: This guideline was coordinated by Dr Nancy Aburto under the supervision of Dr Chizuru Nishida. The World Health Organization (WHO) gratefully acknowledges the technical input  and  expert  advice  provided  by  the  members  of  the WHO  Nutrition  Guidance Expert Advisory Group Subgroup on Diet and Health, and by the external experts and resource persons involved in the development of this guideline.
+Thanks  are  due  to  the  members  of  the WHO  Steering  Committee  for  Nutrition Guidelines  Development,  and  the  staff  of  the  WHO  Guidelines  Review  Committee Secretariat  for  their  support  and  guidance  throughout  the  process. We  also  express our  deep  appreciation  of  Mr  Issa  Matta  from  the  WHO  Office  of  the  Legal  Counsel for his support and valuable guidance in the management of the conflicts of interest procedures. Special acknowledgement is made to Ms Emma Kennedy from the Nutrition Policy and Scientific Advice Unit, Department of Nutrition for Health and Development, for providing administrative and logistic support. Special thanks are given also to Hialy Guiterrez,  Sara  Hanson  and  Anna  Ziolkovska  for  their  work  on  data  collection  and extraction for the systematic reviews that informed this guideline.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0011
+Text: Acknowledgement is also made to Dr Hilary Cadman from Cadman Editing Services in Australia for technical editing of this guideline and Mr Alberto March from Grafmac Inc in USA for the cover design and layout.
+WHO expresses special appreciation to the Ministry of Health, Labour and Welfare of the Government of Japan, the Korea Food and Drug Administration, the Korea Health Industry Development Institute, and the International Kidney Evaluation Association Japan for providing financial support for this work.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0012
+Text: AUB
+American University of Beirut
+CDC
+Centers for Disease Control and Prevention
+CI
+confidence interval
+FAO
+Food and Agriculture Organization of the United Nations
+FSANZ
+Food Standards Australia New Zealand
+GRADE
+Grading of Recommendations Assessment,
+Development and Evaluation
+HDL
+high-density lipoprotein
+IAEA
+International Atomic Energy Agency
+KFDA
+Korea Food and Drug Administration
+KHIDI
+Korea Health Industry Development Institute
+LDL
+low-density lipoprotein
+MD
+mean difference
+NCD
+noncommunicable disease
+NUGAG
+Nutrition Guidance Expert Advisory Group
+NZFSA
+New Zealand Food Safety Academy
+PICO
+population, intervention, control and outcomes
+RCT
+randomized-controlled trial
+RR
+risk ratio
+UN
+United Nations
+UNU
+United Nations University
+USA
+United States of America
+WASH
+World Action on Salt and Health
+WHO
+World Health Organization
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0013
+Text: - >
+greater than
+- < less than
+- ≥
+equal to or greater than
+- ≤ equal to or less than
+Background
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0014
+Text: Noncommunicable diseases (NCDs) are the main contributor to mortality and morbidity globally (1,  2) ,  and  interventions  to  reduce  the  burden  of  NCDs  are  valuable.  Low potassium intake has been associated with a number of NCDs, including hypertension, cardiovascular disease, chronic kidney stone formation and low bone-mineral density.  An  increased  potassium intake may reduce blood pressure, decrease risk of cardiovascular disease, have beneficial effects on bone-mineral density, and mitigate the negative consequences of high sodium consumption (3-5) .
+The World Health Organization (WHO) currently does not have a recommendation for  potassium  intake.  However,  interest  in  potassium  intake  and  its  potential  use in public health is growing, due to the increasing burden of NCDs, and the need for well-understood, cost-effective and feasible interventions to combat NCDs. Therefore, Member States and the Codex Committee on Nutrition and Food for Special Dietary Uses requested WHO to develop a guideline on potassium intake for adults and children, to inform the development of public health nutrition programmes and policies aimed at reducing the risk of NCDs.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0015
+Text: The objective of this guideline is to provide recommendations on the consumption of  potassium  to  reduce  NCDs  in  adults  and  children.  The  recommendations  given here  can  be  used  by  those  developing  programmes  and  policies  to  assess  current potassium intake levels relative to a benchmark. If necessary, the recommendations can also be used to develop measures to increase potassium intake, through public health interventions such as food and product labelling, consumer education, and the establishment of food-based dietary guidelines.
+WHO  developed  the  present  evidence-informed  guideline  using  the  procedures outlined in the WHO Handbook for guideline development (6) . The steps in this process included: Methods
+- identification of priority questions and outcomes;
+- retrieval of the evidence;
+- assessment and synthesis of the evidence;
+- formulation of recommendations;
+- identification of research gaps;
+- planning for dissemination, implementation, impact evaluation and updating of the guideline.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0016
+Text: The Grading of Recommendations Assessment, Development and Evaluation (GRADE) methodology (7) was  followed  to  prepare  evidence  profiles  related  to  preselected topics, based  on  up-to-date  systematic reviews of the scientific literature.  An international, multidisciplinary group of experts participated in three WHO technical consultations.  The  first  was  held  in  Geneva,  Switzerland  on  14-18  March  2011;  the second in Seoul, the Republic of Korea on 29 November to 2 December 2011; and the third in Geneva, Switzerland on 27-30 March 2012. At these meetings, the group of experts reviewed and discussed the evidence, drafted recommendations, and reached consensus on the strength of each recommendation. In determining the strength of the recommendations, they took into consideration the desirable and undesirable effects of the recommendation, the quality of the available evidence, values and preferences related to the recommendation in different settings, and the cost of options available to public health officials and programme managers in different settings. All guideline group members completed a declaration of interests form before each meeting. An External Expert and Stakeholder Panel was involved throughout the process.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0017
+Text: Increased  potassium  intake  reduced  systolic  and  diastolic  blood  pressure  in  adults. Across a wide range of baseline intakes, increasing potassium intake was beneficial in terms of blood pressure. The largest reduction in blood pressure was detected when the potassium intake was increased to 90-120 mmol/day, although potassium increases reaching other levels of intake also reduced blood pressure. Increased potassium intake had no significant adverse effect on blood lipids, catecholamine levels or renal function in  adults.  In  children,  increased  potassium  intake  reduced  systolic  blood  pressure by  a  small,  non-significant  amount.  Higher  potassium  intake  was  associated  with  a reduced risk of incident stroke. There was no significant association between potassium intake  and  incident  cardiovascular  disease  or  coronary  heart  disease.  However,  the strong positive relationship between blood pressure and cardiovascular disease, and between blood pressure and coronary heart disease, provides indirect evidence that increasing potassium intake can improve these outcomes through a beneficial effect on blood pressure. Based on the entire body of evidence, WHO generated the following recommendations for potassium intake in adults and children.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0018
+Text: - WHO recommends an increase in potassium intake from food to reduce blood pressure and risk of cardiovascular disease, stroke and coronary heart disease in adults ( strong recommendation 1  ). WHO suggests a potassium intake of at least 90 mmol/day (3510 mg/day) for adults ( conditional recommendation 2 ).
+- WHO suggests an increase  in  potassium  intake  from  food  to  control 3 blood pressure in children ( conditional recommendation ). The recommended potassium intake of at least 90 mmol/day should be adjusted downward for children,  based  on  the  energy  requirements  of  children  relative  to  those  of adults.
+1  A strong recommendation is one for which the guideline development group is confident that the desirable effects of adherence outweigh the undesirable effects.
+2 A  conditional  recommendation  is  one  for  which  the  guideline  development  group  concludes  that  the  desirable effects of adherence probably outweigh the undesirable effects, but the group is not confident about the trade-off.
+3 'Control' for this recommendation refers to the prevention of a deleterious rise in blood pressure with age.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0019
+Text: These recommendations complement the WHO guideline on sodium intake. They should be used in conjunction with that and other nutrient guidelines and recommendations, to guide development of public health nutrition programmes and policies. Addressing the  optimal  ratio  of  intake  of  sodium  to  potassium  was  outside  the  scope  of  this guideline; however, if an individual consumes sodium at the levels recommended in the WHO guideline on sodium intake, and potassium as recommended in the current guideline, the ratio of sodium to potassium would be approximately one to one, which is  considered beneficial for health (8) .  However, most populations around the world consume less than the recommended levels of potassium (9, 10) , and consume a ratio of sodium to potassium of two to one or more (11) .  The successful implementation of these recommendations would have an important public health impact through reductions in morbidity and mortality, improvement in the quality of life for millions of people, and substantial reductions in health-care costs (2, 12, 13) .
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0020
+Text: The objective of this guideline is to provide recommendations on the consumption of potassium for adults and children. It is important to establish nutrient guidelines so that nutrition interventions can be developed in a logical, systematic, and scientific manner taking into account the best available evidence. The recommendations in this guideline can be used by programme and policy planners to assess current potassium intake levels relative  to  a  benchmark  and  develop  measures  to  increase  potassium  intake,  where necessary, through public health interventions including, but not limited to, food and product labelling, consumer education, and the establishment of Food-Based Dietary Guidelines (FBDG). This guideline does not provide guidance on specific food intake because such dietary guidelines should be based on the overall dietary goals, which take  into  consideration  all  required  nutrients.  It  should  be  used  in  conjunction  with the guideline on sodium intake and other nutrient guidelines to guide public health nutrition programme and policy development.
+This guideline provides a global, evidence-informed recommendation on potassium intake for:
+- adults  (≥16  years  of  age)  for  the  reduction  of  blood  pressure  and  risk  of cardiovascular disease, stroke and coronary heart disease;
+- children (2-15 years of age) for the control of blood pressure.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0021
+Text: It does not provide recommendations for individuals with impaired urinary potassium excretion from a medical condition or drug therapy.
+The guideline will help Member States and their partners to make informed decisions on appropriate nutrition actions to reduce noncommunicable diseases (NCDs). It is intended for a wide audience, including policy-makers and their expert advisers, and technical and programme staff in organizations involved in the design, implementation and scaling-up of nutrition actions for public health.
+This document presents the key recommendations and a summary of the supporting evidence. Further details of the evidence base are provided in Annex 1 and other documents listed in the references.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0022
+Text: NCDs are the leading cause of death globally, killing more people each year than all other causes combined (14) . The major NCDs currently account for approximately 60% of  all  deaths  and  43%  of  disease  burden  globally,  and  these  levels  are  expected  to continue to rise (2, 15) . In 2008, 29 million NCD-related deaths (almost 80%) occurred in low and middle-income countries. In those countries, 29% of NCD-related deaths were in people under 60 years of age; in contrast, in high-income countries, only 13% of the NCD-related deaths were premature. In 2005, cardiovascular disease alone accounted for 30% of all deaths; the equivalent of infectious disease, nutritional deficiency, and maternal and perinatal conditions combined (2) .
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0023
+Text: Hypertension is considered a major risk factor for cardiovascular diseases, particularly coronary  heart  disease  and  stroke.  Suboptimal  systolic  blood  pressure  (>115  mmHg)  is estimated to contribute to 49% of all coronary heart disease and 62% of all stroke (12) . Thus, the burden of morbidity and mortality from hypertension and related NCDs is currently one of  the  most  urgent  public  health  problems  globally.  Although  NCDs  disproportionately affect adults, they and their risk factors are now being detected more frequently in paediatric populations. Diet-related NCDs are chronic, and take years or decades to manifest; delaying the onset of these diseases could improve lives and result in substantial cost savings (13) . Blood pressure during childhood has a significant association with blood pressure during adulthood,  meaning  that  children  with  increased  blood  pressure  are  at  high  risk  for hypertension and its related morbidities as adults (16) . Additionally, elevated blood pressure in childhood contributes to cardiovascular disease pathology during childhood itself (17) . Thus, addressing during childhood the problem of elevated blood pressure and other risk factors for NCDs that could manifest later in life is crucial to combat NCDs.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0024
+Text: Potassium  is  an  essential  nutrient  needed  for  maintenance  of  total  body  fluid volume,  acid  and  electrolyte  balance,  and  normal  cell  function (18) .  Normally,  most ingested potassium is excreted via the urine. Under conditions of extreme heat and intense  physical  activity  that  result  in  a  high  sweat  production,  potassium  losses in  sweat  are  increased  and  appreciable.  However,  acclimation  occurs  rapidly,  and potassium  losses  via  sweat  are  reduced  quickly.  Thus,  most  individuals  can  replace needed potassium through food consumption without the need for supplements or specially  formulated  products (19-21) .  Potassium  is  commonly  found  in  a  variety  of unrefined foods, especially fruits and vegetables. Food processing reduces the amount of  potassium in many food products, and a diet high in processed foods and low in fresh  fruits  and  vegetables  is  often  lacking  in  potassium (22) .  Data  from  around  the world suggest that the population average potassium consumption in many countries is  below  70-80mmol/day,  the  value  recommended  by  the  2002  Joint World  Health Organization/Food  and  Agriculture  Organization  of  the  United  Nations  (WHO/FAO) Expert  Consultation (8) .  Few  countries  report  an  average  consumption  of  90
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0025
+Text: mmol/ day, which is recommended in countries such as Belgium, Mexico, Spain and the United Kingdom of Great Britain and Northern Ireland (23-26) . No countries report an average population consumption of 120 mmol/day, which is recommended in countries such as Bulgaria, Canada, the Republic of Korea and the United States of America (USA) (9, 10, 27-29) . Women consistently have lower levels of potassium intake than men, but both groups commonly consume a level that is below current recommendations.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0026
+Text: Reduced  potassium  consumption  has  been  associated  with  hypertension  and cardiovascular  diseases,  and  appropriate  consumption  levels  could  be  protective against these conditions (8) . A recent meta-analysis including 11 cohort studies reported an inverse association between potassium intake and risk of stroke (30) .  Additionally, two meta-analyses of trials comparing increased potassium to lower potassium intake found that increased potassium intake lowers blood pressure (4, 31) . These results were further supported by a systematic review without a meta-analysis, which concluded that increased potassium intake results in decreased blood pressure in adults (3) . Thus, a public health intervention aimed at increasing potassium intake from food could be a cost-effective strategy to reduce the burden of NCD morbidity and mortality. Moreover, increasing potassium consumption from food in the population is safe; in individuals without renal impairment caused by medical conditions or drug therapy, the body is able to efficiently adapt and excrete excess potassium via the urine when consumption Justification exceeds needs (18, 32, 33) . Intervention trials including potassium consumption as high as 400 mmol/day from food for several weeks and 115 mmol/day for up to a year have not  reported  any  adverse  effects (32,  33) .  There  have  been  some  isolated  reports
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0027
+Text: of acute toxicity from extremely high potassium intake in supplement form (34) ,  but no reports of toxicity of potassium from consumption in food.
+The function of potassium in the body is closely related to that of sodium (18, 35) .  As  sodium  consumption rises, increased consumption of potassium may be even more beneficial  because,  in  addition  to  other  benefits,  it  can  mitigate  the negative  effects  of  elevated  sodium  consumption  on  blood  pressure (4) .  Some studies have reported that the ratio of the two nutrients is an important factor in cardiovascular disease and mortality (36, 37) .  Additionally, there is evidence from randomized controlled trials (RCTs) that a combination of increased potassium and decreased sodium intake can be effective in reducing blood pressure, cardiovascular mortality and medical expenses (38, 39) .
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0028
+Text: Much of  the  human  and  social  impact  caused  each  year  by  NCD-related  morbidity and mortality could be averted through interventions that are well understood, cost effective and feasible (14) . As explained above, there is no evidence of adverse effects from increased potassium intake from foods in individuals with unimpaired potassium excretion,  and  increased  potassium  intake  has  been  associated  with  reduced  blood pressure  and  cardiovascular  disease  outcomes  in  cohort  and  intervention  trials. Hence, intervening to increase dietary potassium consumption could make a positive change  to  blood  pressure  and  cardiovascular  outcomes.  Most  populations  around the  world  consume  sodium  at  levels  far  exceeding  physiological  needs  and  current recommendations (40) ; therefore, public health interventions to combat NCDs and their risk  factors  should  be  informed  by  guidance  on  potassium  consumption,  combined with reduced sodium consumption. Although the evidence for the safety of potassium intake  from  food  is  not  disputed,  there  are  some  inconsistencies  in  the  literature about the potential  beneficial  effect  of  increased  potassium  on  blood  pressure  and cardiovascular outcomes. One meta-analysis of studies of individuals with hypertension reported no significant effect of  increased  potassium intake on blood pressure (41) . Therefore, a systematic evaluation of all available epidemiological evidence to inform the generation of this guideline was warranted.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0029
+Text: Considering  this  background,  the  32nd  Session  of  the  Codex  Committee  on Nutrition and Food for Special Dietary Uses (held in Santiago, the Republic of Chile on 1-5 November 2010) made a special request to WHO to consider establishing a guideline for  daily  potassium  intake  for  adults  and  children.  Member  States  also  requested WHO to develop a guideline on potassium intake to inform public policy. Therefore, the WHO Department of Nutrition for Health and Development, in collaboration with other departments of WHO Headquarters and regional offices, developed the following guideline on potassium consumption for adults and children.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0030
+Text: This guideline was developed in accordance with the WHO evidence-informed guideline development procedures outlined in the WHO Handbook for guideline development (6).
+Development of this guideline was undertaken by the WHO Department of Nutrition for Health and Development, in partnership with the Department of Research Policy and Cooperation 1 , and members of the WHO Secretariat (Annex 3). The work was guided by the WHO Steering Committee for Nutrition Guideline Development (Annex 4), which also provided overall supervision of the guideline development process. The WHO Secretariat and the Steering Committee included representatives from all departments of WHO with an interest in the provision of scientific advice on nutrition. Two additional groups were  formed:  an  advisory  guideline  group  and  an  external  expert  and  stakeholder panel, as outlined below.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0031
+Text: The  WHO  Nutrition  Guidance  Expert  Advisory  Group  (NUGAG)  Subgroup  on  Diet and  Health  was  convened  to  support  the  development  of  this  guideline  (Annex  5). This group included experts who had previously participated in various WHO expert advisory panels, and others identified through open calls for specialists. In forming this group, WHO took into consideration the need for a balanced gender mix, expertise from multiple disciplinary areas and representation from all WHO regions. Efforts were made to include subject-matter experts; statistical, systematic review, programme evaluation and Grading of Recommendations Assessment, Development and Evaluation (GRADE) methodologists; and representatives of potential stakeholder groups (e.g. programme managers and other professionals involved in the health-care process). There were no representatives of commercial organizations, because such individuals are prohibited from being members of any WHO guideline group. External resource persons (including subject matter experts, and systematic review and GRADE methodologists) were invited to the NUGAG meetings as observers to provide technical input. These individuals did not participate in the decision-making processes. NUGAG's role was to advise WHO on the choice of outcomes important for decision-making and on the interpretation of the evidence.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0032
+Text: The External Expert and Stakeholder Panel was formed during the planning stages of guideline development. The panel was consulted on the scope of the guideline, and on the specific research questions to be addressed and outcomes to be investigated in the systematic reviews of the literature. The panel was later asked to review and provide feedback on the completed draft guideline (Annex 6). During the consultations on both the scoping of the guideline and the draft guideline documents, there was an open call
+1 The  Department  of  Research  Policy  and  Cooperation  has  since  been  reorganized  and  the  nutrition  guideline development work is being carried out in close collaboration with the Department of Knowledge Management and Sharing.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0033
+Text: for all interested parties to join the External Expert and Stakeholder Panel. The panel comprises individuals who responded to direct solicitation for contribution based on their known expertise and interest in the subject matter, or to the WHO open call for public comment executed through the electronic mailing lists of the WHO Department of  Nutrition  for  Health  and  Development  and  that  of  the  Codex  Alimentarius Commissioin, and through the posting of the call for public comment on the WHO and United Nations (UN) Standing Committee of Nutrition websites.
+WHO developed an initial  set  of  questions  to  be  addressed  in  the  guideline. These draft questions were based on the needs of Member States and international partners for policy and programme guidance. They were also influenced by the request of the Codex  Committee  of  Nutrition  and  Foods  for  Special  Dietary  Uses. The  population, intervention, control and outcomes (PICO) format was used in generating the questions (Annex 7). The PICO questions were first discussed and reviewed by the WHO Secretariat and the WHO Steering Committee for Nutrition Guideline Development, and were then made available for public comment from 1 to 28 February 2011. Feedback was received from 16 individuals or organizational stakeholders, and the questions were adapted accordingly.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0034
+Text: The draft set of PICO questions was presented to the NUGAG Subgroup on Diet and Health during its meeting on 14-18 March 2011. During that meeting, the guideline topic was introduced and the scope of the guideline to be generated was finalized. The PICO questions were discussed, and outcomes and populations were ranked in importance by NUGAG members. The prioritization of the PICO questions defined the scope of the evidence to be used in informing the guideline development. Subsequent to the meeting, WHO reviewed the scientific literature and conducted new systematic reviews and meta-analyses to address the PICO questions. WHO was supported in the execution  of  these  reviews  by  external  experts  with  subject-matter  expertise,  and expertise in systematic reviews and the GRADE methodology.
+A follow-up meeting of the NUGAG Subgroup on Diet and Health was held from 29 November to 2 December 2011. WHO presented the systematic reviews of evidence, and a draft recommendation that had been prepared before the meeting. This draft recommendation included:
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0035
+Text: - a summary of the evidence from the systematic reviews;
+- draft GRADE evidence profiles assessing the quality of the body of evidence;
+- potential research gaps, concerns and opportunities for feasible implementation of the recommendations in diverse cultural contexts;
+- appropriate references.
+The  NUGAG  Subgroup  on  Diet  and  Health  discussed  the  evidence  and  the  GRADE assessment  of  the  quality  of  evidence,  and  advised  WHO  on  the  interpretation  of
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0036
+Text: the  results.  The  subgroup  also  discussed  the  draft  recommendation  and,  through consensus, reached an agreement on that recommendation.
+The systematic reviews and the GRADE evidence profiles for each of the critical outcomes were used as the evidence base for drafting the guideline. Classification of the  strength  of  each  recommendation  included  consideration  of  the  desirable  and undesirable effects of the recommendation, the overall quality of the evidence, values and preferences related to the recommendation in different settings, and the cost of options available to public health authorities in implementing the recommendation in  different  settings  (Annex  8).  The  classification  was  discussed  among  the  NUGAG members, invited external resource persons and the members of the WHO Secretariat present at the meeting. The final wording of the recommendations and determination of  their  strength  were  based  on  the  consensus  of  members  of  the WHO  Secretariat present and the NUGAG members only. There were no strong disagreements among the NUGAG members.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0037
+Text: From 1 to 29 February 2012, a draft of this guideline was made available for public comment. Participants in the External Expert and Stakeholder Panel were consulted, and other interested parties were invited to comment, as outlined above. More than 165 comments were received from 30 individuals and representatives of stakeholder groups. WHO reviewed the comments and made appropriate updates to the guideline. The guideline was then presented for finalization to the NUGAG Subgroup on Diet and Health at their meeting on 27-30 March 2012. The finalized guideline was submitted for clearance by WHO before publication.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0038
+Text: According to the rules in the WHO Basic documents (42) ,  all  experts  participating  in WHO meetings must declare any interest relevant to the meeting before participating. The declaration of interest forms for all guideline group members were reviewed by WHO when finalizing the composition of the NUGAG Subgroup on Diet and Health. All  NUGAG  members,  external  experts  and  other  special  invitees  participating  in each  of  the  NUGAG  meetings  submitted  a  declaration  of  interests  form,  together with their curriculum vitae. In addition, each participant verbally declared interests at the beginning of each meeting. The procedures for management of interests strictly followed  the  WHO Guidelines  for  declaration  of  interests  for  WHO  experts (43) .  The potential interests declared by members of the NUGAG Subgroup on Diet and Health and external expert and resource persons are summarized in Annex 9.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0039
+Text: This guideline is based on a review of the epidemiologic literature, including three new systematic reviews conducted by WHO (44-46) to summarize the evidence regarding potassium intake and health outcomes. Specific health outcomes considered were:
+- in adults - blood pressure, all-cause mortality, cardiovascular disease, stroke, coronary heart disease, renal function, blood lipids, catecholamine levels and other potential adverse effects;
+- in  children  -  blood  pressure,  blood  lipids,  catecholamine  levels  and  other potential adverse effects.
+The specific research questions guiding these systematic reviews were:
+- What is the effect of increased potassium intake compared with lower potassium intake on health outcomes in adults and children?
+- Compared with lower potassium intake, what is the effect on health outcomes in adults and children of increased potassium intake to:
+- -less than approximately 90 mmol/day;
+- -approximately 90-120 mmol/day;
+- -approximately 120-155 mmol/day;
+- -more than approximately 155 mmol/day?
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0040
+Text: Evidence was considered conclusive of either a benefit or a harm from increased potassium intake if the point estimate suggested a benefit or harm and the 95%CI did not overlap a threshold of relevance. That is to say, if the real value were the high or the low 95%CI and that value was still of clinical relevance, the evidence was considered conclusive. If the point estimate were near the null value and the 95%CI did not overlap a threshold of relevance (e.g. if the real value were the high or the low 95%CI value and that value was not of clinical relevance) the evidence was considered conclusive of no effect. In such cases, the point estimates were considered precise.
+Conversely, evidence was considered inconclusive if the point estimate suggested a benefit or a harm but the 95%CI crossed a threshold of relevance (e.g. if the real value were the high or the low 95%CI value and that value was not of clinical relevance). In such cases, the point estimates were considered imprecise.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0041
+Text: WHO conducted a systematic review to explore the relationship between potassium and blood pressure in adults. The review identified 22 RCTs that met the inclusion criteria (44). Of these RCTs, 17 were conducted in individuals with hypertension (defined as a blood pressure ≥140/90 mmHg (47) ), three in individuals without hypertension, and two in populations of individuals with and without hypertension. Two studies were conducted only in women, and the other 20 in populations of men and women. Studies were conducted in all regions of the world and all measured 24-hour urinary potassium excretion. WHO estimated potassium intake levels from 24-hour urinary potassium excretion using the conversion factor of 1.3 (48) .
+The lower potassium intake level varied among studies and ranged from 45 to 100 mmol/ day, with a median value of 73 mmol/day. The increased potassium intake ranged from 70 to 247 mmol/day, with a median value of 127 mmol/day. There was a median difference in increased potassium relative to lower potassium of 57 mmol/day (74%).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0042
+Text: The  meta-analysis  of  21  studies  with  21  comparisons  found  that  increased potassium  resulted  in  a  decrease  in  resting  systolic  blood  pressure  of  3.06  mmHg (95% confidence interval [CI]: 1.42, 4.70) (quality of evidence high 1 ) and a decrease in resting diastolic blood pressure of 2.84 mmHg (95%CI: 1.01, 4.66) (quality of evidence high). The meta-analysis of four studies with four comparisons reporting ambulatory blood pressure found that increased potassium intake decreased ambulatory systolic blood pressure by 3.04 mmHg (95%CI: 0.66, 5.42) (quality of evidence moderate), and ambulatory  diastolic  blood  pressure  by  1.24  mmHg  (95%CI:  -0.66,  3.13)  (quality  of evidence moderate). The findings demonstrate that across a wide range of baseline intakes, increasing potassium intake is beneficial in terms of blood pressure and they concur with three earlier systematic reviews and meta-analyses (3, 4, 31) , but not with a fourth (41) .
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0043
+Text: The results suggest that the greatest impact on blood pressure was achieved when the increased potassium intake was approximately 90-120mmol/day (44). The meta-analysis of five studies (with five comparisons) that achieved an increased potassium intake of 90-120mmol/ day demonstrated a reduction in systolic blood pressure of 5.82 mmHg (95%CI: -0.79, 12.43) (quality of evidence moderate), and a reduction in diastolic blood pressure of 3.52 mmHg (95%CI: -1.24, 8.28) (quality of evidence moderate). Only one study with one comparison, in which the increased potassium intake was 90-120 mmol/day, reported ambulatory systolic and diastolic blood pressure; increased potassium intake resulted in a non-significant decrease of 1.80 mmHg (95%CI: -3.42, 7.02) in ambulatory systolic blood pressure and 1.40mmHg (95%CI: -2.34, 5.14) in ambulatory diastolic blood pressure (quality of evidence moderate).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0044
+Text: WHO conducted a systematic review on the relationship between potassium consumption and  cardiovascular  disease,  stroke,  coronary  heart  disease  and  all-cause
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0045
+Text: mortality (45) . The review updated and reanalysed data from the recent systematic review of D'Elia and colleagues (30) . Only one study that met the inclusion criteria reported all-cause mortality. The results of this study were inconclusive (risk ratio [RR] 1.08 2 ; 95%CI: 0.91, 1.29) (quality of evidence very low). Twelve prospective cohort studies with more than 127,000 participants measured potassium intake through urinary potassium excretion, dietary records or some combination of these methods, and compared the incidence of cardiovascular disease, stroke or coronary heart disease between the lowest and highest potassium-consuming groups. Populations had wide ranges of potassium intake: some consumed approximately 35 mmol/ day in the lowest group and 65 mmol/day in the highest group, whereas others consumed approximately 65 mmol/day or more in the lowest group and 110-150 mmol/day in the highest group. The follow-up period ranged from 2 to 19 years. Studies were conducted in Asia, Europe and the USA, and one study used data from individuals in 40 different countries. Two  studies  were  conducted
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0046
+Text: exclusively  in  individuals  without  hypertension,  two  were specifically in a heterogeneous group of individuals both with and without hypertension, and the remaining studies did not specify the blood pressure status of the study population.
+1  Based on the grades of evidence set  by  the  GRADE Working  Group: high quality ,  we  are  very  confident  that  the true effect lies close to that of the estimate of the effect; moderate quality , we have moderate confidence in the effect estimate; the true effect is likely to be close to the estimate of the effect, but there is a possibility that it is substantially different; low quality , our confidence in the effect estimate is limited; the true effect may be substantially different from the estimate of the effect; very low qualit y, we have very little confidence in the effect estimate; the true effect is likely to be substantially different from the estimate of the effect.
+2 In the analysis of data from cohort studies, RR <1 indicates decreased risk with increased potassium intake.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0047
+Text: The meta-analysis of four studies with four comparisons with cardiovascular disease as  an  outcome  was  inconclusive  regarding  the  association  between  potassium  and cardiovascular disease (RR 0.88; 95%CI: 0.70, 1.11) (quality of evidence very low). The metaanalysis of nine studies with nine comparisons with stroke as an outcome was supportive of a reduction in risk of stroke with increased potassium (RR 0.79; 95%CI: 0.68, 0.93) (quality of evidence low). The meta-analysis of four studies with four comparisons between a potassium intake of ≥90 mmol/day and <90 mmol/day demonstrated a reduction in stroke  associated  with  consuming  ≥90  mmol/day  (RR  0.70;  95%CI:  0.56,  0.88)  (quality  of evidence low). The outcome of the meta-analysis of three studies with three comparisons reporting coronary heart disease as the outcome was inconclusive (RR 0.97; 95%CI: 0.77, 1.24) (quality of evidence very low).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0048
+Text: There is  a  well-established  relationship  between  increasing  blood  pressure  and increasing risk of cardiovascular diseases, particularly coronary heart disease and stroke (12, 49) .  Blood pressure is thus considered a reliable biomarker for estimating risk of cardiovascular  disease (50,  51) .  Recognizing  the  limitations  of  any  biomarker,  it  was nonetheless determined that blood pressure could be a suitable proxy indicator for risk of cardiovascular disease, stroke, and coronary heart disease. Therefore, in addition to the direct evidence from observational cohort studies on the relationship between potassium intake and cardiovascular disease, stroke, and coronary heart disease, the data from RCTs on the effect of increased potassium consumption on blood pressure (44) were  used  as  part  of  the  evidence  base  for  considering  the  effect  of  increased potassium intake on these outcomes.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0049
+Text: Potential adverse effects from increased potassium intake included changes in blood lipids (e.g. increased total cholesterol, low-density lipoprotein [LDL] cholesterol and triglyceride; decreased high-density lipoprotein [HDL] cholesterol); changes in renal function; increases in catecholamine levels; and any other adverse effects or minor side-effects (i.e. dizziness, headache, muscle pain) reported by study authors. The decrease in blood volume caused by increased potassium activates the sympathetic nervous system, resulting in the release of adrenaline and noradrenaline. Decreased blood volume may also be responsible for changes in  blood  lipid  concentrations.  The  effect  of  four  or  more  weeks  of  increased  potassium consumption on these outcomes was addressed in the systematic review of the literature that considered the effect of potassium on blood pressure (44) . The meta-analysis of three trials  reporting  total  cholesterol  concentration  showed  that  increased  potassium  intake relative  to  lower  potassium  intake  resulted  in  a  non-significant  decrease  of
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0050
+Text: 0.12mmol/L (95%CI: -0.33, 0.09) in total cholesterol (quality of evidence high). Only one study in the literature reported LDL concentration, and the results indicated a non-significant decrease in  LDL of 0.10 mmol/L (95%CI: -0.18, 0.38) (quality of evidence high). Although the data were limited, the meta-analysis of two studies with two comparisons reporting HDL and triglyceride concentrations also showed non-significant decreases in those indicators with increased potassium consumption (HDL 0.01 mmol/L; 95%CI: -0.11, 0.13; triglyceride 0.11 mmol/L;  95%CI:  -0.26,  0.48)  (quality  of  evidence  high).  The  meta-analysis  of  three
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0051
+Text: trials showed that increased potassium intake relative to lower potassium intake resulted in a non-significant decrease of 4.32 pg/mL (95%CI: -15.13, 23.78) in plasma noradrenaline and 3.94 pg/mL (95%CI: -1.34, 9.22) in plasma adrenaline (quality of evidence high). No studies that met the inclusion criteria reported urinary catecholamine levels. As an indicator of renal function, three studies quantified serum creatinine concentration. The meta-analysis of these studies suggested that increased potassium intake had no effect on renal function with a non-significant increase of 4.86 µmol/L (95%CI: -3.87, 13.59) in these samples of individuals with apparently normal renal function (quality of evidence high). Although the evidence was limited, the data from RCTs were conclusive of no adverse effect of increased potassium intake in terms of blood lipids, catecholamine levels or renal function.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0052
+Text: No minor side-effects as a result of increased potassium intake were reported in any of the RCTs. Though these studies were all of relatively short duration, the absence of any complaints of adverse effects with increased potassium intake is consistent with the literature (32, 33) .  The  body is  able  to  efficiently  adapt  and  excrete  excess  potassium via the urine when consumption exceeds needs ( 18, 32, 33 ), and there have been no reports of toxicity of potassium from consumption in food (34) .
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0053
+Text: WHO conducted a systematic review of the effect of increased potassium intake on blood pressure, blood lipids, catecholamine levels and other potential adverse effects in children ( 46 ). Only four studies in children reporting on blood pressure met the inclusion criteria for the review, and none of these reported on blood lipids, catecholamine levels or other adverse effects. Three of the four studies were controlled trials conducted in the USA. They included a total of 326 boys and girls averaging 13 years of age. The potassium intake values in the lower groups averaged 57 mmol/day, compared with 95 mmol/day in the increased potassium groups. The fourth study was an observational cohort study conducted in the Netherlands; it included children aged 5-17 years of age at baseline and followed them for 7 years. The meta-analysis of the three controlled  trials  with five
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0054
+Text: comparisons showed that increased potassium intake affected a non-significant decrease of 0.28 mmHg (95%CI: -0.49, 1.05) in systolic blood pressure and 0.92 mmHg (95%CI: -0.16, 2.00) in diastolic blood pressure (quality of evidence low). The results of the observational cohort study in children were consistent with a beneficial effect of increased potassium on blood pressure over time. In that study, potassium intake was inversely related to the rate of increase in blood pressure over a 7-year period (52) .
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0055
+Text: There were few high-quality RCTs testing the effect of increased potassium intake on blood pressure and potential adverse effects in children. Hence, in generating the guideline for children, the data from the systematic review conducted in adults (44) were used as part of the evidence base for estimating the effect of increased potassium on health outcomes in children. Renal function is fully developed in early childhood; thus, it was considered acceptable to use information from adults to infer the effect of potassium intake on blood pressure in children. The evidence from studies conducted in adults was downgraded from high to moderate in quality because of indirectness (i.e. the use of a proxy population for the target population).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0056
+Text: WHO attempted to discern differences in the effect of increased potassium on outcomes according  to  type  of  intervention  (i.e.  supplements,  fortification  or  food),  type  of potassium supplement (i.e. potassium citrate, potassium chloride or other) and gender. In the systematic review and meta-analysis of RCTs in adults reporting blood pressure as an outcome ( 44 ), the subgroup analysis of 19 studies using potassium supplements showed a decrease in systolic blood pressure of 3.31 mmHg (95%CI: 1.55, 5.07) (quality of evidence high), and the subgroup analysis of three studies using dietary changes showed a decrease in systolic blood pressure of 4.19 mmHg (95%CI: 1.92, 6.46) (quality of evidence high). The results suggest that an increase in potassium intake from either supplement or food has a beneficial effect on blood pressure.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0057
+Text: In assessing the results of supplementation studies, it was possible to isolate the effect of potassium because it was the only variable manipulated between increased potassium  and  usual  or  lower  potassium  groups.  The  consistency  in  results  from studies with increased potassium through dietary change supports the health benefit of potassium specifically, and not the conjugate anion found in the supplements used in  the  supplementation  studies.  Additionally,  all  cohort  studies  compared  groups consuming different levels of potassium from foods (44) . The cohort studies suggested a positive effect of increased potassium on stroke, further strengthening the conclusion that specifically increasing potassium has beneficial effects on health. No studies that met the inclusion criteria looked specifically at potassium fortification of food, mainly because such studies also manipulated sodium levels. One study used potassium citrate, one used potassium bicarbonate and one used a combination of potassium citrate and bicarbonate, whereas all other supplementation studies used potassium chloride; thus, it was not possible to compare different supplement types. Twenty of the 22 RCTs and nine of the 12 cohort studies were in mixed populations of men and women. Although differences by gender could not be compared, the overall positive effect of increased potassium found in these studies supports a beneficial effect in both men and women.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0058
+Text: Addressing the optimal ratio of sodium to potassium was outside the scope of this guideline; however, we undertook subgroup analysis of the RCTs to explore whether different levels of sodium intake influence the effect of potassium on blood pressure. Only one study had a mean sodium intake level of <2 g/day, and it found a non-significant decrease of 2.00 mmHg (95%CI: -7.70, 11.70) on systolic blood pressure with increased potassium intake (quality of evidence moderate), but conclusions should not be drawn from such limited evidence. In the 15 studies with a mean sodium intake of 2-4 g/day, increased potassium intake decreased systolic blood pressure by 1.97 mmHg (95%CI: 0.52, 3.41) (quality of evidence high). In the five studies with a mean sodium intake of >4 g/day, increased potassium intake decreased systolic blood pressure by 6.91 mmHg (95%CI: 2.29, 11.53) (quality of evidence high).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0059
+Text: Although the difference in the effect estimates was not statistically significant, the results suggest that potassium may be more effective in reducing blood pressure at higher sodium consumption levels, which is consistent with previous findings (4). There was still a significant benefit of increased potassium intake on blood pressure when populations consumed 2-4 g/day of sodium; hence, with most populations around the world consuming more than 2-4 g/day of sodium ( 40 ), increased potassium intake should benefit most countries.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0060
+Text: The  RCTs  were  also  grouped  by  baseline  potassium  intake.  In  the  two  studies in  which  baseline  intake  was  <50mmol/day,  increased  potassium  intake  decreased systolic  blood  pressure  by  3.89  mmHg  (95%CI:  0.74,  7.03).  In  the  14  studies  with  a baseline potassium intake of 50-80mmol/day, increased potassium intake decreased systolic blood pressure by 3.39mmHg (95%CI: 1.26, 5.51) and diastolic blood pressure by 1.53 mmHg (95%CI: 0.25, 2.80). In the five studies with a baseline potassium intake of >80mmol/day, increased potassium intake decreased systolic blood pressure by 4.11 mmHg (95%CI: 1.97, 6.26) and diastolic blood pressure by 3.38 mmHg (95%CI: 2.02, 4.74). Thus, increased potassium intake had a beneficial effect on blood pressure regardless of baseline potassium intake.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0061
+Text: The RCTs were grouped by blood pressure status at baseline. In the three studies conducted exclusively in individuals with normal blood pressure, increased potassium intake resulted in a non-significant increase in systolic blood pressure of 0.09 mmHg (95%CI:  -0.95,0.77)  (quality  of  evidence  moderate).  In  the  16  studies  conducted  in individuals  with  hypertension,  increased  potassium  intake  decreased  systolic  blood pressure by 5.32 mmHg (95%CI: 3.43, 7.20) (quality of evidence high). Although it appears that potassium may only reduce blood pressure in individuals with hypertension, the studies in individuals without hypertension were of relatively short duration, and the effect over time on the prevention of elevated blood pressure is not known. Given the high prevalence of hypertension in adult populations globally (2) ,  the  relatively  low potassium  intake  in  most  populations (9,  10,  53) ,  and  the  clear  benefit  of  increased potassium intake in individuals with high blood pressure, increasing potassium intake is likely to be broadly beneficial to populations around the world.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0062
+Text: Finally, the modest reduction in systolic blood pressure (3.06 mmHg) and in diastolic blood pressure (2.84 mmHg) would have important public health benefits. Elevated blood pressure is the leading risk factor for mortality, accounting for almost 13% of death globally (2) . In the USA, a relatively small decrease of 2 mmHg in diastolic blood pressure in the population could result in an estimated 17% decrease in the prevalence of hypertension, 6% decrease in risk of coronary heart disease, and 15% decrease in risk of stroke; it could also prevent an estimated 67,000 coronary heart disease events and 34,000 stroke events every year (54) . In the United Kingdom, researchers estimate that  a  5  mmHg reduction in systolic blood pressure could reduce the prevalence of hypertension by 50% (55) .  Additionally, the relationship between blood pressure and risk of vascular mortality is positive, strong and linear down to a systolic blood pressure of 115 mmHg, below which there is no evidence (49) .  Thus, almost all reduction in blood pressure  is  beneficial  for  health,  and  modest  population-wide  reductions  in  blood pressure  result  in  important  reductions  in  mortality,  substantial  health  benefits
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0063
+Text: and meaningful savings in health-care costs (2, 12, 13) .
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0064
+Text: - WHO recommends an increase in potassium intake from food for reduction of blood  pressure  and  risk  of  cardiovascular  disease,  stroke  and  coronary  heart disease in adults ( strong recommendation 1  ). WHO suggests a potassium intake of at least 90 mmol/day (3510 mg/day) for adults ( conditional recommendation 2 ).
+- WHO  suggests  an  increase  in  potassium  intake  from  food  to  control 3 blood pressure in children ( conditional recommendation ). The recommended potassium intake of at least 90 mmol/day should be adjusted downward for children, based on the energy requirements of children relative to those of adults.
+- For this recommendation, 'adults' includes all individuals ≥16 years of age.
+- For this recommendation, 'children' includes all individuals 2-15 years of age.
+- The recommendation for children does not address the recommended period of exclusive breastfeeding (0-6 months) or the period of complementary feeding with continued breastfeeding (6-24 months).
+- These  recommendations  apply  to  all  individuals,  with  or  without  hypertension (including pregnant and lactating women) except for those with impaired urinary potassium excretion.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0065
+Text: - These recommendations do not address the optimal ratio of sodium to potassium; however,  if  this  guideline  and  the  WHO  guideline  on  sodium  consumption  are achieved,  the  molar  ratio  of  sodium  to  potassium  would  be  approximately  one to one. To maintain this molar ratio at higher levels of sodium consumption, the recommended level of intake of ≥90 mmol/day potassium should be increased.
+- These recommendations complement the WHO guideline on sodium consumption and should not be interpreted to replace or supersede that guideline. Public health interventions should aim to increase potassium intake through foods (Annex 2), and to simultaneously reduce sodium intake.
+1 A strong recommendation is one for which the guideline development group is confident that the desirable effects of adherence outweigh the undesirable effects. The recommendation can be either in favour of or against an intervention. Implications of a strong recommendation are as follows: for patients ,  most people in their situation would desire the recommended course of action, only a  small  proportion  would  not; for  clinicians ,  most  patients  should  receive  the recommended course of action, and adherence to this recommendation is a reasonable measure of good-quality care; for policy-makers , the recommendation can be adopted as a policy in most situations.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0066
+Text: 2 A conditional recommendation is one for which the guideline development group concludes that the desirable effects of adherence probably outweigh the undesirable effects, but the group is not confident about the trade-off. The reason for not being confident could be the absence of high-quality evidence; the presence of imprecise estimates of benefit or harm; uncertainty or variation on how certain individuals will value the outcome; small benefits; and benefits that are  not  worth  the  costs  (including  the  costs  of  implementing  the  recommendation).  Implications  of  a  conditional recommendation are as follows: for patients ,  most people in their situation would want the recommended course of action, but many would not; for clinicians , patients may need help to make a decision in relation to the recommendation that is consistent with their own values; for policy-makers , there is a need for debate and involvement of stakeholders in deciding whether to adopt the recommendation as policy.
+3 'Control' for this recommendation refers to the prevention of a deleterious rise in blood pressure with age.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0067
+Text: - The recommended level of intake of ≥90 mmol/day is a conditional recommendation for  adults  because  there  is  limited  evidence  regarding  the  precise  level  that  will result in maximum health benefits. The recommendation is informed by moderate and high-quality evidence that consuming potassium at ≥90 mmol/day will provide a  health  benefit.  However,  the  recommendation  recognizes  that  the  value  may change if there are additional high-quality trials that determine the precise level of potassium intake that achieves the most favourable reduction in blood pressure and risk of cardiovascular disease, stroke and coronary heart disease, without a negative effect on other health outcomes such as blood lipids and catecholamine levels.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0068
+Text: - The recommendation to increase potassium intake in children is conditional, because few studies in children have considered the effects of increased potassium on blood pressure, blood lipids, catecholamine levels, and other possible adverse effects. The recommendation is based on a limited amount of low-quality direct evidence from children, and moderate-quality indirect evidence from adults. Because renal function is fully developed early in childhood, an adult population is an appropriate proxy population for informing guidelines for children. This recommendation recognizes that there is a need for high-quality RCTs, to verify the effects of potassium intake on blood pressure and potential adverse effects in children. An adjustment in intake, based on energy requirement, is recommended because the relatively high energy intake on a per body-weight basis during periods of rapid growth implies a risk that the recommended level of potassium intake could be too low if adjustments to the adult recommended value are made on a per body-weight basis. Every country should determine the requirement of various age categories of the paediatric population relative to adults 20-50 years of age, to adjust the recommended minimum intake value of 90 mmol/day.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0069
+Text: If country-specific data are not available, data from another country with similar population demographics and dietary habits can be used to make this adjustment.
+- These  recommendations  recognize  that  non-acclimated  individuals  engaged  in intense physical activities (especially at high temperatures) for extended periods of time, resulting in the production of large volumes of sweat, should consume higher levels  of  potassium  to  replace  potassium  losses  via  sweat.  For  most  individuals, sufficient potassium to replace such losses can be consumed through food, without the need for specially formulated food and beverage products.
+- It  is  recommended  that  potassium  be  consumed  through  food.  Because  of  the safety of consumption of increased potassium via food, no upper limit has been considered.
+Implications for future research
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0070
+Text: This  nutrient  guideline  on  potassium  can  aid  the  logical,  systematic,  and  scientific  development of  nutrition  interventions  taking  into  account  the  best  available  scientific  evidence. This guideline should be used in conjunction with sodium and other nutrient guidelines to guide public health nutrition programmes and policies.
+The recommendations in this guideline can be used by programme and policy planners to assess current potassium intake relative to a benchmark and develop measures to increase potassium intake, where necessary, through public health interventions including, but not limited to, food and product labelling and consumer education. Additionally, this guideline can be translated at the country-level into culturally and contextually specific FBDGs that take into account locally available food and dietary customs.
+Though providing overall dietary guidance is outside the scope of this guideline because such dietary guidance should be based on overall dietary goals, which consider all required nutrients, it is recommended that potassium be consumed through food. It is also recognized that it is feasible to achieve this recommendation while respecting national dietary customs because potassium is found in a wide variety of foods (Annex 2). Additionally, because fresh fruits, vegetables and beans are high in potassium, an increased intake of potassium can be achieved without increasing caloric intake if these foods replace foods lower in potassium levels in the diet.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0071
+Text: - High-quality RCTs in children are needed that address the effects of increased potassium intake compared with lower potassium intake on blood pressure, and adverse effects such as changes in blood lipids and catecholamine levels.
+- Further high-quality RCTs in adults are needed that assess the effects of increased potassium  intake  compared  with  lower  potassium  intake  on  cardiovascular disease, stroke and coronary heart disease.
+- High-quality RCTs with multiple intervention arms designed to directly test the effect of multiple levels of potassium intake on health outcomes are warranted, to strengthen the evidence base for the precise target potassium intake value.
+- High-quality trials with multiple intervention arms designed to test various forms of  potassium  compounds  (i.e.  potassium  citrate,  potassium  bicarbonate  and potassium chloride), in either supplement or fortification form, are warranted.
+The current guideline will be disseminated through:
+- electronic media such as slide presentations;
+- mailing lists of the WHO Department of Nutrition for Health and Development and the UN Standing Committee on Nutrition;
+- the web site of the WHO Department of Nutrition for Health and Development.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0072
+Text: Updating the guideline A summary of this guideline will also be available in all six UN languages through the WHO  Department  of  Nutrition  for  Health  and  Development's  electronic  Library  of Evidence  for  Nutrition  Actions  (eLENA). The  library  displays WHO  guidelines  related to  nutrition,  and  complementary  documents  such  as  systematic  reviews  and  other evidence  informing  the  guidelines,  biological  and  behavioural  rationales  for  the effectiveness of a guideline, and other relevant resources produced by Member States and global partners.
+The recommendations in this guideline will be reviewed by the end of 2017. If new information  is  available  by  that  date,  a  guideline  review  group  will  be  convened  to evaluate the new evidence and revise the recommendation. However, if a large amount of new evidence becomes available before that date, a guideline review group may be convened earlier. The Department of Nutrition for Health and Development at the WHO Headquarters in Geneva, together with partners in other departments within the WHO Secretariat, will be responsible for coordinating the updating of the guideline, following the formal WHO Handbook for guideline development (6) procedures. When the guideline is due for review, WHO will welcome suggestions for additional questions that could be addressed in the guideline.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0073
+Text: 
+Cardiovascular disease 1 (directly assessed; RR greater than 1 indicates increased risk with increased sodium intake), Effect (95 % IC) = RR 0.88 (0.70 to 1.11). Cardiovascular disease 1 (directly assessed; RR greater than 1 indicates increased risk with increased sodium intake), Number of participants (studies) = 29 067 (4 studies). Cardiovascular disease 1 (directly assessed; RR greater than 1 indicates increased risk with increased sodium intake), Quality of the evidence (GRADE) = ⊕⊝⊝⊝ very low. Cardiovascular disease 1 (directly assessed; RR greater than 1 indicates increased risk with increased sodium intake), Comments = Data from cohort studies begin with a GRADE of low. Downgraded due to imprecision because 95%CI crossed threshold of relevance of benefit or harm.. Stroke (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Effect (95 % IC) = RR 0.79 (0.68 to 0.93 ). Stroke (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Number of participants (studies) = 97 152 (9 studies). Stroke (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Quality of the
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0074
+Text: 
+ evidence (GRADE) = ⊕⊕⊝⊝ low. Stroke (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Comments = Data from cohort studies begin with a GRADE of low.. Coronary heart disease (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Effect (95 % IC) = RR 0.97 (0.77 to 1.24). Coronary heart disease (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Number of participants (studies) = 31 162 (3 studies). Coronary heart disease (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Quality of the evidence (GRADE) = ⊕⊝⊝⊝ very low. Coronary heart disease (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Comments = Data from cohort studies begin with a GRADE of low. Downgraded due to imprecision because 95%CI crossed threshold of relevance of benefit or harm.. All cause mortality (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Effect (95 % IC) = RR 1.08 (0.91 to 1.29). All cause mortality (directly assessed;
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0075
+Text: 
+ RR less than 1 indicates decreased risk with increased potassium intake), Number of participants (studies) = 1 448 (1 study). All cause mortality (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Quality of the evidence (GRADE) = ⊕⊝⊝⊝ very low. All cause mortality (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Comments = Only one study reported this outcome. Downgraded due to imprecision because 95%CI crossed threshold of relevance of benefit or harm.. Resting systolic blood pressure 2 (follow-up 1-36 months; units mmHg; better indicated by lower values), Effect (95 % IC) = MD 3.06 lower 3 (4.70 to 1.42 lower ). Resting systolic blood pressure 2 (follow-up 1-36 months; units mmHg; better indicated by lower values), Number of participants (studies) = 1 892 (21 studies). Resting systolic blood pressure 2 (follow-up 1-36 months; units mmHg; better indicated by lower values), Quality of the evidence (GRADE) = ⊕⊕⊕⊕ high. Resting systolic blood pressure 2 (follow-up
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0076
+Text: 
+ 1-36 months; units mmHg; better indicated by lower values), Comments = . Total cholesterol 4 (follow-up 1 - 2 months; units mmol/L; better indicated by lower values), Effect (95 % IC) = MD 0.12 lower (0.33 lower to 0.09 higher ). Total cholesterol 4 (follow-up 1 - 2 months; units mmol/L; better indicated by lower values), Number of participants (studies) = 208 (3 studies). Total cholesterol 4 (follow-up 1 - 2 months; units mmol/L; better indicated by lower values), Quality of the evidence (GRADE) = ⊕⊕⊕⊕ high. Total cholesterol 4 (follow-up 1 - 2 months; units mmol/L; better indicated by lower values), Comments = Not downgraded due to imprecision because 95%CI did not cross threshold of relevance of benefit or harm.. Plasma noradrenaline 5 (follow-up 1 - 1.5 months; units pg/mL; better indicated by lower values), Effect (95 % IC) = MD 4.32 lower (23.78 lower to 15.13 higher
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0077
+Text: 
+ ). Plasma noradrenaline 5 (follow-up 1 - 1.5 months; units pg/mL; better indicated by lower values), Number of participants (studies) = 152 (3 studies). Plasma noradrenaline 5 (follow-up 1 - 1.5 months; units pg/mL; better indicated by lower values), Quality of the evidence (GRADE) = ⊕⊕⊕⊕ high. Plasma noradrenaline 5 (follow-up 1 - 1.5 months; units pg/mL; better indicated by lower values), Comments = Not downgraded due to imprecision because 95%CI did not cross threshold of relevance of benefit or harm.. Serum Creatinine (follow-up 1 - 3 months; units μmol/L; better indicated by lower values), Effect (95 % IC) = MD 4.86 lower (13.59 lower to 3.87 higher ). Serum Creatinine (follow-up 1 - 3 months; units μmol/L; better indicated by lower values), Number of participants (studies) = 147 (3 studies). Serum Creatinine (follow-up 1 - 3 months; units
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0078
+Text:  μmol/L; better indicated by lower values), Quality of the evidence (GRADE) = ⊕⊕⊕⊕ high. Serum Creatinine (follow-up 1 - 3 months; units μmol/L; better indicated by lower values), Comments = Not downgraded due to imprecision because 95%CI did not cross threshold of relevance of benefit or harm.. Minor side effects (better indicated by lower values), Effect (95 % IC) = . Minor side effects (better indicated by lower values), Number of participants (studies) = . Minor side effects (better indicated by lower values), Quality of the evidence (GRADE) = . Minor side effects (better indicated by lower values), Comments = No studies reported this outcome.
+CI, Confidence interval; RR, Risk ratio; MD, Mean difference.
+GRADE Working Group grades of evidence:
+High quality: We are very confident that the true effect lies close to that of the estimate of the effect.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0079
+Text: Moderate quality: We have moderate confidence in the effect estimate. The true effect is likely to be close to the estimate of the effect, but there is a possibility that it is substantially different.
+Low quality: Our confidence in the effect estimate is limited. The true effect may be substantially different from the estimate of the effect.
+Very low quality: We have very little confidence in the effect estimate. The true effect is likely to be substantially different from the estimate of the effect.
+1 Composite cardiovascular disease as reported by original study authors. This variable included some or all of the following: fatal and non-fatal stroke, coronary heart disease, myocardial infarction, and/or congestive cardiac failure, or episode of coronary revascularization, bypass grafting, and/or angioplasty.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0080
+Text: 2  Additional evidence from a meta-analysis of 21 randomized-controlled trials (RCTs) with 21 comparisons reporting resting diastolic blood pressure is supportive of a benefit of increased potassium on blood pressure (MD 2.84 mmHg lower (4.66 to 1.01 lower)) (quality of evidence high); a meta-analysis of four RCTs with four comparisons reporting ambulatory systolic blood pressure is supportive of a benefit of increased potassium on blood pressure (MD 3.04 mmHg lower (5.42 to 0.66 lower)) (quality of evidence moderate); and a meta-analysis of four RCTs with four comparisons reporting ambulatory diastolic blood pressure is consistent with a benefit of increased potassium on blood pressure (MD 1.24 lower (3.13 lower to 0.66 higher))(quality of evidence moderate).
+3  A MD described as 'lower' signifies a reduction in the outcome in the increased potassium versus the lower potassium group.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0081
+Text: 4  Additional evidence on the relationship between potassium intake and blood lipids comes from a meta-analysis of two RCTs with two comparisons reporting high-density lipoprotein (HDL) cholesterol concentration that is supportive of no effect of increased potassium in blood lipids (MD 0.01 mmol/L lower (0.13 lower to 0.11 higher)) (quality of evidence high), and a meta-analysis of two RCTs with two comparisons reporting triglyceride concentration that is supportive of no effect of increased potassium on blood lipids (MD 0.11 mmol/L lower (0.48 lower to 0.26 higher)) (quality of evidence high). There was only one RCT in the literature that reported low-density lipoprotein (LDL) cholesterol concentration and it was consistent with no effect of increased potassium on blood lipids (MD 0.10 mmol/L lower (0.38 lower to 0.18 higher).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0082
+Text: 5  A meta-analysis of three RCTs with three comparisons reporting plasma adrenaline concentration is supportive of no effect of increased potassium on catecholamine levels (MD 3.94 pg/mL lower (9.22 lower to 1.34 higher)) (quality of evidence high). There were no studies identified that reported urinary catecholamine levels.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0083
+Text: 
+Cardiovascular disease 1 (directly assessed; RR greater than 1 indicates decreased risk with increased potassium intake), Effect (95 % IC) = RR 0.84 (0.61 to 1.15). Cardiovascular disease 1 (directly assessed; RR greater than 1 indicates decreased risk with increased potassium intake), Number of participants (studies) = 2 809 (2 studies). Cardiovascular disease 1 (directly assessed; RR greater than 1 indicates decreased risk with increased potassium intake), Quality of the evidence (GRADE) = ⊕⊝⊝⊝ very low. Cardiovascular disease 1 (directly assessed; RR greater than 1 indicates decreased risk with increased potassium intake), Comments = Data from cohort studies begin with a GRADE of low. Downgraded due to imprecision because 95%CI crossed threshold of relevance of benefit or harm.. Stroke (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Effect (95 % IC) = RR 0.70 (0.56 to 0.88 ). Stroke (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Number of participants (studies) = 54 796 (4 studies). Stroke (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Quality of
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0084
+Text: 
+ the evidence (GRADE) = ⊕⊕⊝⊝ low. Stroke (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Comments = Data from cohort studies begin with a GRADE of low.. Coronary heart disease (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Effect (95 % IC) = . Coronary heart disease (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Number of participants (studies) = . Coronary heart disease (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Quality of the evidence (GRADE) = . Coronary heart disease (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Comments = There were no studies with coronary heart disease as an outcome which addressed this question.. All cause mortality (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Effect (95 % IC) = . All cause mortality (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Number of participants (studies) = . All cause mortality (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Quality of the evidence (GRADE) = .
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0085
+Text: 
+ All cause mortality (directly assessed; RR less than 1 indicates decreased risk with increased potassium intake), Comments = There were no studies with all cause mortality as an outcome which addressed this question.. Resting systolic blood pressure 2 (follow-up 1-36 months; units mmHg; better indicated by lower values), Effect (95 % IC) = MD 5.82 lower 3 (12.43 lower to 0.79 higher). Resting systolic blood pressure 2 (follow-up 1-36 months; units mmHg; better indicated by lower values), Number of participants (studies) = 286 (5 studies). Resting systolic blood pressure 2 (follow-up 1-36 months; units mmHg; better indicated by lower values), Quality of the evidence (GRADE) = ⊕⊕⊕⊝ moderate. Resting systolic blood pressure 2 (follow-up 1-36 months; units mmHg; better indicated by lower values), Comments = . Total cholesterol (follow-up 1.5 months; units mmol/L; better indicated by lower values), Effect (95 % IC) = MD 0.17 lower (0.43 lower to 0.09 higher). Total cholesterol
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0086
+Text: 
+ (follow-up 1.5 months; units mmol/L; better indicated by lower values), Number of participants (studies) = 128 (2 studies). Total cholesterol (follow-up 1.5 months; units mmol/L; better indicated by lower values), Quality of the evidence (GRADE) = ⊕⊕⊕⊕ high. Total cholesterol (follow-up 1.5 months; units mmol/L; better indicated by lower values), Comments = . Plasma noradrenaline (directly assessed), Effect (95 % IC) = . Plasma noradrenaline (directly assessed), Number of participants (studies) = . Plasma noradrenaline (directly assessed), Quality of the evidence (GRADE) = . Plasma noradrenaline (directly assessed), Comments = There were no studies with plasma noradrenaline as an outcome which addressed this question.. Serum Creatinine (follow-up 1 - 3 months; units μmol/L; better indicated by lower values), Effect (95 % IC) = MD 0.18 lower (6.8 lower to 3.3 higher). Serum Creatinine (follow-up 1 - 3 months;
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0087
+Text:  units μmol/L; better indicated by lower values), Number of participants (studies) = 74 (1 study). Serum Creatinine (follow-up 1 - 3 months; units μmol/L; better indicated by lower values), Quality of the evidence (GRADE) = ⊕⊕⊕⊕ high. Serum Creatinine (follow-up 1 - 3 months; units μmol/L; better indicated by lower values), Comments = . Minor side effects, Effect (95 % IC) = . Minor side effects, Number of participants (studies) = . Minor side effects, Quality of the evidence (GRADE) = . Minor side effects, Comments = No studies reported this outcome.
+CI, Confidence interval; RR, Risk ratio; MD, Mean difference.
+GRADE Working Group grades of evidence:
+High quality: We are very confident that the true effect lies close to that of the estimate of the effect.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0088
+Text: Moderate quality: We have moderate confidence in the effect estimate. The true effect is likely to be close to the estimate of the effect, but there is a possibility that it is substantially different.
+Low quality: Our confidence in the effect estimate is limited. The true effect may be substantially different from the estimate of the effect.
+Very low quality: We have very little confidence in the effect estimate. The true effect is likely to be substantially different from the estimate of the effect.
+1 Composite cardiovascular disease as reported by original study authors. This variable included some or all of the following: fatal and non-fatal stroke, coronary heart disease, myocardial infarction, and/or congestive cardiac failure, or episode of coronary revascularization, bypass grafting, and/or angioplasty.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0089
+Text: 2  Additional evidence comes from a meta-analysis of 5 randomized-controlled trials with 5 comparisons reporting resting diastolic blood pressure is consistent with a benefit of increased potassium to 90 mmol/day on blood pressure (MD 3.52 mmHg lower (8.28 lower to 1.24 higher) (quality of evidence moderate). There was 1 randomized-controlled trial with 1 comparison which reported ambulatory systolic and diastolic blood pressure. The results were inconclusive (ambulatory systolic blood pressure MD 1.80 lower (7.02 lower to 3.42 higher); ambulatory diastolic blood pressure MD 1.40 lower (5.14 lower to 2.34 higher) (quality of evidence moderate).
+3  A MD described as 'lower' signifies a reduction in the outcome in the increased potassium versus the lower potassium group.
+For details on studies included in the reviews, see references (44, 45 ).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0090
+Text: 
+Resting systolic blood pressure 1 (assessed directly in children; follow-up 0.75 months - 3 years; units mmHg; better indicated by lower values), Effect (95 % IC) = MD 0.28 lower 2 (1.05 lower to 0.49 higher ). Resting systolic blood pressure 1 (assessed directly in children; follow-up 0.75 months - 3 years; units mmHg; better indicated by lower values), Number of participants (studies) = 256 (3 studies). Resting systolic blood pressure 1 (assessed directly in children; follow-up 0.75 months - 3 years; units mmHg; better indicated by lower values), Quality of the evidence (GRADE) = ⊕⊕⊝⊝ low. Resting systolic blood pressure 1 (assessed directly in children; follow-up 0.75 months - 3 years; units mmHg; better indicated by lower values), Comments = 1 of 3 studies was not randomized. Downgraded for high risk of bias and imprecision.. Resting systolic blood pressure 3 (assessed in adults; follow-up 1-36 months; units mmHg; better indicated by lower values), Effect (95 % IC) = MD 3.06
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0091
+Text: 
+ lower (4.70 to 1.42 lower ). Resting systolic blood pressure 3 (assessed in adults; follow-up 1-36 months; units mmHg; better indicated by lower values), Number of participants (studies) = 1 892 (21 studies). Resting systolic blood pressure 3 (assessed in adults; follow-up 1-36 months; units mmHg; better indicated by lower values), Quality of the evidence (GRADE) = ⊕⊕⊕⊝ moderate. Resting systolic blood pressure 3 (assessed in adults; follow-up 1-36 months; units mmHg; better indicated by lower values), Comments = Downgraded for indirectness.. Total cholesterol (assessed directly in children), Effect (95 % IC) = . Total cholesterol (assessed directly in children), Number of participants (studies) = . Total cholesterol (assessed directly in children), Quality of the evidence (GRADE) = . Total cholesterol (assessed directly in children), Comments = No studies in children reported on this outcome.. Total cholesterol 3 (assessed in adults; follow-up 1 - 2 months; units mmol/L; better indicated by lower values), Effect (95
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0092
+Text: 
+ % IC) = MD 0.12 lower (0.33 lower to 0.09 higher ). Total cholesterol 3 (assessed in adults; follow-up 1 - 2 months; units mmol/L; better indicated by lower values), Number of participants (studies) = 208 (3 studies). Total cholesterol 3 (assessed in adults; follow-up 1 - 2 months; units mmol/L; better indicated by lower values), Quality of the evidence (GRADE) = ⊕⊕⊕⊝ moderate. Total cholesterol 3 (assessed in adults; follow-up 1 - 2 months; units mmol/L; better indicated by lower values), Comments = Downgraded for indirectness. Not downgraded due to imprecision because 95%CI did not cross threshold of relevance of benefit or harm.. Plasma noradrenaline (assessed directly in children), Effect (95 % IC) = . Plasma noradrenaline (assessed directly in children), Number of participants (studies) = . Plasma noradrenaline (assessed directly in children), Quality of the evidence (GRADE) = . Plasma noradrenaline (assessed directly in children), Comments = No studies in children reported on this
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0093
+Text: 
+ outcome.. Plasma noradrenaline 3 (assessed in adults; follow-up 1 - 2.5 months; units pg/mL; better indicated by lower values), Effect (95 % IC) = MD 4.32 lower (23.78 lower to 15.13 higher ). Plasma noradrenaline 3 (assessed in adults; follow-up 1 - 2.5 months; units pg/mL; better indicated by lower values), Number of participants (studies) = 152 (3 studies). Plasma noradrenaline 3 (assessed in adults; follow-up 1 - 2.5 months; units pg/mL; better indicated by lower values), Quality of the evidence (GRADE) = ⊕⊕⊕⊝ moderate. Plasma noradrenaline 3 (assessed in adults; follow-up 1 - 2.5 months; units pg/mL; better indicated by lower values), Comments = Downgraded for indirectness. Not downgraded due to imprecision because 95%CI did not cross threshold of relevance of benefit or harm.. Minor side effects (assessed directly in children), Effect (95 % IC) = . Minor side effects (assessed directly in children), Number of participants (studies) = . Minor side effects
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0094
+Text:  (assessed directly in children), Quality of the evidence (GRADE) = . Minor side effects (assessed directly in children), Comments = No studies in children reported on this outcome.
+CI, Confidence interval; RR, Risk ratio; MD, Mean difference.
+GRADE Working Group grades of evidence:
+High quality: We are very confident that the true effect lies close to that of the estimate of the effect.
+Moderate quality: We have moderate confidence in the effect estimate. The true effect is likely to be close to the estimate of the effect, but there is a possibility that it is substantially different.
+Low quality: Our confidence in the effect estimate is limited. The true effect may be substantially different from the estimate of the effect.
+Very low quality: We have very little confidence in the effect estimate. The true effect is likely to be substantially different from the estimate of the effect.
+1  One cohort observational study in children is consistent with a beneficial effect of increased potassium on blood pressure over time.
+2  A MD described as 'lower' signifies a reduction in the outcome in the increased potassium versus the lower potassium group
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0095
+Text: 3 Data from adults used as a proxy for children.
+For details on studies included in the reviews, see references (46).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0096
+Text: The table below provides examples of foods from around the world that contain potassium, and gives the approximate average potassium content of those examples from various food composition databases.
+Beans and peas, Approximate potassium content, (mg/100g fresh weight) = 1300. Beans and peas, Examples = Cowpeas, pigeon peas, lima beans, African yam beans. Nuts, Approximate potassium content, (mg/100g fresh weight) = 600. Nuts, Examples = Hazelnuts, walnuts, cashew nuts, brazil nuts. Green vegetables, Approximate potassium content, (mg/100g fresh weight) = 550. Green vegetables, Examples = Spinach, cabbage, parsley. Root vegetables, Approximate potassium content, (mg/100g fresh weight) = 200. Root vegetables, Examples = Carrots, onions, beetroot. Other vegetables, Approximate potassium content, (mg/100g fresh weight) = 300. Other vegetables, Examples = Tomatoes, cucumbers, pumpkins. Fruits, Approximate potassium content, (mg/100g fresh weight) = 300. Fruits, Examples = Bananas, papayas, dates
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0097
+Text: Note:  The  information  in  this  table  is  based  on  approximate  calculations  of  the  average potassium content from an example of foods within each food group from food composition databases from around the globe. The potassium content varies within the food groups. Thus, the information provided can be used only for approximate comparisons of various food groups, and should not be used to estimate daily intake.
+Sources: (
+56-61 )
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0098
+Text: Director
+Department of Nutrition for Health and Development
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0099
+Text: Coordinator
+Nutrition Policy and Scientific Advice Unit Department of Nutrition for Health and Development
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0100
+Text: Scientist Nutrition Policy and Scientific Advice Unit
+Department of Nutrition for Health and Development
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0101
+Text: Director, Ageing and Life Course Family and Community Health
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0102
+Text: Coordinator Chronic Diseases Prevention and Management Department of Chronic Diseases and
+Health Promotion
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0103
+Text: Dental Officer Health Promotion Department of Chronic Diseases and Health Promotion
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0104
+Text: Technical Officer
+Improving Maternal and Perinatal Health Reproductive Health and Research
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0105
+Text: Technical Officer Surveillance and Population-based Prevention Department of Chronic Diseases and Health Promotion
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0106
+Text: Guidelines Review Committee Secretariat
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0107
+Text: Guidelines Review Committee Secretariat
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0108
+Text: Guidelines Review Committee Secretariat
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0109
+Text: Medical Officer WHO Regional Office for Africa Brazzaville, the Congo
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0110
+Text: Regional Adviser Unit on Child and Adolescent Health WHO Regional Office for the Americas/ Pan American Health Organization Washington, USA
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0111
+Text: Regional Adviser Nutrition and Food Safety WHO Regional Office for South-East Asia New Delhi, India
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0112
+Text: Scientist WHO Regional Office for Europe Copenhagen, Denmark
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0113
+Text: Regional Adviser Nutrition WHO Regional Office for the Easter n Mediterranean Cairo, Egypt
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0114
+Text: Regional Adviser
+Nutrition WHO Regional Office for the Western Pacific Manila, the Philippines
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0115
+Text: Director, Nutrition for Health and Development Department
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0116
+Text: Director, Research Policy and Cooperation
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0117
+Text: Director, Child and Adolescent Health and Development
+Alternate:
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0118
+Text: Scientist, Newborn and Child Health and Development
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0119
+Text: Acting Director, Chronic Diseases and Health Promotion
+Alternate:
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0120
+Text: Technical Officer Chronic Disease and Health Promotion
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0121
+Text: Director, Ethics, Equity, Trade and Human Rights
+Alternate:
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0122
+Text: Technical Officer, Ethics, Equity, Trade and Human Rights
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0123
+Text: Director, Food Safety, Zoonoses and Foodborne Diseases
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0124
+Text: Director, Global Malaria Programme Alternate:
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0125
+Text: Associate Director, Global Malaria Programme
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0126
+Text: Medical Officer, Global Malaria Programme
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0127
+Text: Director, Health Policy, Development and Services
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0128
+Text: Director, HIV/AIDS Alternate:
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0129
+Text: Senior Technical Officer, HTM/HIV
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0130
+Text: Director, Immunization, Vaccines and Biologicals
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0131
+Text: Director, Reproductive Health and Research
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0132
+Text: Director, Stop Tuberculosis Alternate:
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0133
+Text: Medical Officer, Stop Tuberculosis
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0134
+Text: Director, Strategy, Policy and Resource Management
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0135
+Text: Acting Director, Emergency Response & Recovery Operations
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0136
+Text: Research on Cancer
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0137
+Text: Director, Nutrition Department
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0138
+Text: (Note: the areas of expertise of each guideline group member are given in italics)
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0139
+Text: University Institute of Social and Preventive
+Medicine,
+Lausanne University Hospital
+Switzerland
+and Ministry of Health
+Seychelles
+Programme manager, noncommunicable diseases
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0140
+Text: School of Nursing and Midwifery Trinity College, Ireland and United Kingdom Cochrane Centre United Kingdom Methods, systematic review
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0141
+Text: Centre for Oncology and Molecular Medicine Division of Medical Sciences University of Dundee United Kingdom Carbohydrates, dietary fibre
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0142
+Text: Institution of Nutritional Sciences University of Vienna
+Austria
+Human nutrition, nutrient requirements, fats and fatty acids, dietary diversity
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0143
+Text: Faculty of Agricultural and Food Sciences American University of Beirut Lebanon Dietetics, nutrition, food-based dietary
+guidelines, diet and health
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0144
+Text: Division of Epidemiology & Community Health University of Minnesota USA Epidemiology, physiology, biostatistics,
+meta-analysis, obesity
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0145
+Text: Center for Clinical Epidemiology & Biostatistics University of Pennsylvania School of Medicine USA
+Human nutrition, epidemiology, obesity, salt/sodium
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0146
+Text: Department of Nutritional Sciences Faculty of Medicine University of Toronto
+Canada
+Nutrition science, trans-fatty acids, risk assessment and risk management, diet and health
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0147
+Text: Department of Food Science and Nutrition Zhejiang University
+China
+Nutritional epidemiology, fats and fatty acids
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0148
+Text: Department of Medical and Surgical
+Sciences University of Otago New Zealand Carbohydrates, sugars, diabetes, fats and fatty acids
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0149
+Text: Department of Nutrition, School of Public Health University of Sao Paulo Brazil Human nutrition, epidemiology,
+double-burden of malnutrition
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0150
+Text: Harvard School of Public Health Harvard University USA
+Cardiology, epidemiology, diet and health
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0151
+Text: Public Health Foundation of India India Cardiovascular diseases, obesity, noncommunicable diseases
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0152
+Text: University of Otago New Zealand Fats and fatty acids, biomarkers, diet and health, human nutrition
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0153
+Text: University of Warwick Warwick Medical School United Kingdom
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0154
+Text: MRC-HPA Centre for Environment and Health and Department of Epidemiology and Biostatistics School of Public Health Imperial College London United Kingdom
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0155
+Text: School of Medicine, Health Policy and Practice University of East Anglia United Kingdom
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0156
+Text: Institute for Ageing and Health School of Dental Sciences University of Newcastle United Kingdom
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0157
+Text: Faculty of Health Sciences North-West University South Africa Nutrition physiology, public health nutrition, food-based dietary guidelines
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0158
+Text: Department of Food and Nutrition Industry Korea Health Industry Development Institute The Republic of Korea
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0159
+Text: German Cochrane Centre Institute of Medical Biometry and Medical Informatics University Medical Center Freiburg Germany
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0160
+Text: Institute for Ageing and Health School of Dental Sciences University of Newcastle United Kingdom
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0161
+Text: 
+Eduard Baladia (on behalf of Maria Manera, Julio Basulto and Eduard Baladia), Affiliation = Spanish Association of Dietitians & Nutritonists, Spain. Gerda Feunekes, Affiliation = Unilever, the Netherlands. Suzanne Harris, Affiliation = International Life Sciences Institute, USA (with offices around the world). Mark Huffman, Affiliation = Northwestern University Feinberg School of Medicine, USA. Siobhan Jennings, Affiliation = Health Service Executive, Ireland. Erika Ketterer, Affiliation = Heart and Stroke Foundation, South Africa. Anatoliy Khudaiberganov, Affiliation = Ministry of Health, Uzbekistan. Branka Legetic (on behalf of the Pan American Health Organization Expert Group on Salt Reduction), Affiliation = Pan American Health Organization Expert Group on Salt Reduction, Americas. Graham MacGregor, Affiliation = Consensus Action on Salt and Health, United Kingdom. Bruce Neal, Affiliation = The George Institute for Global Health, Australia. Aileen Robertson, Affiliation = Metropolitan University College Copenhagen, Denmark. Barbara Schneeman, Affiliation = U.S. Food and Drug Administration; U.S. Delegate to the Codex Committee on Nutrition and Foods for Special Dietary Uses and the Codex Committee on Food Labelling, USA.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0162
+Text:  Hans Verhagen, Affiliation = National Institute for Public Health and the Environment (RIVM), the Netherlands. Jacqueline Webster, Affiliation = The George Institute for Global Health, Australia
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0163
+Text: 
+Nebal Aboul Ella, Affiliation = National Nutrition Institute, Egypt. Michael Alderman, Affiliation = The Albert Einstein College of Medicine, USA. Leila Alouane, Affiliation = National Institute of Nutrition and Food Technology, Tunisia. Salmeh Bahmanpour, Affiliation = Shiraz University of Medical Sciences, Iran (Islamic Republic of). Amber Bastian, Affiliation = Health Promotion Board, Singapore. Wulf Becker, Affiliation = National Food Agency, Sweden. Lucie Bohac, Affiliation = Network for Sustained Elimination of Iodine Deficiency, Canada. Norm Campbell, Affiliation = University of Calgary, Canada. Jalila el Ati, Affiliation = National Institute of Nutrition and Food Technology, Tunisia. Sheila Fleischhacker, Affiliation = Institute of Food Technologists, USA. Gihan Fouad, Affiliation = National Nutrition Institute, Egypt. Isabel Gaertner, Affiliation = German Federation for Food Law and Food Science, Germany. Mark Huffman, Affiliation = Northwestern University Department of Preventive Medicine, USA. Antti Jula, Affiliation = National Institute for Health and Welfare, Finland. Chor San Khoo, Affiliation = ILSI North America, USA. Marzia Lazzerini, Affiliation = WHO Collaborating Center for Maternal and Child
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0164
+Text:  Health, IRCCS Burlo Trieste, Italy. Sandrine Lauret, Affiliation = EuSalt (European Salt Producers' Association), Belgium. Graham MacGregor, Affiliation = Wolfson Institute, Queen Mary University of London, United Kingdom
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0165
+Text: Kathryn McMurry, Affiliation = National Heart, Lung, and Blood Institute, United States of America. Viola Michael, Affiliation = Non Communicable Disease Section, Disease Control Division, Ministry Of Health, Malaysia. Gulsen Saleh, Affiliation = National Nutrition Institute, Egypt. Rusidah Selamat BT, Affiliation = Nutrition Division, Ministry of Health, Malaysia. Letty Shiu, Affiliation = Health Promotion Board, Singapore. Pasquale Strazzullo, Affiliation = Department of Clinical and Experimental Medicine, University of Naples Medical School, Italy. Eman Sultan, Affiliation = National Nutrition Institute, Egypt. Alison Tedstone, Affiliation = Department of Health, England, United Kingdom. Ljiljana Trajkovic Pavlovic, Affiliation = Institute of Public Health of Vojvodina / School of Medicine University of Novi Sad, Republic of Serbia. Jacqueline Webster, Affiliation = The George Institute for Global Health, Australia. Clare Whitton, Affiliation = Health Promotion Board, Singapore. Sahar Zaghloul, Affiliation = National Nutrition Institute, Egypt
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0166
+Text: What is the effect of increased potassium compared with lower intake on health outcomes? What is the optimal level of potassium intake for maximum benefit?
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0167
+Text: 
+Population, 1 = Adults (≥16 years of age) with or without hypertension, or a population of adults (some with and some without hypertension) not acutely ill and not requiring potassium management (with or without type 2 diabetes, previous cardiovascular disease, previous cancer, etc). Intervention (or exposure), 1 = Intervention: increased potassium via advice, specific foods, supplements or whole diet provided and unconfounded by other dietary, weight, lifestyle or pharmaceutical interventions. Exposure: single baseline or repeated potassium intake measurement by dietary intake assessment or urinary potassium excretion. Control, 1 = Diet with a potassium level lower than in the intervention (may be usual intake or specific potassium intake) via advice or no advice or specific foods or supplements or whole diet provided.. Specific comparisons, 1 = Increased potassium intake (any level) versus lower potassium (usual potassium intake) Increased potassium intake to at least 90mmol/day versus lower intake. Increased potassium intake to at least 120mmol/day versus lower intake. Increased potassium intake to at least 155mmol/day versus lower intake.. Outcomes, 1 = Blood pressure (systolic and/or diastolic), all-cause mortality, cardiovascular disease, stroke, coronary heart
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0168
+Text:  disease, renal function, adverse effects (blood lipids, catecholamine levels and any other adverse events reported by study authors). Settings, 1 = All countries
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0169
+Text: What is the effect of increased potassium intake compared with lower intake on blood pressure and potential adverse effects?
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0170
+Text: Population, 1 = Children or adolescents (2-15 years inclusive), not acutely ill and not requiring potassium management (with or without type 2 diabetes, previous cardiovascular disease, previous cancer, etc.). Intervention (or exposure), 1 = Intervention: increased potassium via advice, specific foods, supplements or whole diet provided and unconfounded by other dietary, weight, lifestyle or pharmaceutical interventions. Exposure: single baseline or repeated potassium intake measurement by dietary intake assessment or urinary potassium excretion. Control, 1 = Diet with a potassium level lower than in the intervention (may be usual intake or specific potassium intake) via advice or no advice or specific foods or supplements or whole diet provided.. Specific comparisons, 1 = Increased potassium intake (any level) versus lower potassium (usual potassium intake) Increased potassium intake to at least 90mmol/day versus lower intake. Increased potassium intake to at least 120mmol/day versus lower intake. Increased potassium intake to at least 155mmol/day versus lower intake.. Outcomes, 1 = Blood pressure (systolic and/or diastolic), adverse effects (blood lipids, catecholamine levels and any other adverse events reported by study authors). Settings, 1 = All countries
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0171
+Text: Quality of evidence:
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0172
+Text: Trade-off between benefits and harm:
+- High-quality evidence that increasing potassium is beneficial for blood pressure with no indication of adverse effects in adults.
+- Because of the well-established relationship between blood pressure and cardiovascular disease outcomes, the evidence of an effect of potassium on blood pressure was also considered moderate-quality indirect evidence for cardiovascular disease, stroke and coronary heart disease.
+- The limited amount of direct evidence regarding cardiovascular disease and coronary heart disease shows no harm or benefit from increased potassium intake.
+- Low-quality direct evidence suggests a benefit of increased potassium intake on reducing risk of stroke.
+- Moderate-quality evidence for blood pressure with no indication of adverse effects in children.
+- High and moderate-quality evidence that increasing potassium intake to at least 90 mmol potassium/day in adults is beneficial; however, high quality RCTs testing varying levels of potassium intake to maximize health benefits are lacking, and additional research may clarify the precise optimal target level of intake.
+- NCDs are the main contributor to mortality globally, and interventions to reduce the burden of NCDs are valuable.
+- NCDs affect countries in all regions and all income levels, meaning that interventions to reduce the burden of NCDs are valuable in all contexts.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0173
+Text: - High-quality evidence of benefit of increasing potassium intake to decrease blood pressure in adults.
+- Blood pressure is a good proxy indicator for risk of cardiovascular disease, stroke and coronary heart disease outcomes. Although inconclusive, there was evidence from the meta-analyses of cohort studies measuring cardiovascular disease or coronary heart disease that a benefit of increased potassium was possible. The cohort data supported the beneficial effect of increased potassium on stroke.
+- Moderate-quality (indirect) evidence of benefit of increasing potassium intake in children on blood pressure.
+- High-quality evidence of no harm on blood lipids, catecholamine levels, or renal function with increased potassium intake in adults.
+- No evidence of harm in children.
+- No risk of toxicity with consumption through food.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0174
+Text: - Individuals can feasibly reach these intake goals through the consumption of a reasonable amount of fresh fruits and vegetables, beans, dairy and other potassium-containing foods.
+- Implementation of this intervention requires consumer education, public health communications and nutrition communication.
+- Reduction of NCDs is highly cost beneficial.
+- These recommendations can be incorporated into existing public health nutrition education campaigns and other existing nutrition programs at the global, regional, national and subnational level.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0175
+Text: Professor John Cummings, Professor Shiriki Kumanyika and Professor Este Vorster declared that they received support from the local organizers of the third meeting of the Subgroup on Diet and Health; that is, the Korean Food and Drug Administration (KFDA)/Korea Health Industry Development Institute (KHIDI).
+It was considered that the declared interests did not constitute any conflict of interest for their roles as members of the NUGAG Subgroup on Diet and Health, nor did they represent any conflict of interest for the work being undertaken by the NUGAG Subgroup on Diet and Health.
+Professor Ibrahim Elmadfa declared that he has received research grants from the Ministry of  Health,  Austria;  the  European  Commission;  the  European  Food  Standard  Agency;  and Nutrisciencia, Switzerland. The grants were received by his university, and funds were mainly used for staff costs for those working in the research projects and fieldwork.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0176
+Text: Further information obtained from Professor Elmadfa regarding Nutrisciencia indicated that it  is  a  Liechtenstein  for-profit  foundation,  registered  with  the  Public  Registry  of  the  Principality of  Liechtenstein  under  number  FL-0002.251.294-8.  The  purpose  of  the  foundation  is  to  support research, education and science to universities in Germany. It also contributes to charitable and humanitarian organizations. No commercially operating companies are involved in the operation of the foundation, either directly or indirectly. The declared interests were not considered to constitute any conflict of interest for Professor Elmadfa's role as a member of the NUGAG Subgroup on Diet and Health, nor did they represent any conflict of interest for the work being undertaken by the NUGAG Subgroup on Diet and Health.
+Professor  Nahla  Hwalla  declared  that  she  has  received  research  support  including  grants, collaborations,  sponsorships and other funding from WHO, the International Atomic Energy Agency (IAEA), the Lebanese National Council for Scientific Research, the UN University (UNU) and Nestle Middle East.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0177
+Text: Further  information obtained from Professor Hwalla regarding the declared grant received from Nestle Middle East indicated that the grant supports two types of projects at the American University of Beirut (AUB): intervention activities to promote healthy eating in schools, and research activities of three faculty members in the Faculty of Agriculture and Food Sciences, where Professor Hwalla, as the Dean of the Faculty, oversees the implementation of these activities. Professor Hwalla also indicated that there is an agreement between AUB and Nestle Middle East that all intellectual property (including technology, method, know-how or data rights) produced during the course of the projects will belong to AUB. Professor Hwalla's declared interests do not present any conflict of interest for the work of the NUGAG because the funds she received for her own research were from UN agencies (i.e. WHO, IAEA and UNU) and a governmental institution (i.e. the Lebanese National Council for Scientific Research). It was agreed that Professor Hwalla could participate in the March 2011 meeting as a member of the NUGAG Subgroup on Diet and Health, especially since:
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0178
+Text: - the interest is not personal;
+- the amount received is not significant in view of the total budget of the faculty;
+- funding is going to a programme that was already established before the Nestle contribution and  that  has  governmental  support.  It  was  suggested  that  an  appropriate  disclosure statement be prepared to indicate her declared interest. Professor Hwalla participated in the March 2011 NUGAG meeting but was not able to attend the November 2011 meeting when the current guideline was developed.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0179
+Text: Professor  Mary  L'Abbe  declared  that  she  received  research  grants  from  the  Canadian Institutes  of  Health  Research,  to  evaluate  the  impact  of  Canada's  sodium  reduction  policy; the Public Health Agency of Canada, to prepare a report on public food procurement policies related to sodium; and the Beef Information Centre (a non-profit research foundation funded, but  administered  at  arm's  length,  by  the  Canadian  beef  industry),  to  examine  the  iron bioavailability of the diets of Canadians. Professor L'Abbe also receives other funding for research in NCD prevention and health promotion. She also declared that she has spoken at the annual meeting  of  the  Canadian  Meat  Council  to  explain  Canada's  Sodium  Working  Group  report recommendations, and the process being used to develop Canada's sodium targets for foods. Her travel expenses were paid by the Canadian Meat Council, but no honorarium was received. Professor L'Abbe appeared as a witness to the Canadian Parliament's Standing Committee on Health, as Chair of Canada's Sodium Working Group, to advocate for action to reduce sodium in Canadian foods and to increase consumer awareness of sodium, and to support research in the sodium field.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0180
+Text: The research grant received from the Beef Information Centre was for a study to examine the iron availability of the diets among the Canadian populations; this activity was not related to the area of recommendations being reviewed and updated by the NUGAG Subgroup on Diet and Health. Hence, it was suggested that the declared interest be reported in the process and the meeting report with details, but that no action be taken and Professor L'Abbe be accepted as a member of the NUGAG Subgroup on Diet and Health.
+Professor Jim Mann declared that he is employed by a university that has an interest in nutrition as  it  relates  to  human  health,  and  receives  research  grants  from  New  Zealand  governmental agencies.  He  also  declared  that,  as  an  individual  and  as  advisory  committee  member,  he  has provided  expert  advice  relating  to  nutrition  and  human  health  to  innumerable  national  and international bodies including WHO, FAO, the World Cancer Research Fund and the media.
+The declared interests were not considered to constitute any conflict of interest for Professor Mann's role as a member of the NUGAG Subgroup on Diet and Health, nor did they represent any conflict of interest for the work being undertaken by that subgroup.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0181
+Text: Professor  Dariush  Mozaffarian  declared  that  he  has  received  a  significant  number  of research grants to study the effects of dietary factors on chronic diseases from the US National Institutes of Health; the Searle Scholar Award from the Searle Funds at the Chicago Community Trust; the Genes and Environment Initiative at the Harvard School of Public Health; the Gates Foundation/WHO Global Burden of Diseases, Injuries and Risk Factors Study; and GlaxoSmith Kline, Sigma-Tau and Pronova for an investigator-initiated, not-for-profit trial of fish oil to prevent post-surgical arrhythmia. He has also received modest honoraria and travel reimbursement for speaking at scientific conferences and reviewing on topics related to diet and cardiovascular disease,  including  from  the  US  Food  and  Drug  Administration,  International  Life  Sciences Institute, Aramark, Unilever, SPRIM, Nutrition Impact, WHO, UpToDate, and several universities and scientific organizations. He has no ownership, patents, stocks, advisory board membership or speaking board membership.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0182
+Text: The  trial  of  fish  oil,  for  which  Professor  Mozaffarian  received  grants  from  GlaxoSmith  Kline, Sigma-Tau and Pronova, is not related to the work of the NUGAG Subgroup on Diet and Health. Given Professor Mozaffarian's honoraria, travel reimbursement and speaking and reviewing engagements, it was agreed that the declared interest in the process be documented in the meeting report and that no action be taken. It was decided he could participate as member of the NUGAG and his participation in the guideline development meetings would be reviewed for each meeting topic in the future.
+Professor Murray Skeaff declared various memberships as follows:
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0183
+Text: - Serving as a member of the Public Health Scientific Advisory Group and the chair of the Food and Nutrition Working Group of the New Zealand National Heart Foundation. These groups advise the Heart Foundation, a nongovernmental organization, about the scientific basis of its public health efforts to reduce the burden of heart disease in New Zealand. He is not an employee of the Heart Foundation and receives no remuneration for work related to the Advisory Group.
+- Appointed  in  2008  as  a  Scientific  Fellow  of  Food  Standards  Australia  New  Zealand (FSANZ). 'The  FSANZ  Fellows  Program  aims  to  establish  a  network  of  distinguished scientists  and  experts  from  key  disciplines  in  areas  relevant  to  food  regulation. The network is intended to promote close collaborative relations between FSANZ staff, the Fellows, and their affiliated institutions to the benefit of all parties.' No remuneration is given to Fellows.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0184
+Text: - Serving as a member of the New Zealand Food Safety Academy (NZFSA). The NZFSA is a governmental department within the Ministry of Agriculture and Fisheries. From time to time, NZFSA seeks the advice of experts in areas where its staff do not have the required expertise or where it requires confirmation of the advice provided by its staff. NZFSA also establishes expert groups to seek more specific assistance in relation to particular issues, drawing experts from the members of the academy. A $1000 honorarium is paid to Professor Skeaff's university each year.
+The  declared  interests  were  not  considered  to  constitute  any  conflict  of  interest  for  his  role  as  a member of the NUGAG Subgroup on Diet and Health, nor did they represent any conflict of interest for the work being undertaken by that subgroup.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0185
+Text: Professor  Francesco  Cappuccio  declared  that  he  provided  expert  testimony  on  salt  and cardiovascular disease as part of the Guidance Development group of the National Institute of Health and Clinical Excellence of England in 2009. He is an unpaid member of Consensus Action on Salt and Health (2000-present), the World Action on Salt and Health (WASH) (2003-present), the  National  Heart  Forum  (2010-present),  the  Pan  American  Health  Organization/WHO  Salt Group (2009-2011), and the European Salt Action Group (2007-present).
+Professor  Paul  Elliott  declared  that  he  is  a  member  of WASH.  He  also  declared  that  his university is currently receiving research funds for the INTERMAP study from the US National Institutes of Health, and that he received research support for a sodium intake study from the US Centers for Disease Control and Prevention (CDC) in 2010. He declared that he provided an expert opinion related to:
+- population sodium intake to the US National Heart, Lung, and Blood Institute National Health  and  Nutrition  Examination  Survey  Sodium Working  Group,  Bethesda,  USA  in January 2011;
+- sodium intake measurement methods and efficacy for the Epidemiology & Surveillance Branch of CDC, USA during 2010-2011.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0186
+Text: Dr Lee Hooper declared that she has received research funding from Barry Callebaut (to her university) to carry out a systematic review on the effects of chocolate and cocoa on markers of oxidative stress; the review was completed in August 2010. She has also received research funding from Soy Nutrition Institute (to her university) to carry out a systematic review on the effects of soy and isoflavones on hormonal status in women; the review was completed in July 2008.
+Dr Sarah Kelly declared the support for her participation at the third meeting of the NUGAG Subgroup on Diet and Health from the local organizers of the third meeting of the Subgroup on Diet and Health; that is, the KFDA/KHIDI.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0187
+Text: Dr Cho-il Kim declared that, in 2009, she provided an expert opinion to the KFDA when they were  developing  a  guideline  to  identify 'energy-dense  and  nutritient-poor'  foods  according to the Special Act on Food Safety Management for Children. Since 2009, the sale of such food has been prohibited within school premises and in designated stores in the vicinity of schools (referred to as the 'Green Food Zone'). Since 2010, television advertisements for such food are prohibited between 5:00 pm and 7:00 pm every day. Dr Kim thought that this information was relevant because the regulations on energy-dense and nutrition-poor foods deal with the fat and sugar content of food, and the meeting of the NUGAG Subgroup on Diet and Health was also reviewing recommendations related to total fat and sugars.
+Professor Paula Moynihan declared that she received a research grant (to her university) that included reviewing the intake of sugars in care homes as a small component of a large dietary study from the United Kingdom Food Standard Agency/Department of Health; the study was completed in January 2011. She also declared that her travel costs for the third meeting of
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0188
+Text: the NUGAG Subgroup on Diet and Health were covered by research funds from her university. External experts and resource persons were involved in the discussions of the evidence, but did  not  vote  at  the  NUGAG  meetings  at  which  the  recommendations  were  formulated. The final wording and determination of the strength of the recommendations were based on the consensus of the NUGAG members only.
+Members of the External Expert and Stakeholder Panel were also required to submit a signed declaration of interests form and a current curriculum vitae before commenting on the draft recommendations and guideline document.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0189
+Text: 1. WHO. Preventing chronic disease: a vital investment . Geneva, World Health Organization (WHO), 2005 (http://www.who.int/chp/chronic_disease_report/contents/en/index.html).
+2. WHO. Global health risks: Mortality and burden of disease attributable to selected major risks . Geneva, World Health Organization (WHO), 2009 (http://www.who.int/healthinfo/global_burden_disease/ GlobalHealthRisks_report_full.pdf).
+3. Dietary Guidelines Advisory Committee. The report of the Dietary Guidelines Advisory Committee on Dietary Guidelines for Americans . Washington, D.C., Department of Health and Human Services and Department of Agriculture, 2005 (http://www.health.gov/dietaryguidelines/dga2005/report/default.htm).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0190
+Text: 4. Whelton PK, He J, Cutler JA et al. Effects of oral potassium on blood pressure. Meta-analysis of randomized controlled clinical trials. Journal of the American Medical Association , 1997, 277(20):1624-1632 (http://www.ncbi.nlm.nih.gov/pubmed/9168293).
+5. WHO. Prevention of recurrent heart attacks and strokes in low and middle income populations: Evidence-based recommendations for policy makers and health professionals . Geneva, World Health Organization (WHO), 2003 (http://www.who.int/cardiovascular_diseases/resources/pub0402/en/).
+6. WHO's Guidelines Review Committee. WHO Handbook for guideline development . Geneva, World Health Organization (WHO), 2012 (http://apps.who.int/iris/bitstream/10665/75146/1/9789241548441_eng.pdf).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0191
+Text: 7. Guyatt GH, Oxman AD, Vist GE et al. GRADE: an emerging consensus on rating quality of evidence and strength of recommendations. BMJ , 2008, 336(7650):924-926 (http://www.ncbi.nlm.nih.gov/pubmed/18436948).
+8. WHO. Diet, nutrition and the prevention of chronic disease. Report of a Joint WHO/FAO Expert Consultation. Geneva, World Health Organization (WHO), 2003 (http://whqlibdoc.who.int/trs/WHO_TRS_916.pdf ).
+9. van Mierlo LA, Greyling A, Zock PL et al. Suboptimal potassium intake and potential impact on population blood pressure. Arch Intern Med , 2010, 170(16):1501-1502 (http://www.ncbi.nlm.nih.gov/pubmed/20837839).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0192
+Text: 10.  Stamler J, Elliott P , Dennis B et al. INTERMAP: background, aims, design, methods, and descriptive statistics (nondietary). Journal of Human Hypertension , 2003, 17(9):591-608 (http://www.ncbi.nlm.nih.gov/pubmed/13679950).
+11.  Elliott P . Sodium intakes around the world. Background document prepared for the Forum and Technical meeting on Reducing Salt Intake in Populations (Paris 5-7 October 2006). Geneva, World Health Organization, 2007.
+12.  Mackay J, Mensah G. The Atlas of Heart Disease and Stroke . Geneva, World Health Organization (WHO), 2004 (http://www.who.int/cardiovascular_diseases/resources/atlas/en/).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0193
+Text: 13.  Murray CJ, Lauer JA, Hutubessy RC et al. Effectiveness and costs of interventions to lower systolic blood pressure and cholesterol: a global and regional analysis on reduction of cardiovascular-disease risk. Lancet, 2003, 361(9359):717-725 (http://www.ncbi.nlm.nih.gov/pubmed/12620735).
+14.  WHO. Global status report on noncommunicable diseases. Geneva, World Health Organization (WHO), 2010 (http://whqlibdoc.who.int/publications/2011/9789240686458_eng.pdf).
+15.  Strong K, Mathers C, Leeder S et al. Preventing chronic diseases: how many lives can we save? Lancet , 2005, 366(9496):1578-1582 (http://www.ncbi.nlm.nih.gov/pubmed/16257345).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0194
+Text: 16.  Chen X, Wang Y. Tracking of blood pressure from childhood to adulthood: a systematic review and meta-regression analysis. Circulation , 2008, 117(25):3171-3180 (http://www.ncbi.nlm.nih.gov/pubmed/18559702).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0195
+Text: 17.  Daniels SR, Loggie JM, Khoury P et al. Left ventricular geometry and severe left ventricular hypertrophy in children and adolescents with essential hypertension. Circulation , 1998, 97(19):1907-1911 (http://www.ncbi.nlm.nih.gov/pubmed/9609083).
+18.  Young DB. Role of potassium in preventive cardiovascular medicine . Boston, Kluwer Academic Publishers, 2001.
+19.  American College of Sports Medicine, Sawka MN, Burke LM et al. American College of Sports Medicine position stand. Exercise and fluid replacement. Medicine and Science in Sports Exercise , 2007, 39(2):377-390 (http://www.ncbi.nlm.nih.gov/pubmed/17277604).
+20.  Fukumoto T, Tanaka T, Fujioka H et al. Differences in composition of sweat induced by thermal exposure and by running exercise. Clin Cardiol , 1988, 11(10):707-709 (http://www.ncbi.nlm.nih.gov/pubmed/3224454).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0196
+Text: 21.  Sawka MN, Montain SJ. Fluid and electrolyte supplementation for exercise heat stress. American Journal of Clinical Nutrition , 2000, 72(2 Suppl):564S-572S (http://www.ncbi.nlm.nih.gov/pubmed/10919961).
+22.  Webster JL, Dunford EK, Neal BC. A systematic survey of the sodium contents of processed foods. Am J Clin Nutr , 2010, 91(2):413-420 (http://www.ncbi.nlm.nih.gov/pubmed/19955402).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0197
+Text: 23.  Bourges H, Casanueva E, Rosado J. Recomendaciones de ingestion de nutrimentos para la poblacion Mexicana. Bases fisiologicas. Vitaminas e nutrimentos inorganicos . Editorial Medica Panamericana, 2004 (http://www. medicapanamericana.com/Libros/Libro/4014/Recomendaciones-de-Ingestion-de-Nutrimentos-para-laPoblacion-Mexicana.html).
+24.  Expert Group on Vitamins and Minerals. Revised review of potassium (http://www.food.gov.uk/multimedia/pdfs/potassium.pdf).
+. 2002
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0198
+Text: 25. Ingestas Dietéticas De Referencia (IDR) Para la Población Española [Dietary reference intakes (DRI) for the Spanish population]. Federación Española de Sociedades de Nutrición, Alimentación y Dietética (FESNAD), 2010 (http://www.grep-aedn.es/documentos/Act_Diet.2010;14%284%29196-197.pdf).
+26.  Hoge Gezondheidsraad. Voedingsaanbevelingen voor België. Herziening . 2009 (http://www.health.belgium. be/internet2Prd/groups/public/@public/@shc/documents/ie2divers/12352470.pdf).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0199
+Text: 27.  Intersalt Cooperative Research Group. Intersalt: an international study of electrolyte excretion and blood pressure. Results for 24 hour urinary sodium and potassium excretion. BMJ , 1988, 297(6644):319-328 (http://www.ncbi.nlm.nih.gov/pubmed/3416162).
+28.  Ministry of Health. Ordinance No. 23 from 19 July 2005 for physiological normative requirement (DRI) for nutrition of the population. State Gazette , 2005, 63.
+29.  Ministry of Health & Welfare, Korean Nutrition Society, Korean Food and Drug Administration. Dietary reference intakes for Koreans . 1st revision . Ministry of Health & Welfare, 2010.
+30.  D'Elia L, Barba G, Cappuccio FP et al. Potassium intake, stroke, and cardiovascular disease a metaanalysis of prospective studies. Journal of the American College of Cardiology, 2011, 57(10):1210-1219 (http://www.ncbi.nlm.nih.gov/pubmed/21371638).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0200
+Text: 31.  Geleijnse JM, Kok FJ, Grobbee DE. Blood pressure response to changes in sodium and potassium intake: a metaregression analysis of randomised trials. Journal of Human Hypertension , 2003, 17(7):471-480 (http://www.ncbi.nlm.nih.gov/pubmed/12821954).
+32.  Rabelink TJ, Koomans HA, Hene RJ et al. Early and late adjustment to potassium loading in humans. Kidney Int, 1990, 38(5):942-947 (http://www.ncbi.nlm.nih.gov/pubmed/2266680).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0201
+Text: 33.  Siani A, Strazzullo P , Giacco A et al. Increasing the dietary potassium intake reduces the need for antihypertensive medication. Ann Intern Med , 1991, 115(10):753-759 (http://www.ncbi.nlm.nih.gov/pubmed/1929022).
+34.  EFSA Panel on Dietetic Products NaA. Opinion of the Scientific Panel on Dietetic products, nutrition and allergies [NDA] related to the tolerable upper intake level of sodium (Request EFSA-Q-2003-018). The European Food Safety Authority Journal , 2005, 193:1-19 (http://www.efsa.europa.eu/en/efsajournal/pub/193.htm).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0202
+Text: 35.  Oberleithner H, Callies C, Kusche-Vihrog K et al. Potassium softens vascular endothelium and increases nitric oxide release. Proc Natl Acad Sci U S A , 2009, 106(8):2829-2834 (http://www.ncbi.nlm.nih.gov/pubmed/19202069).
+36.  Cook NR, Obarzanek E, Cutler JA et al. Joint effects of sodium and potassium intake on subsequent cardiovascular disease: the Trials of Hypertension Prevention follow-up study. Arch Intern Med , 2009, 169(1):32-40 (http://www.ncbi.nlm.nih.gov/pubmed/19139321).
+37.  Yang Q, Liu T, Kuklina EV et al. Sodium and potassium intake and mortality among US adults: prospective data from the Third National Health and Nutrition Examination Survey. Arch Intern Med , 2011, 171(13):11831191 (http://www.ncbi.nlm.nih.gov/pubmed/21747015).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0203
+Text: 38.  Chang HY, Hu YW, Yue CS et al. Effect of potassium-enriched salt on cardiovascular mortality and medical expenses of elderly men. American Journal of Clinical Nutrition , 2006, 83(6):1289-1296 (http://www.ncbi.nlm.nih.gov/pubmed/16762939).
+39.  Kawasaki T, Itoh K, Kawasaki M. Reduction in blood pressure with a sodium-reduced, potassium- and magnesium-enriched mineral salt in subjects with mild essential hypertension. Hypertension Research , 1998, 21(4):235-243 (http://www.ncbi.nlm.nih.gov/pubmed/9877516).
+40.  Brown IJ, Tzoulaki I, Candeias V et al. Salt intakes around the world: implications for public health. Int J Epidemiol , 2009, 38(3):791-813 (http://www.ncbi.nlm.nih.gov/pubmed/19351697).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0204
+Text: 41.  Dickinson HO, Nicolson DJ, Campbell F et al. Potassium supplementation for the management of primary hypertension in adults. Cochrane Database of Systemic Reviews, 2006, (3):CD004641 (http://www.ncbi.nlm.nih.gov/pubmed/16856053).
+42.  WHO. Basic documents (Edition 47) . Geneva, World Health Organization (WHO), 2009 (http://apps.who.int/gb/bd/).
+43.  WHO. Guidelines for declaration of interests for WHO experts . Geneva, World Health Organization (WHO), 2010
+44.  WHO. Effect of increased potassium intake on blood pressure, renal function, blood lipids and other potential adverse effects . Geneva, World Health Organization (WHO), 2012.
+45.  WHO. Effect of increased potassium intake on cardiovascular disease, coronary heart disease and stroke . Geneva, World Health Organization (WHO), 2012.
+46.  WHO. Effect of increased potassium intake on blood pressure and potential adverse effects in children . Geneva, World Health Organization (WHO), 2012.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0205
+Text: 47.  Chobanian AV, Bakris GL, Black HR et al. The Seventh Report of the Joint National Committee on Prevention, Detection, Evaluation, and Treatment of High Blood Pressure: the JNC 7 report. JAMA , 2003, 289(19):2560-2572 (http://www.ncbi.nlm.nih.gov/pubmed/12748199).
+48.  Stamler J, Elliot P , Chan Q et al. INTERMAP Appendix Tables. Journal of Human Hypertension , 2003, 17:759-775.
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0206
+Text: 49.  Lewington S, Clarke R, Qizilbash N et al. Age-specific relevance of usual blood pressure to vascular mortality: a meta-analysis of individual data for one million adults in 61 prospective studies. Lancet, 2002, 360(9349):1903-1913 (http://www.ncbi.nlm.nih.gov/pubmed/12493255).
+50.  Desai M, Stockbridge N, Temple R. Blood pressure as an example of a biomarker that functions as a surrogate. American Association of Pharmaceutical Scientists , 2006, 8(1):E146-152 (http://www.ncbi.nlm.nih.gov/pubmed/16584122).
+51.  Vasan RS. Biomarkers of cardiovascular disease: molecular basis and practical considerations. Circulation , 2006, 113(19):2335-2362 (http://www.ncbi.nlm.nih.gov/pubmed/16702488).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0207
+Text: 52.  Geleijnse JM, Grobbee DE, Hofman A. Sodium and potassium intake and blood pressure change in childhood. BMJ , 1990, 300(6729):899-902 (http://www.ncbi.nlm.nih.gov/pubmed/2337712).
+53.  Energy and nutrient intake in the European Union. Annals of Nutrition and Metabolism , 2004, 48(Suppl 2):1-16.
+54.  Cook NR, Cohen J, Hebert PR et al. Implications of small reductions in diastolic blood pressure for primary prevention. Arch Intern Med , 1995, 155(7):701-709 (http://www.ncbi.nlm.nih.gov/pubmed/7695458).
+55.  McPherson K, Britton A, Causer L. Coronary heart disease: estimating the impact of changes in risk factors. National Heart Forum . Norwich, The Stationery Office, 2002.
+56.  Cashel K, English R, Lewis J. Composition of foods Australia . Canberra, Nutrition Section, Department of Community Services and Health, 1989.
+2012
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0208
+Text: 57. [Food composition databases for European member countries. (http://eurofir.net/eurofir_knowledge/european_databases).](http://eurofir.net/eurofir_knowledge/european_databases)
+58.  Wu Leung W. Food composition table for use in Africa . Rome and Bethesda, MD, FAO and US Department of Health, Education, and Welfare, 1968.
+59.  Wu Leung W, Butrum R, Chang F et al. Food composition table for use in East Asia . Rome and Washington, D.C., FAO and US Department of Health, Education, and Welfare, 1972.
+60.  FAO. INFOODS food composition database for biodiversity, version 1.1. Rome, Food and Agricultural Organization of the United Nations (FAO), 2011.
+61.  United States Department of Agriculture. USDA national nutrient database for standard reference . 2011 (http://www.ars.usda.gov/Services/docs.htm?docid=8964).
+
+----------------------------------------
+
+Chunk ID: potassium_intake_chunk_0209
+Text: Department of Nutrition for Health and Development World Health Organization
+20, Avenue Appia, CH-1211 Geneva 27, Switzerland
+Fax: +41 22 791 4156
+E-mail:  nutrition@who.int
+www.who.int/nutrition
+WHO| Guideline
+44
+Potassium intake for adults and children ISBN 978 92 4 150482 9
