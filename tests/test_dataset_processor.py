@@ -31,7 +31,16 @@ class DatasetProcessorTests(unittest.TestCase):
         chunks = [
             SimpleNamespace(
                 text="Potassium recommendation",
-                meta={"headings": ["Recommendations"], "page": 12},
+                meta={
+                    "headings": ["Diet", "Recommendations"],
+                    "doc_items": [
+                        {
+                            "label": "text",
+                            "prov": [{"page_no": 12}, {"page_no": 13}],
+                        }
+                    ],
+                    "origin": {"uri": "https://example.org/potassium.pdf"},
+                },
             )
         ]
         chunker = Mock()
@@ -42,6 +51,8 @@ class DatasetProcessorTests(unittest.TestCase):
             Mock(),
             source_file="WHO/potassium.pdf",
             document_id="who_potassium",
+            document_name="potassium",
+            source_organization="WHO",
             chunker=chunker,
         )
 
@@ -54,7 +65,24 @@ class DatasetProcessorTests(unittest.TestCase):
                     "chunk_index": 0,
                     "text": "Potassium recommendation",
                     "contextualized_text": "Recommendations\nPotassium recommendation",
-                    "metadata": {"headings": ["Recommendations"], "page": 12},
+                    "metadata": {
+                        "headings": ["Diet", "Recommendations"],
+                        "doc_items": [
+                            {
+                                "label": "text",
+                                "prov": [{"page_no": 12}, {"page_no": 13}],
+                            }
+                        ],
+                        "origin": {"uri": "https://example.org/potassium.pdf"},
+                        "document_id": "who_potassium",
+                        "document_name": "potassium",
+                        "source_organization": "WHO",
+                        "section_title": "Recommendations",
+                        "section_path": ["Diet", "Recommendations"],
+                        "page_start": 12,
+                        "page_end": 13,
+                        "source_url": "https://example.org/potassium.pdf",
+                    },
                 }
             ],
         )

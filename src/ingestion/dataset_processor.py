@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 import re
 from typing import Any
+from urllib.parse import urlparse
 
 from docling.chunking import HybridChunker
 from docling.document_converter import DocumentConverter
@@ -22,6 +23,25 @@ from .pdf_parser import parse_pdf, save_markdown
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DATASET_DIRECTORY = PROJECT_ROOT / "DataSet"
 DEFAULT_ARTIFACTS_DIRECTORY = PROJECT_ROOT / "artifacts"
+
+
+@dataclass(frozen=True, slots=True)
+class DocumentConfiguration:
+    """Explicit provenance that is not supplied by local Docling conversion."""
+
+    source_organization: str | None = None
+    source_url: str | None = None
+
+
+DOCUMENT_CONFIGURATIONS: dict[str, DocumentConfiguration] = {
+    "Guideline for the pharmacological treatment of hypertension in adults.pdf": (
+        DocumentConfiguration(source_organization="WHO")
+    ),
+    "Potassium intake.pdf": DocumentConfiguration(source_organization="WHO"),
+    "sodium intake for adults and children.pdf": DocumentConfiguration(
+        source_organization="WHO"
+    ),
+}
 
 
 @dataclass(frozen=True, slots=True)
@@ -89,11 +109,72 @@ def to_json_safe(value: Any) -> Any:
     return str(value)
 
 
+def _valid_source_url(value: Any) -> str | None:
+    """Return an HTTP(S) source URL only when it is structurally valid."""
+
+    if not isinstance(value, str):
+        return None
+    parsed = urlparse(value)
+    if parsed.scheme in {"http", "https"} and parsed.netloc:
+        return value
+    return None
+
+
+def enrich_chunk_metadata(
+    raw_metadata: Any,
+    *,
+    document_id: str,
+    document_name: str,
+    source_organization: str | None,
+    configured_source_url: str | None,
+) -> dict[str, Any]:
+    """Add normalized citation fields while retaining all raw Docling metadata."""
+
+    metadata = to_json_safe(raw_metadata)
+    if not isinstance(metadata, dict):
+        raise TypeError("Docling chunk metadata must serialize to a JSON object")
+
+    headings = metadata.get("headings") or []
+    section_path = list(headings) if isinstance(headings, list) else []
+
+    page_numbers = [
+        provenance["page_no"]
+        for item in metadata.get("doc_items") or []
+        if isinstance(item, dict)
+        for provenance in item.get("prov") or []
+        if isinstance(provenance, dict)
+        and isinstance(provenance.get("page_no"), int)
+    ]
+
+    origin = metadata.get("origin")
+    origin_uri = origin.get("uri") if isinstance(origin, dict) else None
+    source_url = _valid_source_url(origin_uri) or _valid_source_url(
+        configured_source_url
+    )
+
+    metadata.update(
+        {
+            "document_id": document_id,
+            "document_name": document_name,
+            "source_organization": source_organization,
+            "section_title": section_path[-1] if section_path else None,
+            "section_path": section_path,
+            "page_start": min(page_numbers) if page_numbers else None,
+            "page_end": max(page_numbers) if page_numbers else None,
+            "source_url": source_url,
+        }
+    )
+    return metadata
+
+
 def chunk_document(
     document: DoclingDocument,
     *,
     source_file: str,
     document_id: str,
+    document_name: str,
+    source_organization: str | None = None,
+    source_url: str | None = None,
     chunker: HybridChunker | None = None,
 ) -> list[dict[str, Any]]:
     """Create structured and contextualized chunks from a Docling document."""
@@ -109,7 +190,13 @@ def chunk_document(
                 "chunk_index": index,
                 "text": chunk.text,
                 "contextualized_text": document_chunker.contextualize(chunk=chunk),
-                "metadata": to_json_safe(chunk.meta),
+                "metadata": enrich_chunk_metadata(
+                    chunk.meta,
+                    document_id=document_id,
+                    document_name=document_name,
+                    source_organization=source_organization,
+                    configured_source_url=source_url,
+                ),
             }
         )
 
@@ -150,6 +237,10 @@ def process_dataset(
     for pdf_path in pdf_paths:
         relative_pdf = pdf_path.relative_to(dataset_root)
         source_file = relative_pdf.as_posix()
+        document_id = _document_id(relative_pdf)
+        document_configuration = DOCUMENT_CONFIGURATIONS.get(
+            source_file, DocumentConfiguration()
+        )
         markdown_path = artifacts_root / "parsed_markdown" / relative_pdf.with_suffix(".md")
         chunks_path = artifacts_root / "chunks" / relative_pdf.with_suffix(".json")
 
@@ -160,7 +251,10 @@ def process_dataset(
             chunks = chunk_document(
                 document,
                 source_file=source_file,
-                document_id=_document_id(relative_pdf),
+                document_id=document_id,
+                document_name=pdf_path.stem,
+                source_organization=document_configuration.source_organization,
+                source_url=document_configuration.source_url,
                 chunker=document_chunker,
             )
             serialize_chunks(chunks, chunks_path)
