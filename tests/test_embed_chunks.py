@@ -84,6 +84,8 @@ class EmbedChunksTests(unittest.TestCase):
             manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
             self.assertEqual(manifest["chunks"][0]["chunk_id"], "chunk_0000")
             self.assertEqual(manifest["embedding_dimension"], 2)
+            self.assertEqual(manifest["document_prefix"], DOCUMENT_PREFIX)
+            self.assertIn("query_prefix", manifest)
 
 
 if __name__ == "__main__":

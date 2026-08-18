@@ -5,10 +5,11 @@ from __future__ import annotations
 import argparse
 
 from src.retrieval import HybridRetrievedChunk, HybridRetriever
+from src.retrieval.hybrid_retriever import DEFAULT_CANDIDATE_K
 
 
 TOP_K = 5
-CANDIDATE_K = 20
+CANDIDATE_K = DEFAULT_CANDIDATE_K
 DIVIDER = "-" * 40
 
 

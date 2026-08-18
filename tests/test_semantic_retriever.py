@@ -19,6 +19,7 @@ class SemanticRetrieverTests(unittest.TestCase):
                     "model_name": "test-model",
                     "embedding_dimension": 2,
                     "normalized": True,
+                    "query_prefix": QUERY_PREFIX,
                 }
             ),
             encoding="utf-8",

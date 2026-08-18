@@ -10,13 +10,17 @@ from typing import Any, Protocol, Sequence
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
+from src.embedding.model_config import (
+    DEFAULT_MODEL_NAME,
+    DOCUMENT_PREFIX,
+    QUERY_PREFIX,
+)
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CHUNKS_DIRECTORY = PROJECT_ROOT / "artifacts" / "chunks"
 DEFAULT_OUTPUT_DIRECTORY = PROJECT_ROOT / "artifacts" / "embeddings"
 DEFAULT_MODEL_CACHE_DIRECTORY = PROJECT_ROOT / "models"
-DEFAULT_MODEL_NAME = "intfloat/multilingual-e5-small"
-DOCUMENT_PREFIX = "passage: "
 
 
 class EmbeddingModel(Protocol):
@@ -63,7 +67,7 @@ def load_chunks(chunks_directory: str | Path) -> list[dict[str, Any]]:
 
 
 def prepare_passages(chunks: Sequence[dict[str, Any]]) -> list[str]:
-    """Apply the E5 document prefix to each contextualized chunk."""
+    """Prepare contextualized chunks according to the model's document format."""
 
     return [f"{DOCUMENT_PREFIX}{chunk['contextualized_text']}" for chunk in chunks]
 
@@ -115,6 +119,7 @@ def save_embedding_artifacts(
         "chunk_count": len(chunks),
         "text_field": "contextualized_text",
         "document_prefix": DOCUMENT_PREFIX,
+        "query_prefix": QUERY_PREFIX,
         "normalized": True,
         "dtype": str(embeddings.dtype),
         "chunks": [

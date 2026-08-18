@@ -12,16 +12,13 @@ from qdrant_client import QdrantClient
 from sentence_transformers import SentenceTransformer
 
 from src.embedding.embed_chunks import DEFAULT_MODEL_CACHE_DIRECTORY
+from src.embedding.model_config import QUERY_PREFIX
 from src.vector_store.qdrant_store import (
     DEFAULT_COLLECTION_NAME,
     DEFAULT_DATABASE_PATH,
     DEFAULT_MANIFEST_PATH,
     DENSE_VECTOR_NAME,
 )
-
-
-QUERY_PREFIX = "query: "
-
 
 class QueryEmbeddingModel(Protocol):
     """Minimal interface required to embed a retrieval question."""
@@ -115,6 +112,7 @@ class SemanticRetriever:
 
         self.embedding_dimension = int(manifest["embedding_dimension"])
         self.model_name = str(manifest["model_name"])
+        self.query_prefix = str(manifest.get("query_prefix", QUERY_PREFIX))
         self.collection_name = collection_name
         self.model = model or SentenceTransformer(
             self.model_name,
@@ -128,14 +126,14 @@ class SemanticRetriever:
         self._owns_client = client is None
 
     def embed_question(self, question: str) -> np.ndarray:
-        """Embed a question with the E5 query prefix and document normalization."""
+        """Embed a question with the model's retrieval instruction and normalization."""
 
         cleaned_question = question.strip()
         if not cleaned_question:
             raise ValueError("Question cannot be empty")
 
         embeddings = self.model.encode(
-            [f"{QUERY_PREFIX}{cleaned_question}"],
+            [f"{self.query_prefix}{cleaned_question}"],
             normalize_embeddings=True,
             show_progress_bar=False,
             convert_to_numpy=True,
