@@ -84,5 +84,72 @@
       "potassium_intake_chunk_0026",
       "potassium_intake_chunk_0052"
     ]
+  },
+  {
+    "question": "What is the blood pressure threshold recommended by WHO to initiate pharmacological treatment in individuals with a confirmed diagnosis of hypertension?",
+    "relevant_chunk_ids": [
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0018",
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0047"
+    ]
+  },
+  {
+    "question": "At what systolic blood pressure level does WHO recommend starting pharmacological treatment for individuals with existing cardiovascular disease?",
+    "relevant_chunk_ids": [
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0018",
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0047"
+    ]
+  },
+  {
+    "question": "What is the recommendation for initiating pharmacological treatment in individuals without cardiovascular disease but with high cardiovascular risk, diabetes, or chronic kidney disease?",
+    "relevant_chunk_ids": [
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0018",
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0047"
+    ]
+  },
+  {
+    "question": "How quickly should pharmacological treatment be started following a confirmed diagnosis of hypertension?",
+    "relevant_chunk_ids": [
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0047",
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0141",
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0142"
+    ]
+  },
+  {
+    "question": "What baseline blood pressure level warrants immediate initiation of antihypertensive treatment without delay?",
+    "relevant_chunk_ids": [
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0047"
+    ]
+  },
+  {
+    "question": "Which laboratory tests does WHO suggest obtaining when starting pharmacological therapy for hypertension?",
+    "relevant_chunk_ids": [
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0055",
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0059",
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0141",
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0142"
+    ]
+  },
+  {
+    "question": "Should antihypertensive treatment be delayed in low-resource settings if laboratory testing and ECG are unavailable?",
+    "relevant_chunk_ids": [
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0019",
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0054",
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0055",
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0141",
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0142"
+    ]
+  },
+  {
+    "question": "Which class of antihypertensive medications is most suitable for initiation without prior laboratory testing?",
+    "relevant_chunk_ids": [
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0055",
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0146"
+    ]
+  },
+  {
+    "question": "What are the four primary reasons for obtaining diagnostic testing prior to hypertension treatment according to the WHO framework?",
+    "relevant_chunk_ids": [
+      "guideline_for_the_pharmacological_treatment_of_hypertension_in_adults_chunk_0056"
+    ]
   }
 ]

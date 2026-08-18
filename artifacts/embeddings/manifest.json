@@ -1,9 +1,10 @@
 {
-  "model_name": "intfloat/multilingual-e5-small",
+  "model_name": "Snowflake/snowflake-arctic-embed-s",
   "embedding_dimension": 384,
   "chunk_count": 653,
   "text_field": "contextualized_text",
-  "document_prefix": "passage: ",
+  "document_prefix": "",
+  "query_prefix": "Represent this sentence for searching relevant passages: ",
   "normalized": true,
   "dtype": "float32",
   "chunks": [

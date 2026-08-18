@@ -10,7 +10,7 @@ PDF guidelines
     -> Docling parsing
     -> HybridChunker
     -> JSON chunks
-    -> multilingual E5 embeddings
+    -> English Arctic dense embeddings
     -> persistent local Qdrant database
     -> hybrid Top-K retrieval (dense + BM25 + RRF)
 ```
@@ -81,13 +81,14 @@ hard-coded.
 ## 5. Download the embedding model
 
 The model is not expected to be committed to Git because it is large. Download
-`intfloat/multilingual-e5-small` into the project-local `models/` cache:
+`Snowflake/snowflake-arctic-embed-s` into the project-local `models/` cache:
 
 ```bash
-conda run -n student_rag python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('intfloat/multilingual-e5-small', cache_folder='models', device='cpu')"
+conda run -n student_rag python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('Snowflake/snowflake-arctic-embed-s', cache_folder='models', device='cpu')"
 ```
 
-The download is approximately 471 MB and only needs to be completed once.
+The model has approximately 33 million parameters and only needs to be
+downloaded once.
 
 ## 6. Parse and chunk all PDFs
 
@@ -210,7 +211,7 @@ of chunks, use `--top-k`:
 conda run --no-capture-output -n student_rag python main.py --top-k 10
 ```
 
-By default, dense search and BM25 each retrieve 20 candidates before Reciprocal
+By default, dense search and BM25 each retrieve 30 candidates before Reciprocal
 Rank Fusion (RRF). You can change that pool independently:
 
 ```bash
@@ -220,7 +221,38 @@ conda run --no-capture-output -n student_rag python main.py --top-k 5 --candidat
 The retriever prints evidence chunks and debugging ranks only. It does not
 generate an answer or call an LLM.
 
-## 11. Run the tests
+## 11. Evaluate retrieval quality
+
+Evaluate the hybrid retriever against the manually reviewed ground truth:
+
+```bash
+conda run -n student_rag python -m src.evaluation.evaluate_retrieval
+```
+
+The default evaluation calculates Precision, Recall, Hit Rate, MRR and nDCG at
+Top-3, Top-5 and Top-10. Every experiment is appended to:
+
+```text
+artifacts/evaluation/evaluation_runs.csv
+artifacts/evaluation/evaluation_question_results.csv
+```
+
+The first CSV contains one row per run, including retrieval settings, input
+fingerprints, environment information, aggregate metrics and a reproducible
+command. The second contains per-question judgments for dashboards and error
+analysis.
+
+Rerun a previous configuration using its recorded run ID:
+
+```bash
+conda run -n student_rag python -m src.evaluation.evaluate_retrieval \
+  --rerun eval_YYYYMMDDTHHMMSSffffffZ
+```
+
+The evaluator warns if the ground truth, chunks, embedding manifest, source code
+or Git commit changed since the original run.
+
+## 12. Run the tests
 
 ```bash
 conda run -n student_rag python -m unittest discover -s tests -v
@@ -233,13 +265,15 @@ For a clean checkout, run these commands in order:
 ```bash
 conda run -n student_rag python -m pip install -r requirements.txt
 
-conda run -n student_rag python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('intfloat/multilingual-e5-small', cache_folder='models', device='cpu')"
+conda run -n student_rag python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('Snowflake/snowflake-arctic-embed-s', cache_folder='models', device='cpu')"
 
 conda run -n student_rag python -m src.ingestion.dataset_processor
 
 conda run -n student_rag python -m src.embedding.embed_chunks --batch-size 4
 
 conda run -n student_rag python -m src.vector_store.qdrant_store
+
+conda run -n student_rag python -m src.evaluation.evaluate_retrieval
 
 conda run -n student_rag python -m unittest discover -s tests -v
 ```
