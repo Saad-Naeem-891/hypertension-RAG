@@ -27,7 +27,7 @@ flowchart TD
     L --> M["Final Top-K Evidence Chunks"]
 
     M --> P["Grounded Prompt"]
-    P --> R["Hosted xAI Grok API"]
+    P --> R["Hosted Gemini API"]
     R --> S["Answer + Chunk Citations"]
 
     M --> N["Ground-Truth Comparison"]
@@ -37,7 +37,7 @@ flowchart TD
 Dense search and BM25 each retrieve a configurable candidate pool. Their full
 union is deduplicated by `chunk_id`, ranked with RRF, and then reordered by the
 cross-encoder before the final Top-K evidence is returned.
-The interactive application sends those evidence chunks to Grok with a strict
+The interactive application sends those evidence chunks to Gemini with a strict
 grounding prompt and asks it to cite supporting chunk IDs. Retrieval evaluation
 remains separate and never calls the hosted LLM.
 
@@ -85,8 +85,8 @@ Install the pinned packages into `student_rag`:
 conda run -n student_rag python -m pip install -r requirements.txt
 ```
 
-The main dependencies are Docling, Sentence Transformers, Qdrant Client, and
-the OpenAI-compatible client used to call xAI.
+The main dependencies are Docling, Sentence Transformers, Qdrant Client,
+Google GenAI, and the OpenAI-compatible client retained for optional xAI use.
 
 ## 4. Confirm the PDF dataset
 
@@ -121,9 +121,9 @@ Download the lightweight English cross-encoder used after hybrid retrieval:
 conda run -n student_rag python -c "from sentence_transformers import CrossEncoder; CrossEncoder('cross-encoder/ms-marco-MiniLM-L6-v2', cache_folder='models', device='cpu')"
 ```
 
-## 5a. Configure the xAI API
+## 5a. Configure the hosted generation API
 
-Create an API key in the [xAI Console](https://console.x.ai/). Copy the example
+Create an API key in [Google AI Studio](https://aistudio.google.com/apikey). Copy the example
 configuration file, then edit `.env` and replace the placeholder locally:
 
 ```bash
@@ -131,8 +131,9 @@ cp .env.example .env
 ```
 
 ```dotenv
-XAI_API_KEY=replace-with-your-xai-api-key
-XAI_MODEL=grok-4.20-non-reasoning
+GEMINI_API_KEY=replace-with-your-gemini-api-key
+GEMINI_MODEL=gemini-3.5-flash-lite
+GENERATION_PROVIDER=gemini
 ```
 
 The application loads this file automatically. Do not put a real API key in
@@ -245,7 +246,7 @@ conda run -n student_rag python -m src.vector_store.qdrant_store --recreate
 
 Only use `--recreate` when intentionally replacing the existing collection.
 
-## 10. Run grounded generation with Grok
+## 10. Run grounded generation with Gemini
 
 Use `--no-capture-output` so the interactive prompt receives terminal input:
 
@@ -254,8 +255,8 @@ conda run --no-capture-output -n student_rag python main.py
 ```
 
 Enter a question when prompted. The application retrieves and reranks the
-default Top-5 evidence chunks, then asks Grok to answer using only that
-evidence. To supply another number of chunks to Grok, use `--top-k`:
+default Top-5 evidence chunks, then asks Gemini to answer using only that
+evidence. To supply another number of chunks to Gemini, use `--top-k`:
 
 ```bash
 conda run --no-capture-output -n student_rag python main.py --top-k 10
@@ -270,14 +271,31 @@ conda run --no-capture-output -n student_rag python main.py --top-k 5 --candidat
 ```
 
 The application prints the grounded answer, provider/model information and a
-compact list of evidence sources. To also print the full retrieved chunks and
-retrieval scores, add:
+compact list of evidence sources. The user-facing answer is rendered as:
+
+```text
+Recommendation
+Supporting Evidence
+Citations
+Confidence
+Safety
+```
+
+Gemini returns constrained JSON. The application validates every cited chunk
+ID, builds document/section/page citations from trusted retrieval metadata, and
+never cites a chunk that was not supplied to generation. Provider/model and the
+complete Top-K chunk list are printed separately under
+`DEBUG / RETRIEVAL INFORMATION`.
+
+To also print the complete retrieved chunk text and retrieval scores, add:
 
 ```bash
 conda run --no-capture-output -n student_rag python main.py --show-evidence
 ```
 
-To test retrieval without spending API tokens or requiring `XAI_API_KEY`, add:
+Gemini is the default provider. Grok remains available for future use with
+`--provider grok` once its team has API credits. To test retrieval without
+spending API tokens or requiring a hosted API key, add:
 
 ```bash
 conda run --no-capture-output -n student_rag python main.py --retrieval-only
@@ -354,7 +372,7 @@ After setup, run the interactive retriever separately:
 conda run --no-capture-output -n student_rag python main.py
 ```
 
-The retrieval evaluation command does not use Grok and does not spend hosted
+The retrieval evaluation command does not call Gemini or Grok and does not spend hosted
 API tokens.
 
 ## Common problems
@@ -392,7 +410,7 @@ conda run -n student_rag python -m src.embedding.embed_chunks --batch-size 2
 Chunk IDs may change when PDFs or chunking settings change. Regenerate the
 ground-truth evaluation dataset before calculating retrieval metrics.
 
-### `XAI_API_KEY is not set`
+### `GEMINI_API_KEY is not set`
 
 Create `.env` from the safe example and add your real key before running
 `main.py`:
@@ -401,4 +419,4 @@ Create `.env` from the safe example and add your real key before running
 cp .env.example .env
 ```
 
-Use `--retrieval-only` when you intentionally want to run without Grok.
+Use `--retrieval-only` when you intentionally want to run without a hosted model.
