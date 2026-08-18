@@ -12,9 +12,10 @@ PDF guidelines
     -> JSON chunks
     -> multilingual E5 embeddings
     -> persistent local Qdrant database
+    -> hybrid Top-K retrieval (dense + BM25 + RRF)
 ```
 
-Retrieval and LLM generation are not implemented yet.
+LLM generation is not implemented yet.
 
 ## 1. Get the project
 
@@ -194,7 +195,32 @@ conda run -n student_rag python -m src.vector_store.qdrant_store --recreate
 
 Only use `--recreate` when intentionally replacing the existing collection.
 
-## 10. Run the tests
+## 10. Run the hybrid Top-K retriever
+
+Use `--no-capture-output` so the interactive prompt receives terminal input:
+
+```bash
+conda run --no-capture-output -n student_rag python main.py
+```
+
+Enter a question when prompted. The default is Top-5. To request another number
+of chunks, use `--top-k`:
+
+```bash
+conda run --no-capture-output -n student_rag python main.py --top-k 10
+```
+
+By default, dense search and BM25 each retrieve 20 candidates before Reciprocal
+Rank Fusion (RRF). You can change that pool independently:
+
+```bash
+conda run --no-capture-output -n student_rag python main.py --top-k 5 --candidate-k 30
+```
+
+The retriever prints evidence chunks and debugging ranks only. It does not
+generate an answer or call an LLM.
+
+## 11. Run the tests
 
 ```bash
 conda run -n student_rag python -m unittest discover -s tests -v
@@ -216,6 +242,12 @@ conda run -n student_rag python -m src.embedding.embed_chunks --batch-size 4
 conda run -n student_rag python -m src.vector_store.qdrant_store
 
 conda run -n student_rag python -m unittest discover -s tests -v
+```
+
+After setup, run the interactive retriever separately:
+
+```bash
+conda run --no-capture-output -n student_rag python main.py
 ```
 
 ## Common problems

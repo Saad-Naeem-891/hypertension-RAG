@@ -1,0 +1,88 @@
+[
+  {
+    "question": "What is the WHO recommended minimum daily potassium intake for adults, and how should this intake recommendation be adjusted for children?",
+    "relevant_chunk_ids": [
+      "potassium_intake_chunk_0018",
+      "potassium_intake_chunk_0064",
+      "potassium_intake_chunk_0067",
+      "potassium_intake_chunk_0068"
+    ]
+  },
+  {
+    "question": "According to the guideline's evidence summary, what effect does an increased potassium intake have on resting blood pressure in adults?",
+    "relevant_chunk_ids": [
+      "potassium_intake_chunk_0017",
+      "potassium_intake_chunk_0042",
+      "potassium_intake_chunk_0075",
+      "potassium_intake_chunk_0080",
+      "potassium_intake_chunk_0173"
+    ]
+  },
+  {
+    "question": "Did the WHO review find any significant adverse effects of increased potassium intake on blood lipids or renal function in adults with unimpaired kidney function?",
+    "relevant_chunk_ids": [
+      "potassium_intake_chunk_0017",
+      "potassium_intake_chunk_0050",
+      "potassium_intake_chunk_0051",
+      "potassium_intake_chunk_0076",
+      "potassium_intake_chunk_0077",
+      "potassium_intake_chunk_0081",
+      "potassium_intake_chunk_0173"
+    ]
+  },
+  {
+    "question": "What are the key population groups excluded from these general potassium intake recommendations?",
+    "relevant_chunk_ids": [
+      "potassium_intake_chunk_0021",
+      "potassium_intake_chunk_0064"
+    ]
+  },
+  {
+    "question": "How does increased potassium intake interact with high dietary sodium consumption regarding blood pressure reduction?",
+    "relevant_chunk_ids": [
+      "potassium_intake_chunk_0027",
+      "potassium_intake_chunk_0058",
+      "potassium_intake_chunk_0059"
+    ]
+  },
+  {
+    "question": "What specific noncommunicable health conditions are associated with low potassium intake in the background section of the guideline?",
+    "relevant_chunk_ids": [
+      "potassium_intake_chunk_0014"
+    ]
+  },
+  {
+    "question": "How does the WHO guideline define and differentiate a 'strong recommendation' from a 'conditional recommendation'?",
+    "relevant_chunk_ids": [
+      "potassium_intake_chunk_0018",
+      "potassium_intake_chunk_0065",
+      "potassium_intake_chunk_0066"
+    ]
+  },
+  {
+    "question": "According to the document, what proportion of global deaths and overall disease burden are caused by major noncommunicable diseases (NCDs)?",
+    "relevant_chunk_ids": [
+      "potassium_intake_chunk_0022"
+    ]
+  },
+  {
+    "question": "Why is controlling elevated blood pressure during childhood considered critical for long-term health outcomes in adulthood?",
+    "relevant_chunk_ids": [
+      "potassium_intake_chunk_0023"
+    ]
+  },
+  {
+    "question": "Which specific countries are cited as having national dietary recommendations for potassium intake at 120 mmol/day?",
+    "relevant_chunk_ids": [
+      "potassium_intake_chunk_0025"
+    ]
+  },
+  {
+    "question": "What physiological mechanism explains why high potassium intake from unrefined food sources is safe for individuals with healthy kidney function?",
+    "relevant_chunk_ids": [
+      "potassium_intake_chunk_0024",
+      "potassium_intake_chunk_0026",
+      "potassium_intake_chunk_0052"
+    ]
+  }
+]
