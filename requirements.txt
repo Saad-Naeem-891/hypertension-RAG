@@ -2,6 +2,8 @@ docling==2.117.0
 ipykernel==7.3.0
 matplotlib==3.11.1
 notebook==7.6.2
+openai==2.53.0
 pandas==3.0.5
+python-dotenv==1.2.2
 qdrant-client==1.16.1
 sentence-transformers==5.7.0
