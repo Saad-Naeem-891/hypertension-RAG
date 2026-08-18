@@ -139,7 +139,26 @@ class CsvHistoryTests(unittest.TestCase):
             self.assertEqual([row["run_id"] for row in run_rows], ["run_1", "run_2"])
             self.assertEqual(len(detail_rows), 2)
             self.assertEqual(detail_rows[0]["retrieved_chunk_ids"], '["a","b","c"]')
+            self.assertEqual(detail_rows[0]["rerank_scores"], "[null,null,null]")
             self.assertEqual(float(run_rows[0]["precision_at_3"]), 1 / 3)
+
+    def test_csv_schema_additions_migrate_existing_rows(self) -> None:
+        with TemporaryDirectory() as temporary_directory:
+            path = Path(temporary_directory) / "history.csv"
+            path.write_text("run_id,status\nold,success\n", encoding="utf-8")
+
+            _append_csv(
+                path,
+                ["run_id", "status", "reranker_model"],
+                [{"run_id": "new", "status": "success", "reranker_model": "model"}],
+            )
+
+            with path.open("r", encoding="utf-8", newline="") as source:
+                rows = list(csv.DictReader(source))
+
+            self.assertEqual(rows[0]["run_id"], "old")
+            self.assertEqual(rows[0]["reranker_model"], "")
+            self.assertEqual(rows[1]["reranker_model"], "model")
 
     def test_previous_run_configuration_can_be_reloaded(self) -> None:
         previous = {
@@ -162,8 +181,33 @@ class CsvHistoryTests(unittest.TestCase):
         self.assertEqual(config["candidate_k"], 20)
         self.assertEqual(config["rrf_k"], 60)
         self.assertEqual(config["bm25_k1"], 1.5)
+        self.assertFalse(config["reranker_enabled"])
         self.assertEqual(config["collection_name"], "guidelines")
         self.assertEqual(config["output_directory"], Path("/new/output"))
+
+    def test_reranked_run_configuration_can_be_reloaded(self) -> None:
+        previous = {
+            "ground_truth_path": "/project/truth.json",
+            "chunks_directory": "/project/chunks",
+            "manifest_path": "/project/manifest.json",
+            "qdrant_path": "/project/qdrant",
+            "qdrant_collection": "guidelines",
+            "top_k_values": "[5,10,20]",
+            "candidate_k": "25",
+            "rrf_k": "60",
+            "bm25_k1": "1.5",
+            "bm25_b": "0.75",
+            "reranker_enabled": "True",
+            "reranker_model": "cross-encoder/test-model",
+            "reranker_batch_size": "8",
+            "device": "cpu",
+        }
+
+        config = _configuration_from_previous_run(previous, Path("/new/output"))
+
+        self.assertTrue(config["reranker_enabled"])
+        self.assertEqual(config["reranker_model"], "cross-encoder/test-model")
+        self.assertEqual(config["reranker_batch_size"], 8)
 
 
 if __name__ == "__main__":

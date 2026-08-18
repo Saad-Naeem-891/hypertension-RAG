@@ -13,7 +13,7 @@ from src.embedding.embed_chunks import DEFAULT_CHUNKS_DIRECTORY, load_chunks
 from src.retrieval.semantic_retriever import RetrievedChunk, SemanticRetriever
 
 
-DEFAULT_CANDIDATE_K = 25
+DEFAULT_CANDIDATE_K = 15 # edited as advice from Ahmed
 DEFAULT_RRF_K = 60
 BM25_K1 = 1.5
 BM25_B = 0.75

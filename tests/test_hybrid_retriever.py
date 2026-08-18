@@ -91,6 +91,32 @@ class HybridRetrieverTests(unittest.TestCase):
         self.assertEqual(results[0].document_name, "Guideline")
         self.assertEqual(results[0].page_start, 3)
         self.assertEqual(results[0].page_end, 4)
+        self.assertEqual(results[0].contextualized_text, "alpha")
+
+    def test_candidate_retrieval_returns_full_deduplicated_union(self) -> None:
+        chunks = [make_chunk(chunk_id, chunk_id) for chunk_id in ("a", "b", "c")]
+        dense = SimpleNamespace(
+            retrieve=lambda question, top_k: [
+                dense_result(1, "a"),
+                dense_result(2, "b"),
+            ]
+        )
+        bm25 = SimpleNamespace(
+            retrieve=lambda question, top_k: [
+                BM25Result(rank=1, score=2.0, chunk_id="a"),
+                BM25Result(rank=2, score=1.0, chunk_id="c"),
+            ]
+        )
+        retriever = HybridRetriever(
+            chunks=chunks,
+            dense_retriever=dense,
+            bm25_retriever=bm25,
+        )
+
+        results = retriever.retrieve_candidates("question", candidate_k=2)
+
+        self.assertEqual(len(results), 3)
+        self.assertEqual({result.chunk_id for result in results}, {"a", "b", "c"})
 
     def test_returns_exact_top_k_when_candidates_are_available(self) -> None:
         chunks = [make_chunk(str(index), f"term {index}") for index in range(6)]
