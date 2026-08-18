@@ -28,8 +28,10 @@ from src.retrieval.hybrid_retriever import (
 )
 from src.retrieval.semantic_retriever import QUERY_PREFIX, SemanticRetriever
 from src.reranking import (
+    DEFAULT_COHERE_RERANKER_MODEL,
     DEFAULT_RERANKER_BATCH_SIZE,
     DEFAULT_RERANKER_MODEL,
+    CohereReranker,
     CrossEncoderReranker,
     RerankedHybridRetriever,
 )
@@ -86,6 +88,7 @@ RUN_FIELDS = [
     "qdrant_collection",
     "retriever_type",
     "reranker_enabled",
+    "reranker_provider",
     "reranker_model",
     "reranker_batch_size",
     "candidate_k",
@@ -575,6 +578,8 @@ def _canonical_command(config: dict[str, Any]) -> str:
         str(config["bm25_b"]),
         "--reranker-model",
         str(config["reranker_model"]),
+        "--reranker-provider",
+        str(config["reranker_provider"]),
         "--reranker-batch-size",
         str(config["reranker_batch_size"]),
         "--device",
@@ -616,6 +621,7 @@ def _configuration_from_previous_run(
         "bm25_b": float(previous["bm25_b"]),
         "reranker_enabled": str(previous.get("reranker_enabled", "")).lower()
         in {"1", "true", "yes"},
+        "reranker_provider": previous.get("reranker_provider") or "cross-encoder",
         "reranker_model": previous.get("reranker_model") or DEFAULT_RERANKER_MODEL,
         "reranker_batch_size": int(
             previous.get("reranker_batch_size") or DEFAULT_RERANKER_BATCH_SIZE
@@ -678,6 +684,12 @@ def _argument_parser() -> argparse.ArgumentParser:
     parser.add_argument("--bm25-b", type=float, default=BM25_B)
     parser.add_argument("--reranker-model", default=DEFAULT_RERANKER_MODEL)
     parser.add_argument(
+        "--reranker-provider",
+        choices=("cross-encoder", "cohere"),
+        default="cross-encoder",
+        help="Reranking backend (default: cross-encoder)",
+    )
+    parser.add_argument(
         "--reranker-batch-size",
         type=int,
         default=DEFAULT_RERANKER_BATCH_SIZE,
@@ -714,6 +726,7 @@ def _configuration_from_args(args: argparse.Namespace) -> dict[str, Any]:
         "bm25_k1": args.bm25_k1,
         "bm25_b": args.bm25_b,
         "reranker_enabled": not args.no_reranker,
+        "reranker_provider": args.reranker_provider,
         "reranker_model": args.reranker_model,
         "reranker_batch_size": args.reranker_batch_size,
         "device": args.device,
@@ -744,6 +757,9 @@ def main() -> None:
             "qdrant_collection": config["collection_name"],
             "retriever_type": "hybrid_dense_bm25_rrf",
             "reranker_enabled": config["reranker_enabled"],
+            "reranker_provider": (
+                config["reranker_provider"] if config["reranker_enabled"] else ""
+            ),
             "reranker_model": (
                 config["reranker_model"] if config["reranker_enabled"] else ""
             ),
@@ -822,16 +838,24 @@ def main() -> None:
         )
         retriever: EvaluationRetriever = hybrid_retriever
         if config["reranker_enabled"]:
-            reranker = CrossEncoderReranker(
-                config["reranker_model"],
-                device=config["device"],
-                batch_size=config["reranker_batch_size"],
-            )
+            if config["reranker_provider"] == "cohere":
+                model_name = config["reranker_model"]
+                if model_name == DEFAULT_RERANKER_MODEL:
+                    model_name = DEFAULT_COHERE_RERANKER_MODEL
+                reranker = CohereReranker(model_name)
+                run_row["reranker_model"] = model_name
+                run_row["retriever_type"] = "hybrid_dense_bm25_rrf_cohere_rerank"
+            else:
+                reranker = CrossEncoderReranker(
+                    config["reranker_model"],
+                    device=config["device"],
+                    batch_size=config["reranker_batch_size"],
+                )
+                run_row["retriever_type"] = "hybrid_dense_bm25_rrf_cross_encoder"
             retriever = RerankedHybridRetriever(
                 hybrid_retriever=hybrid_retriever,
                 reranker=reranker,
             )
-            run_row["retriever_type"] = "hybrid_dense_bm25_rrf_cross_encoder"
         report = evaluate_retriever(
             examples,
             retriever,

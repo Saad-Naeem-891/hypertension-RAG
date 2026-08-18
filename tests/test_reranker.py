@@ -1,9 +1,10 @@
 from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 import numpy as np
 
-from src.reranking.reranker import CrossEncoderReranker, RerankedHybridRetriever
+from src.reranking.reranker import CohereReranker, CrossEncoderReranker, RerankedHybridRetriever
 from src.retrieval.hybrid_retriever import HybridRetrievedChunk
 
 
@@ -32,6 +33,20 @@ class FakeCrossEncoder:
     def predict(self, inputs: list[tuple[str, str]], **kwargs):
         self.calls.append((inputs, kwargs))
         return self.scores
+
+
+class FakeCohereResponse:
+    def __init__(self, body: bytes) -> None:
+        self.body = body
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *_args):
+        return False
+
+    def read(self) -> bytes:
+        return self.body
 
 
 class CrossEncoderRerankerTests(unittest.TestCase):
@@ -80,6 +95,22 @@ class CrossEncoderRerankerTests(unittest.TestCase):
                 "question",
                 [candidate(1, "same", "one"), candidate(2, "same", "two")],
             )
+
+    def test_cohere_reranker_uses_returned_indexes_and_scores(self) -> None:
+        body = b'{"results":[{"index":2,"relevance_score":0.9},{"index":0,"relevance_score":0.1},{"index":1,"relevance_score":0.5}]}'
+        reranker = CohereReranker(api_key="test-key")
+        with patch("src.reranking.reranker.urlopen", return_value=FakeCohereResponse(body)) as opener:
+            results = reranker.rerank(
+                "Which tests?",
+                [candidate(1, "a", "alpha"), candidate(2, "b", "beta"), candidate(3, "c", "gamma")],
+                top_k=2,
+            )
+
+        self.assertEqual([result.chunk_id for result in results], ["c", "b"])
+        self.assertAlmostEqual(results[0].rerank_score, 0.9)
+        request = opener.call_args.args[0]
+        self.assertEqual(request.get_method(), "POST")
+        self.assertNotIn("test-key", request.data.decode("utf-8"))
 
 
 if __name__ == "__main__":
