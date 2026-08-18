@@ -27,6 +27,12 @@ from src.retrieval.hybrid_retriever import (
     HybridRetriever,
 )
 from src.retrieval.semantic_retriever import QUERY_PREFIX, SemanticRetriever
+from src.reranking import (
+    DEFAULT_RERANKER_BATCH_SIZE,
+    DEFAULT_RERANKER_MODEL,
+    CrossEncoderReranker,
+    RerankedHybridRetriever,
+)
 from src.vector_store.qdrant_store import (
     DEFAULT_COLLECTION_NAME,
     DEFAULT_DATABASE_PATH,
@@ -41,7 +47,7 @@ DEFAULT_GROUND_TRUTH_PATH = (
 DEFAULT_OUTPUT_DIRECTORY = PROJECT_ROOT / "artifacts" / "evaluation"
 RUNS_FILENAME = "evaluation_runs.csv"
 QUESTION_RESULTS_FILENAME = "evaluation_question_results.csv"
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 DEFAULT_TOP_K_VALUES = (5, 10, 20)
 FLATTENED_K_VALUES = (3, 5, 10)
 
@@ -79,6 +85,9 @@ RUN_FIELDS = [
     "qdrant_path",
     "qdrant_collection",
     "retriever_type",
+    "reranker_enabled",
+    "reranker_model",
+    "reranker_batch_size",
     "candidate_k",
     "rrf_k",
     "bm25_k1",
@@ -117,6 +126,8 @@ QUESTION_RESULT_FIELDS = [
     "dense_ranks",
     "bm25_ranks",
     "hybrid_scores",
+    "pre_rerank_ranks",
+    "rerank_scores",
     "precision",
     "recall",
     "hit",
@@ -170,6 +181,8 @@ class QuestionEvaluation:
     dense_ranks: tuple[int | None, ...]
     bm25_ranks: tuple[int | None, ...]
     hybrid_scores: tuple[float | None, ...]
+    pre_rerank_ranks: tuple[int | None, ...]
+    rerank_scores: tuple[float | None, ...]
     metrics: EvaluationMetrics
 
 
@@ -337,6 +350,18 @@ def evaluate_retriever(
                         )
                         for result in top_results
                     ),
+                    pre_rerank_ranks=tuple(
+                        getattr(result, "original_rank", None)
+                        for result in top_results
+                    ),
+                    rerank_scores=tuple(
+                        (
+                            float(result.rerank_score)
+                            if getattr(result, "rerank_score", None) is not None
+                            else None
+                        )
+                        for result in top_results
+                    ),
                     metrics=calculate_metrics(
                         top_ids,
                         example.relevant_chunk_ids,
@@ -420,14 +445,30 @@ def _new_run_id(now: datetime) -> str:
 
 
 def _append_csv(path: Path, fieldnames: Sequence[str], rows: Sequence[dict[str, Any]]) -> None:
-    """Append rows while enforcing a stable dashboard schema."""
+    """Append rows and migrate existing files when new optional fields are added."""
 
     path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists() and path.stat().st_size:
         with path.open("r", encoding="utf-8", newline="") as source:
-            existing_header = next(csv.reader(source), [])
+            reader = csv.DictReader(source)
+            existing_header = reader.fieldnames or []
+            existing_rows = list(reader)
         if existing_header != list(fieldnames):
-            raise ValueError(f"Existing CSV schema does not match: {path}")
+            unexpected_fields = sorted(set(existing_header) - set(fieldnames))
+            if unexpected_fields:
+                raise ValueError(
+                    f"Existing CSV has unsupported fields {unexpected_fields}: {path}"
+                )
+            temporary_path = path.with_name(f".{path.name}.schema-migration")
+            with temporary_path.open("w", encoding="utf-8", newline="") as destination:
+                writer = csv.DictWriter(
+                    destination,
+                    fieldnames=fieldnames,
+                    lineterminator="\n",
+                )
+                writer.writeheader()
+                writer.writerows(existing_rows)
+            temporary_path.replace(path)
 
     needs_header = not path.exists() or path.stat().st_size == 0
     with path.open("a", encoding="utf-8", newline="") as destination:
@@ -462,6 +503,8 @@ def _question_rows(run_id: str, report: EvaluationReport) -> list[dict[str, Any]
                 "dense_ranks": _json_cell(result.dense_ranks),
                 "bm25_ranks": _json_cell(result.bm25_ranks),
                 "hybrid_scores": _json_cell(result.hybrid_scores),
+                "pre_rerank_ranks": _json_cell(result.pre_rerank_ranks),
+                "rerank_scores": _json_cell(result.rerank_scores),
                 "precision": result.metrics.precision,
                 "recall": result.metrics.recall,
                 "hit": result.metrics.hit,
@@ -530,11 +573,17 @@ def _canonical_command(config: dict[str, Any]) -> str:
         str(config["bm25_k1"]),
         "--bm25-b",
         str(config["bm25_b"]),
+        "--reranker-model",
+        str(config["reranker_model"]),
+        "--reranker-batch-size",
+        str(config["reranker_batch_size"]),
         "--device",
         str(config["device"]),
         "--output-directory",
         str(config["output_directory"]),
     ]
+    if not config["reranker_enabled"]:
+        command.append("--no-reranker")
     return shlex.join(command)
 
 
@@ -565,6 +614,12 @@ def _configuration_from_previous_run(
         "rrf_k": int(previous["rrf_k"]),
         "bm25_k1": float(previous["bm25_k1"]),
         "bm25_b": float(previous["bm25_b"]),
+        "reranker_enabled": str(previous.get("reranker_enabled", "")).lower()
+        in {"1", "true", "yes"},
+        "reranker_model": previous.get("reranker_model") or DEFAULT_RERANKER_MODEL,
+        "reranker_batch_size": int(
+            previous.get("reranker_batch_size") or DEFAULT_RERANKER_BATCH_SIZE
+        ),
         "device": previous["device"],
         "output_directory": output_directory,
     }
@@ -612,12 +667,26 @@ def _argument_parser() -> argparse.ArgumentParser:
         type=int,
         nargs="+",
         default=list(DEFAULT_TOP_K_VALUES),
-        help="Evaluation cutoffs (default: 3 5 10)",
+        help=(
+            "Evaluation cutoffs "
+            f"(default: {' '.join(str(k) for k in DEFAULT_TOP_K_VALUES)})"
+        ),
     )
     parser.add_argument("--candidate-k", type=int, default=DEFAULT_CANDIDATE_K)
     parser.add_argument("--rrf-k", type=int, default=DEFAULT_RRF_K)
     parser.add_argument("--bm25-k1", type=float, default=BM25_K1)
     parser.add_argument("--bm25-b", type=float, default=BM25_B)
+    parser.add_argument("--reranker-model", default=DEFAULT_RERANKER_MODEL)
+    parser.add_argument(
+        "--reranker-batch-size",
+        type=int,
+        default=DEFAULT_RERANKER_BATCH_SIZE,
+    )
+    parser.add_argument(
+        "--no-reranker",
+        action="store_true",
+        help="Evaluate the hybrid RRF baseline without cross-encoder reranking",
+    )
     parser.add_argument("--device", default="cpu")
     parser.add_argument("--output-directory", type=Path, default=DEFAULT_OUTPUT_DIRECTORY)
     parser.add_argument(
@@ -644,6 +713,9 @@ def _configuration_from_args(args: argparse.Namespace) -> dict[str, Any]:
         "rrf_k": args.rrf_k,
         "bm25_k1": args.bm25_k1,
         "bm25_b": args.bm25_b,
+        "reranker_enabled": not args.no_reranker,
+        "reranker_model": args.reranker_model,
+        "reranker_batch_size": args.reranker_batch_size,
         "device": args.device,
         "output_directory": output_directory,
     }
@@ -671,6 +743,13 @@ def main() -> None:
             "qdrant_path": str(config["database_path"]),
             "qdrant_collection": config["collection_name"],
             "retriever_type": "hybrid_dense_bm25_rrf",
+            "reranker_enabled": config["reranker_enabled"],
+            "reranker_model": (
+                config["reranker_model"] if config["reranker_enabled"] else ""
+            ),
+            "reranker_batch_size": (
+                config["reranker_batch_size"] if config["reranker_enabled"] else ""
+            ),
             "candidate_k": config["candidate_k"],
             "rrf_k": config["rrf_k"],
             "bm25_k1": config["bm25_k1"],
@@ -735,12 +814,24 @@ def main() -> None:
             k1=config["bm25_k1"],
             b=config["bm25_b"],
         )
-        retriever = HybridRetriever(
+        hybrid_retriever = HybridRetriever(
             chunks=chunks,
             dense_retriever=dense_retriever,
             bm25_retriever=bm25_retriever,
             rrf_k=config["rrf_k"],
         )
+        retriever: EvaluationRetriever = hybrid_retriever
+        if config["reranker_enabled"]:
+            reranker = CrossEncoderReranker(
+                config["reranker_model"],
+                device=config["device"],
+                batch_size=config["reranker_batch_size"],
+            )
+            retriever = RerankedHybridRetriever(
+                hybrid_retriever=hybrid_retriever,
+                reranker=reranker,
+            )
+            run_row["retriever_type"] = "hybrid_dense_bm25_rrf_cross_encoder"
         report = evaluate_retriever(
             examples,
             retriever,

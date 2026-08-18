@@ -100,6 +100,8 @@ def make_configuration_key(row: pd.Series) -> str:
     fields = [
         "embedding_model",
         "retriever_type",
+        "reranker_model",
+        "reranker_batch_size",
         "candidate_k",
         "rrf_k",
         "bm25_k1",
@@ -113,13 +115,15 @@ def make_configuration_key(row: pd.Series) -> str:
 successful_runs["configuration_key"] = successful_runs.apply(
     make_configuration_key, axis=1
 )
-successful_runs["run_label"] = successful_runs.apply(
-    lambda row: (
-        f"{short_model_name(row['embedding_model'])}\n"
-        f"{row['started_at_utc'].strftime('%Y-%m-%d %H:%M:%S')}"
-    ),
-    axis=1,
-)
+def make_run_label(row: pd.Series) -> str:
+    label = short_model_name(row["embedding_model"])
+    reranker_model = row.get("reranker_model")
+    if pd.notna(reranker_model) and str(reranker_model).strip():
+        label += f" + {short_model_name(reranker_model)}"
+    return f"{label}\n{row['started_at_utc'].strftime('%Y-%m-%d %H:%M:%S')}"
+
+
+successful_runs["run_label"] = successful_runs.apply(make_run_label, axis=1)
 
 if SHOW_LATEST_RUN_PER_CONFIGURATION:
     plotted_runs = successful_runs.drop_duplicates(
@@ -144,6 +148,8 @@ summary_columns = [
     "started_at_utc",
     "embedding_model",
     "retriever_type",
+    "reranker_model",
+    "reranker_batch_size",
     "candidate_k",
     "rrf_k",
     "bm25_k1",
@@ -151,6 +157,7 @@ summary_columns = [
     "question_count",
     "duration_seconds",
 ]
+summary_columns = [column for column in summary_columns if column in plotted_runs]
 
 summary = plotted_runs.loc[:, summary_columns].copy()
 summary["duration_seconds"] = pd.to_numeric(
