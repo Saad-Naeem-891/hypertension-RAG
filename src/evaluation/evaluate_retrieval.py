@@ -42,7 +42,7 @@ DEFAULT_OUTPUT_DIRECTORY = PROJECT_ROOT / "artifacts" / "evaluation"
 RUNS_FILENAME = "evaluation_runs.csv"
 QUESTION_RESULTS_FILENAME = "evaluation_question_results.csv"
 SCHEMA_VERSION = 1
-DEFAULT_TOP_K_VALUES = (3, 5, 10)
+DEFAULT_TOP_K_VALUES = (5, 10, 20)
 FLATTENED_K_VALUES = (3, 5, 10)
 
 
@@ -431,7 +431,11 @@ def _append_csv(path: Path, fieldnames: Sequence[str], rows: Sequence[dict[str, 
 
     needs_header = not path.exists() or path.stat().st_size == 0
     with path.open("a", encoding="utf-8", newline="") as destination:
-        writer = csv.DictWriter(destination, fieldnames=fieldnames)
+        writer = csv.DictWriter(
+            destination,
+            fieldnames=fieldnames,
+            lineterminator="\n",
+        )
         if needs_header:
             writer.writeheader()
         writer.writerows(rows)
@@ -708,7 +712,7 @@ def main() -> None:
                 "chunk_count": len(chunks),
                 "embedding_model": manifest.get("model_name"),
                 "embedding_dimension": manifest.get("embedding_dimension"),
-                "query_prefix": QUERY_PREFIX,
+                "query_prefix": manifest.get("query_prefix", QUERY_PREFIX),
                 "normalized_embeddings": manifest.get("normalized"),
             }
         )
