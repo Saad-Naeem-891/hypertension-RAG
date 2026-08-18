@@ -3,17 +3,36 @@
 This guide explains how to run the hypertension food-guidance RAG ingestion
 pipeline after cloning or pulling the project from GitHub.
 
-The current pipeline performs:
+## System pipeline
 
-```text
-PDF guidelines
-    -> Docling parsing
-    -> HybridChunker
-    -> JSON chunks
-    -> English Arctic dense embeddings
-    -> persistent local Qdrant database
-    -> hybrid Top-K retrieval (dense + BM25 + RRF)
+```mermaid
+flowchart TD
+    A["WHO PDF Guidelines"] --> B["Docling Parsing"]
+    B --> C["Structured Chunks + Metadata"]
+    C --> D["English Arctic Embeddings"]
+    D --> E["Persistent Qdrant Database"]
+    C --> F["BM25 Index"]
+
+    Q["User Question"] --> G["Query Embedding"]
+    G --> H["Dense Search"]
+    E --> H
+
+    Q --> I["BM25 Search"]
+    F --> I
+
+    H --> J["Combine and Deduplicate"]
+    I --> J
+    J --> K["Reciprocal Rank Fusion"]
+    K --> L["Cross-Encoder Reranking"]
+    L --> M["Final Top-K Evidence Chunks"]
+
+    M --> N["Ground-Truth Comparison"]
+    N --> O["Metrics + Evaluation CSV History"]
 ```
+
+Dense search and BM25 each retrieve a configurable candidate pool. Their full
+union is deduplicated by `chunk_id`, ranked with RRF, and then reordered by the
+cross-encoder before the final Top-K evidence is returned.
 
 LLM generation is not implemented yet.
 
@@ -78,7 +97,7 @@ DataSet/
 The pipeline discovers PDF files recursively, so individual filenames are not
 hard-coded.
 
-## 5. Download the embedding model
+## 5. Download the embedding and reranker models
 
 The model is not expected to be committed to Git because it is large. Download
 `Snowflake/snowflake-arctic-embed-s` into the project-local `models/` cache:
@@ -89,6 +108,12 @@ conda run -n student_rag python -c "from sentence_transformers import SentenceTr
 
 The model has approximately 33 million parameters and only needs to be
 downloaded once.
+
+Download the lightweight English cross-encoder used after hybrid retrieval:
+
+```bash
+conda run -n student_rag python -c "from sentence_transformers import CrossEncoder; CrossEncoder('cross-encoder/ms-marco-MiniLM-L6-v2', cache_folder='models', device='cpu')"
+```
 
 ## 6. Parse and chunk all PDFs
 
@@ -196,7 +221,7 @@ conda run -n student_rag python -m src.vector_store.qdrant_store --recreate
 
 Only use `--recreate` when intentionally replacing the existing collection.
 
-## 10. Run the hybrid Top-K retriever
+## 10. Run hybrid retrieval with cross-encoder reranking
 
 Use `--no-capture-output` so the interactive prompt receives terminal input:
 
@@ -211,26 +236,28 @@ of chunks, use `--top-k`:
 conda run --no-capture-output -n student_rag python main.py --top-k 10
 ```
 
-By default, dense search and BM25 each retrieve 30 candidates before Reciprocal
-Rank Fusion (RRF). You can change that pool independently:
+By default, dense search and BM25 each retrieve 25 candidates. Their full
+deduplicated union is scored by RRF and then by the cross-encoder. You can
+change the branch candidate pool independently:
 
 ```bash
 conda run --no-capture-output -n student_rag python main.py --top-k 5 --candidate-k 30
 ```
 
-The retriever prints evidence chunks and debugging ranks only. It does not
-generate an answer or call an LLM.
+The retriever prints the final reranked evidence, cross-encoder score, original
+hybrid rank, Dense rank and BM25 rank. It does not generate an answer or call
+an LLM.
 
 ## 11. Evaluate retrieval quality
 
-Evaluate the hybrid retriever against the manually reviewed ground truth:
+Evaluate the reranked hybrid retriever against the manually reviewed ground truth:
 
 ```bash
 conda run -n student_rag python -m src.evaluation.evaluate_retrieval
 ```
 
 The default evaluation calculates Precision, Recall, Hit Rate, MRR and nDCG at
-Top-3, Top-5 and Top-10. Every experiment is appended to:
+Top-5, Top-10 and Top-20. Every experiment is appended to:
 
 ```text
 artifacts/evaluation/evaluation_runs.csv
@@ -241,6 +268,12 @@ The first CSV contains one row per run, including retrieval settings, input
 fingerprints, environment information, aggregate metrics and a reproducible
 command. The second contains per-question judgments for dashboards and error
 analysis.
+
+To measure the non-reranked RRF baseline with the same settings, add:
+
+```bash
+conda run -n student_rag python -m src.evaluation.evaluate_retrieval --no-reranker
+```
 
 Rerun a previous configuration using its recorded run ID:
 
@@ -266,6 +299,8 @@ For a clean checkout, run these commands in order:
 conda run -n student_rag python -m pip install -r requirements.txt
 
 conda run -n student_rag python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('Snowflake/snowflake-arctic-embed-s', cache_folder='models', device='cpu')"
+
+conda run -n student_rag python -c "from sentence_transformers import CrossEncoder; CrossEncoder('cross-encoder/ms-marco-MiniLM-L6-v2', cache_folder='models', device='cpu')"
 
 conda run -n student_rag python -m src.ingestion.dataset_processor
 
@@ -297,8 +332,8 @@ conda run -n student_rag python -m pip install -r requirements.txt
 
 ### Embedding model cannot be found locally
 
-Run the model-download command from step 5. The embedding pipeline intentionally
-uses the local cache and does not silently download a model.
+Run both model-download commands from step 5. The embedding and reranking
+pipelines use the local cache and do not silently download models at runtime.
 
 ### Qdrant says the database is already accessed
 
