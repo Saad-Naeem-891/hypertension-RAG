@@ -1,4 +1,5 @@
 from types import SimpleNamespace
+import json
 import os
 import unittest
 from unittest.mock import patch
@@ -34,7 +35,21 @@ def evidence_chunk(
 
 
 class FakeResponses:
-    def __init__(self, *, output_text: str = "Grounded answer [sodium_chunk_001]") -> None:
+    def __init__(self, *, output_text: str | None = None) -> None:
+        if output_text is None:
+            output_text = json.dumps(
+                {
+                    "recommendation": "Adults should reduce sodium intake.",
+                    "supporting_evidence": [
+                        {
+                            "statement": "WHO recommends reducing sodium intake.",
+                            "chunk_ids": ["sodium_chunk_001"],
+                        }
+                    ],
+                    "confidence": "high",
+                    "safety_message": "Guideline evidence only.",
+                }
+            )
         self.output_text = output_text
         self.calls: list[dict] = []
 
@@ -74,7 +89,9 @@ class GrokGeneratorTests(unittest.TestCase):
 
         answer = generator.generate("What is recommended?", [evidence_chunk()])
 
-        self.assertEqual(answer.text, "Grounded answer [sodium_chunk_001]")
+        self.assertEqual(answer.recommendation, "Adults should reduce sodium intake.")
+        self.assertEqual(answer.confidence, "High")
+        self.assertEqual(answer.citations[0].document_name, "Sodium intake for adults and children")
         self.assertEqual(answer.provider, "xAI")
         self.assertEqual(answer.model, "test-grok")
         self.assertEqual(answer.evidence_chunk_ids, ("sodium_chunk_001",))
