@@ -99,6 +99,7 @@ class CrossEncoderReranker:
             cache_folder=str(Path(model_cache_directory).expanduser().resolve()),
             device=device,
             local_files_only=local_files_only,
+            max_length=512,
         )
 
     def rerank(
