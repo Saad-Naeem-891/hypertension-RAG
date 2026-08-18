@@ -44,6 +44,7 @@ class HybridRetrievedChunk:
     section_title: str | None
     page_start: int | None
     page_end: int | None
+    contextualized_text: str | None = None
 
 
 class DenseRetriever(Protocol):
@@ -221,21 +222,34 @@ class HybridRetriever:
     ) -> list[HybridRetrievedChunk]:
         """Retrieve candidates from both branches and return the Top-K RRF ranking."""
 
-        if not question.strip():
-            raise ValueError("Question cannot be empty")
         if top_k < 1:
             raise ValueError("top_k must be at least 1")
+        candidate_limit = max(top_k, candidate_k)
+        return self.retrieve_candidates(
+            question,
+            candidate_k=candidate_limit,
+        )[:top_k]
+
+    def retrieve_candidates(
+        self,
+        question: str,
+        *,
+        candidate_k: int = DEFAULT_CANDIDATE_K,
+    ) -> list[HybridRetrievedChunk]:
+        """Return the full deduplicated Dense/BM25 candidate union ranked by RRF."""
+
+        if not question.strip():
+            raise ValueError("Question cannot be empty")
         if candidate_k < 1:
             raise ValueError("candidate_k must be at least 1")
 
-        candidate_limit = max(top_k, candidate_k)
         dense_results = self.dense_retriever.retrieve(
             question,
-            top_k=candidate_limit,
+            top_k=candidate_k,
         )
         bm25_results = self.bm25_retriever.retrieve(
             question,
-            top_k=candidate_limit,
+            top_k=candidate_k,
         )
 
         dense_ranks = {result.chunk_id: result.rank for result in dense_results}
@@ -267,7 +281,7 @@ class HybridRetriever:
 
         results: list[HybridRetrievedChunk] = []
         for rank, (chunk_id, score, dense_rank, bm25_rank) in enumerate(
-            fused[:top_k],
+            fused,
             start=1,
         ):
             chunk = self.chunks_by_id[chunk_id]
@@ -292,6 +306,9 @@ class HybridRetriever:
                     section_title=section_title,
                     page_start=page_start,
                     page_end=page_end,
+                    contextualized_text=str(
+                        chunk.get("contextualized_text") or chunk.get("text", "")
+                    ),
                 )
             )
         return results

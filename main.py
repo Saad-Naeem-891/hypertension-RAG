@@ -1,11 +1,16 @@
-"""Interactive entry point for the hybrid Top-K retrieval baseline."""
+"""Interactive entry point for hybrid retrieval with cross-encoder reranking."""
 
 from __future__ import annotations
 
 import argparse
 
-from src.retrieval import HybridRetrievedChunk, HybridRetriever
 from src.retrieval.hybrid_retriever import DEFAULT_CANDIDATE_K
+from src.reranking import (
+    DEFAULT_RERANKER_BATCH_SIZE,
+    DEFAULT_RERANKER_MODEL,
+    RerankedChunk,
+    RerankedHybridRetriever,
+)
 
 
 TOP_K = 5
@@ -13,7 +18,7 @@ CANDIDATE_K = DEFAULT_CANDIDATE_K
 DIVIDER = "-" * 40
 
 
-def _format_pages(result: HybridRetrievedChunk) -> str:
+def _format_pages(result: RerankedChunk) -> str:
     if result.page_start is None and result.page_end is None:
         return "Unknown"
     start = result.page_start if result.page_start is not None else "?"
@@ -21,7 +26,7 @@ def _format_pages(result: HybridRetrievedChunk) -> str:
     return f"{start} - {end}"
 
 
-def print_results(results: list[HybridRetrievedChunk]) -> None:
+def print_results(results: list[RerankedChunk]) -> None:
     """Print ranked evidence chunks in a human-readable format."""
 
     if not results:
@@ -30,6 +35,8 @@ def print_results(results: list[HybridRetrievedChunk]) -> None:
 
     for result in results:
         print(f"Rank: {result.rank}")
+        print(f"Reranker Score: {result.rerank_score:.6f}")
+        print(f"Original Hybrid Rank: {result.original_rank}")
         print(f"Hybrid Score: {result.hybrid_score:.6f}")
         print(f"Dense Rank: {result.dense_rank or '-'}")
         print(f"BM25 Rank: {result.bm25_rank or '-'}")
@@ -64,10 +71,27 @@ def main() -> None:
             f"(default: {CANDIDATE_K})"
         ),
     )
+    parser.add_argument(
+        "--reranker-model",
+        default=DEFAULT_RERANKER_MODEL,
+        help=f"Cross-encoder model (default: {DEFAULT_RERANKER_MODEL})",
+    )
+    parser.add_argument(
+        "--reranker-batch-size",
+        type=int,
+        default=DEFAULT_RERANKER_BATCH_SIZE,
+        help=(
+            "Question/chunk pairs scored per reranker batch "
+            f"(default: {DEFAULT_RERANKER_BATCH_SIZE})"
+        ),
+    )
     args = parser.parse_args()
 
     question = input("Enter your question:\n").strip()
-    with HybridRetriever() as retriever:
+    with RerankedHybridRetriever(
+        reranker_model=args.reranker_model,
+        reranker_batch_size=args.reranker_batch_size,
+    ) as retriever:
         results = retriever.retrieve(
             question,
             top_k=args.top_k,
