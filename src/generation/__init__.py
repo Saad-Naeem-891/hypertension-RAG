@@ -7,6 +7,8 @@ from .gemini_generator import (
     GeminiGenerationError,
     GeminiGenerator,
 )
+from .gemini_scheduler import GeminiScheduler, GeminiSchedulerConfig
+from .rate_limiter import SlidingWindowRateLimiter
 from .grok_generator import (
     DEFAULT_GROK_MODEL,
     GrokConfigurationError,
@@ -22,7 +24,10 @@ __all__ = [
     "GeminiConfigurationError",
     "GeminiGenerationError",
     "GeminiGenerator",
+    "GeminiScheduler",
+    "GeminiSchedulerConfig",
     "GrokConfigurationError",
     "GrokGenerationError",
     "GrokGenerator",
+    "SlidingWindowRateLimiter",
 ]
