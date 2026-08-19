@@ -25,6 +25,9 @@ from src.reranking import RerankedHybridRetriever
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 EVALUATION_RUNS_PATH = PROJECT_ROOT / "artifacts" / "evaluation" / "evaluation_runs.csv"
+EVALUATION_QUESTION_RESULTS_PATH = (
+    PROJECT_ROOT / "artifacts" / "evaluation" / "evaluation_question_results.csv"
+)
 DEFAULT_REQUESTS_PER_MINUTE = 20
 LOGGER = logging.getLogger(__name__)
 
@@ -134,7 +137,10 @@ class EvaluationMetricResponse(BaseModel):
 
 class EvaluationRunResponse(BaseModel):
     run_id: str
+    started_at_utc: str
     finished_at_utc: str
+    duration_seconds: float | None
+    embedding_model: str
     retriever_type: str
     reranker_enabled: bool
     reranker_model: str | None
@@ -144,6 +150,14 @@ class EvaluationRunResponse(BaseModel):
     embedding_dimension: int | None
     ground_truth_name: str | None
     metrics: list[EvaluationMetricResponse]
+
+
+class EvaluationQuestionMetricResponse(BaseModel):
+    run_id: str
+    question_index: int
+    question: str
+    cutoff: int
+    ndcg: float
 
 
 def _optional_int(value: str | None) -> int | None:
@@ -157,6 +171,15 @@ def _optional_int(value: str | None) -> int | None:
 
 def _as_bool(value: str | None) -> bool:
     return (value or "").strip().lower() in {"1", "true", "yes"}
+
+
+def _optional_float(value: str | None) -> float | None:
+    if not value:
+        return None
+    try:
+        return float(value)
+    except ValueError:
+        return None
 
 
 def _metric_rows(raw_metrics: str | None) -> list[EvaluationMetricResponse]:
@@ -193,7 +216,10 @@ def _safe_evaluation_row(row: dict[str, str]) -> EvaluationRunResponse:
     ground_truth_path = row.get("ground_truth_path")
     return EvaluationRunResponse(
         run_id=row.get("run_id", ""),
+        started_at_utc=row.get("started_at_utc", ""),
         finished_at_utc=row.get("finished_at_utc", ""),
+        duration_seconds=_optional_float(row.get("duration_seconds")),
+        embedding_model=row.get("embedding_model", ""),
         retriever_type=row.get("retriever_type", ""),
         reranker_enabled=_as_bool(row.get("reranker_enabled")),
         reranker_model=row.get("reranker_model") or None,
@@ -214,7 +240,35 @@ def _successful_evaluation_rows() -> list[dict[str, str]]:
             row
             for row in csv.DictReader(source)
             if row.get("status") == "success"
-        ][-12:]
+        ]
+
+
+def _evaluation_question_metrics(
+    successful_run_ids: set[str],
+) -> list[EvaluationQuestionMetricResponse]:
+    if not EVALUATION_QUESTION_RESULTS_PATH.is_file():
+        return []
+
+    results: list[EvaluationQuestionMetricResponse] = []
+    with EVALUATION_QUESTION_RESULTS_PATH.open(
+        "r", encoding="utf-8", newline=""
+    ) as source:
+        for row in csv.DictReader(source):
+            if row.get("run_id") not in successful_run_ids:
+                continue
+            try:
+                results.append(
+                    EvaluationQuestionMetricResponse(
+                        run_id=row["run_id"],
+                        question_index=int(row["question_index"]),
+                        question=row["question"],
+                        cutoff=int(row["k"]),
+                        ndcg=float(row["ndcg"]),
+                    )
+                )
+            except (KeyError, TypeError, ValueError):
+                continue
+    return results
 
 
 def _require_chat_access(
@@ -255,6 +309,17 @@ def evaluations() -> list[EvaluationRunResponse]:
     """Return sanitized successful evaluation summaries for the dashboard."""
 
     return [_safe_evaluation_row(row) for row in _successful_evaluation_rows()]
+
+
+@app.get(
+    "/evaluation-question-results",
+    response_model=list[EvaluationQuestionMetricResponse],
+)
+def evaluation_question_results() -> list[EvaluationQuestionMetricResponse]:
+    """Return sanitized per-question nDCG values used by the dashboard heatmap."""
+
+    run_ids = {row.get("run_id", "") for row in _successful_evaluation_rows()}
+    return _evaluation_question_metrics(run_ids)
 
 
 @app.post(
