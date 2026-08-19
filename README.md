@@ -80,7 +80,9 @@ insufficient-evidence response instead of guessing.
 │   ├── qdrant_db/                 # Persistent local vector database
 │   └── truth_table/               # Manual retrieval ground truth
 ├── notebooks/                     # Experiment comparison notebook/scripts
+├── scripts/                       # Explicit manual smoke checks
 ├── src/
+│   ├── api/                       # FastAPI service for the web application
 │   ├── embedding/
 │   ├── evaluation/
 │   ├── generation/
@@ -132,7 +134,12 @@ Add the API key to the local `.env` file:
 GEMINI_API_KEY=replace-with-your-gemini-api-key
 GEMINI_MODEL=gemini-3.5-flash-lite
 GENERATION_PROVIDER=gemini
+RAG_API_TOKEN=replace-with-a-long-random-shared-token
+RAG_RATE_LIMIT_PER_MINUTE=20
 ```
+
+The web application must use the same `RAG_API_TOKEN` in `web/.env.local`.
+Generate a unique random value for your machine; do not use the placeholder.
 
 Never commit `.env` or paste real API keys into source files, issues, or chat.
 
@@ -165,6 +172,26 @@ conda run --no-capture-output -n student_rag python main.py --retrieval-only
 conda run --no-capture-output -n student_rag python main.py --top-k 10
 ```
 
+### 7. Run the web application
+
+Start the authenticated Python API from the project root:
+
+```bash
+conda run -n student_rag python -m uvicorn src.api.app:app --reload
+```
+
+Copy `web/.env.local.example` to `web/.env.local` and set the same
+`RAG_API_TOKEN` used by the root `.env`. Then start the frontend:
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`. The evaluation dashboard reads the latest
+successful metrics from the Python API; it does not use hardcoded scores.
+
 ## Retrieval Evaluation
 
 The ground-truth examples contain a question and manually reviewed relevant
@@ -191,6 +218,9 @@ hosted generation tokens.
 conda run -n student_rag python -m unittest discover -s tests -v
 ```
 
+Manual checks that make network requests or load the complete RAG pipeline are
+kept under `scripts/` so test discovery cannot execute them accidentally.
+
 ## Safety and Grounding
 
 - Answers must use only retrieved guideline evidence.
@@ -209,6 +239,6 @@ artifact-generation, execution and troubleshooting guide.
 
 ## Current Scope
 
-The repository currently provides a command-line RAG backend. It does not yet
-include a web UI, automatic Gemini-to-Grok failover, or generation-quality
-evaluation.
+The repository provides a command-line application, an authenticated FastAPI
+service, and a Next.js dashboard/chat interface. Automatic Gemini-to-Grok
+failover and generation-quality evaluation are not yet included.

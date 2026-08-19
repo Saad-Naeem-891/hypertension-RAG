@@ -134,11 +134,15 @@ cp .env.example .env
 GEMINI_API_KEY=replace-with-your-gemini-api-key
 GEMINI_MODEL=gemini-3.5-flash-lite
 GENERATION_PROVIDER=gemini
+RAG_API_TOKEN=replace-with-a-long-random-shared-token
+RAG_RATE_LIMIT_PER_MINUTE=20
 ```
 
 The application loads this file automatically. Do not put a real API key in
 source code or commit `.env` to Git; it is already ignored. `.env.example`
 contains only safe placeholders and can be committed for teammates.
+Generate a unique `RAG_API_TOKEN`; the web server uses it to authenticate to
+the Python chat API and protect hosted-model quota.
 
 ## 6. Parse and chunk all PDFs
 
@@ -344,6 +348,40 @@ or Git commit changed since the original run.
 conda run -n student_rag python -m unittest discover -s tests -v
 ```
 
+The files under `scripts/` are manual smoke checks. They are intentionally
+outside `tests/` because they load models, call a running API, or spend hosted
+generation quota.
+
+## 13. Run the web dashboard and chat
+
+Install Node.js 20.9 or newer before running the frontend.
+
+Copy the frontend example configuration and set `RAG_API_TOKEN` to exactly the
+same random value used in the root `.env`:
+
+```bash
+cp web/.env.local.example web/.env.local
+```
+
+Start the Python API from the repository root:
+
+```bash
+conda run -n student_rag python -m uvicorn src.api.app:app --reload
+```
+
+In a second terminal, install the pinned frontend dependencies and start
+Next.js:
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`. The dashboard loads sanitized metrics from the
+latest successful evaluation run. The chat displays recommendation, supporting
+evidence, citations, confidence, and the safety message.
+
 ## Complete pipeline command order
 
 For a clean checkout, run these commands in order:
@@ -420,3 +458,8 @@ cp .env.example .env
 ```
 
 Use `--retrieval-only` when you intentionally want to run without a hosted model.
+
+### `Chat API authentication is not configured`
+
+Set the same long random `RAG_API_TOKEN` in the root `.env` and in
+`web/.env.local`, then restart both servers. Never commit either local file.
