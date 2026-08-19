@@ -86,6 +86,7 @@ insufficient-evidence response instead of guessing.
 │   ├── embedding/
 │   ├── evaluation/
 │   ├── generation/
+│   ├── guardrails/                 # Pre-retrieval safety and confidence gates
 │   ├── ingestion/
 │   ├── reranking/
 │   ├── retrieval/
@@ -231,6 +232,10 @@ kept under `scripts/` so test discovery cannot execute them accidentally.
   individualized treatment plans.
 - Questions not supported by the indexed guidelines receive an
   insufficient-evidence response.
+- Emergency, medication-change, personalized clinical, and personally framed
+  complex-condition questions are redirected before retrieval or generation.
+- Hosted generation runs only when the top reranked evidence meets the
+  configurable `GUARDRAIL_CONFIDENCE_THRESHOLD` (70% by default).
 
 ## Documentation
 

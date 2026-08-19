@@ -136,6 +136,7 @@ GEMINI_MODEL=gemini-3.5-flash-lite
 GENERATION_PROVIDER=gemini
 RAG_API_TOKEN=replace-with-a-long-random-shared-token
 RAG_RATE_LIMIT_PER_MINUTE=20
+GUARDRAIL_CONFIDENCE_THRESHOLD=70
 ```
 
 The application loads this file automatically. Do not put a real API key in
@@ -143,6 +144,9 @@ source code or commit `.env` to Git; it is already ignored. `.env.example`
 contains only safe placeholders and can be committed for teammates.
 Generate a unique `RAG_API_TOKEN`; the web server uses it to authenticate to
 the Python chat API and protect hosted-model quota.
+
+`GUARDRAIL_CONFIDENCE_THRESHOLD` is the minimum calibrated relevance score
+required after reranking and before hosted generation. The default is 70.
 
 ## 6. Parse and chunk all PDFs
 
