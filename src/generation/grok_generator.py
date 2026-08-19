@@ -7,7 +7,6 @@ from pathlib import Path
 from typing import Any, Protocol, Sequence
 
 from dotenv import load_dotenv
-from openai import OpenAI
 
 from src.generation.common import (
     GeneratedAnswer,
@@ -75,6 +74,12 @@ class GrokGenerator:
                 "XAI_API_KEY is not set. Add the xAI API key to .env before "
                 "running Grok generation."
             )
+        try:
+            from openai import OpenAI
+        except ImportError as exc:
+            raise GrokConfigurationError(
+                "openai is not installed. Run: python -m pip install -r requirements.txt"
+            ) from exc
         self.client = OpenAI(
             api_key=resolved_api_key,
             base_url=base_url,

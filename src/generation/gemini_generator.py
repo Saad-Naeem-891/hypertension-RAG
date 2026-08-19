@@ -7,8 +7,6 @@ from pathlib import Path
 from typing import Any, Protocol, Sequence
 
 from dotenv import load_dotenv
-from google import genai
-from google.genai import types
 
 from src.generation.common import (
     GROUNDED_RESPONSE_JSON_SCHEMA,
@@ -75,6 +73,13 @@ class GeminiGenerator:
                 "GEMINI_API_KEY is not set. Add the Gemini API key to .env "
                 "before running generation."
             )
+        try:
+            from google import genai
+            from google.genai import types
+        except ImportError as exc:
+            raise GeminiConfigurationError(
+                "google-genai is not installed. Run: python -m pip install -r requirements.txt"
+            ) from exc
         self.client = genai.Client(
             api_key=resolved_api_key,
             http_options=types.HttpOptions(timeout=int(timeout_seconds * 1000)),

@@ -216,3 +216,5 @@ __marimo__/
 # Locally downloaded embedding and reranker models
 /models/
 artifacts/qdrant_db
+/web/node_modules/
+/web/.next/
