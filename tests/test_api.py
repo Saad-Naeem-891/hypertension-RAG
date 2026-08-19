@@ -1,9 +1,10 @@
 import json
+from types import SimpleNamespace
 import unittest
 
 from pydantic import ValidationError
 
-from src.api.app import ChatRequest, _metric_rows, _safe_evaluation_row
+from src.api.app import ChatRequest, _metric_rows, _safe_evaluation_row, chat
 
 
 class ApiContractTests(unittest.TestCase):
@@ -46,6 +47,34 @@ class ApiContractTests(unittest.TestCase):
 
         self.assertEqual(response.ground_truth_name, "truth.json")
         self.assertNotIn("/private/project", response.model_dump_json())
+
+    def test_safety_guard_stops_before_retrieval(self) -> None:
+        class RetrieverThatMustNotRun:
+            def retrieve(self, *_args, **_kwargs):
+                raise AssertionError("retrieval should not run")
+
+        response = chat(
+            ChatRequest(message="I have chest pain and cannot breathe"),
+            RetrieverThatMustNotRun(),
+        )
+
+        self.assertEqual(response.confidence, "Insufficient Evidence")
+        self.assertEqual(response.citations, [])
+        self.assertIn("emergency", response.safety_message.lower())
+
+    def test_low_evidence_confidence_stops_before_generation(self) -> None:
+        class LowConfidenceRetriever:
+            def retrieve(self, *_args, **_kwargs):
+                return [SimpleNamespace(rerank_score=0.0)]
+
+        response = chat(
+            ChatRequest(message="What is the sodium recommendation?"),
+            LowConfidenceRetriever(),
+        )
+
+        self.assertEqual(response.confidence, "Insufficient Evidence")
+        self.assertEqual(response.evidence_confidence_percentage, 50.0)
+        self.assertEqual(response.citations, [])
 
 
 if __name__ == "__main__":
