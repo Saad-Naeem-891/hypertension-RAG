@@ -103,6 +103,7 @@ class ChatRequest(BaseModel):
 
 class CitationResponse(BaseModel):
     chunk_id: str
+    text: str
     document_name: str | None
     section_title: str | None
     page_start: int | None
@@ -297,6 +298,7 @@ def chat(
             detail="Answer generation is temporarily unavailable.",
         ) from None
 
+    evidence_by_id = {chunk.chunk_id: chunk for chunk in evidence}
     return ChatResponse(
         answer=answer.recommendation,
         supporting_evidence=[
@@ -311,6 +313,7 @@ def chat(
         citations=[
             CitationResponse(
                 chunk_id=citation.chunk_id,
+                text=evidence_by_id[citation.chunk_id].text,
                 document_name=citation.document_name,
                 section_title=citation.section_title,
                 page_start=citation.page_start,

@@ -5,6 +5,7 @@ import { FormEvent, useEffect, useState } from "react";
 
 type Citation = {
   chunk_id: string;
+  text: string;
   document_name: string | null;
   section_title: string | null;
   page_start: number | null;
@@ -151,7 +152,6 @@ export default function ChatPage() {
                       {message.supportingEvidence.map((item, evidenceIndex) => (
                         <li key={`${evidenceIndex}-${item.chunk_ids.join("-")}`}>
                           {item.statement}
-                          <small>Chunks: {item.chunk_ids.join(", ")}</small>
                         </li>
                       ))}
                     </ol>
@@ -171,7 +171,9 @@ export default function ChatPage() {
                         ? `–${citation.page_end}`
                         : ""}
                     </span>
-                    <small>{citation.chunk_id}</small>
+                    <p className="chunk-text">
+                      {citation.text || "Chunk text is unavailable in this saved response. Ask the question again to reload it."}
+                    </p>
                   </div>
                 ))}
 
