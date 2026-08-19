@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 
 from src.generation import GeminiConfigurationError, GeminiGenerator
 from src.reranking import RerankedHybridRetriever
+from src.translation import is_arabic, translate_ar_to_en, translate_en_to_ar
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -45,6 +46,7 @@ class ChatResponse(BaseModel):
     confidence: str
     safety_message: str
     citations: list[CitationResponse]
+    language: str = "en"  # "ar" when the question was in Arabic
 
 
 @lru_cache(maxsize=1)
@@ -73,17 +75,37 @@ def evaluations() -> list[dict[str, str]]:
 
 @app.post("/chat", response_model=ChatResponse)
 def chat(request: ChatRequest) -> ChatResponse:
-    question = request.message.strip()
+    original_question = request.message.strip()
+
+    # --- Arabic detection & question translation ---
+    arabic = is_arabic(original_question)
+    if arabic:
+        question = translate_ar_to_en(original_question)
+    else:
+        question = original_question
+
     try:
         evidence = _retriever().retrieve(question, top_k=request.top_k)
     except Exception as exc:
         raise HTTPException(status_code=503, detail=f"Retrieval failed: {exc}") from exc
+
     if not evidence:
+        no_evidence_msg = (
+            "لم يتم العثور على أدلة إرشادية ذات صلة بسؤالك."
+            if arabic
+            else "No relevant guideline evidence was found for this question."
+        )
+        safety_msg = (
+            "هذه الأداة تقدم أدلة من الإرشادات الطبية، وليست نصيحة طبية فردية."
+            if arabic
+            else "This tool provides guideline evidence, not individualized medical advice."
+        )
         return ChatResponse(
-            answer="No relevant guideline evidence was found for this question.",
+            answer=no_evidence_msg,
             confidence="insufficient_evidence",
-            safety_message="This tool provides guideline evidence, not individualized medical advice.",
+            safety_message=safety_msg,
             citations=[],
+            language="ar" if arabic else "en",
         )
 
     try:
@@ -93,10 +115,18 @@ def chat(request: ChatRequest) -> ChatResponse:
     except Exception as exc:
         raise HTTPException(status_code=502, detail=f"Generation failed: {exc}") from exc
 
+    # --- Answer translation back to Arabic ---
+    if arabic:
+        answer_text = translate_en_to_ar(answer.recommendation)
+        safety_text = translate_en_to_ar(answer.safety_message)
+    else:
+        answer_text = answer.recommendation
+        safety_text = answer.safety_message
+
     return ChatResponse(
-        answer=answer.recommendation,
+        answer=answer_text,
         confidence=answer.confidence,
-        safety_message=answer.safety_message,
+        safety_message=safety_text,
         citations=[
             CitationResponse(
                 chunk_id=citation.chunk_id,
@@ -107,4 +137,5 @@ def chat(request: ChatRequest) -> ChatResponse:
             )
             for citation in answer.citations
         ],
+        language="ar" if arabic else "en",
     )
