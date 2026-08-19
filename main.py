@@ -17,6 +17,13 @@ from src.generation import (
     GrokGenerationError,
     GrokGenerator,
 )
+from src.guardrails import (
+    ConfidenceResult,
+    DEFAULT_CONFIDENCE_THRESHOLD,
+    SafetyCategory,
+    check_query,
+    estimate_confidence,
+)
 from src.retrieval.hybrid_retriever import DEFAULT_CANDIDATE_K
 from src.reranking import (
     DEFAULT_RERANKER_BATCH_SIZE,
@@ -86,7 +93,10 @@ def _format_citation_pages(answer_citation: Citation) -> str:
     return str(start) if start == end else f"{start}-{end}"
 
 
-def print_final_response(answer: GeneratedAnswer) -> None:
+def print_final_response(
+    answer: GeneratedAnswer,
+    evidence_confidence: ConfidenceResult | None = None,
+) -> None:
     """Render the validated grounded answer for the end user."""
 
     citation_numbers = {
@@ -123,8 +133,40 @@ def print_final_response(answer: GeneratedAnswer) -> None:
 
     print("\nConfidence:")
     print(answer.confidence)
+    if evidence_confidence is not None:
+        print(
+            f"Evidence confidence: {evidence_confidence.percentage:.1f}% "
+            f"(minimum {evidence_confidence.threshold:.1f}%)"
+        )
     print("\nSafety:")
     print(answer.safety_message)
+
+
+def print_guardrail_response(
+    recommendation: str,
+    safety_message: str,
+    evidence_confidence: ConfidenceResult | None = None,
+) -> None:
+    """Render a response stopped before hosted generation by a guardrail."""
+
+    print(f"\n{SECTION_DIVIDER}")
+    print("FINAL RESPONSE")
+    print(SECTION_DIVIDER)
+    print("\nRecommendation:")
+    print(recommendation)
+    print("\nSupporting Evidence:")
+    print("- No sufficient supporting evidence was found.")
+    print("\nCitations:")
+    print("None.")
+    print("\nConfidence:")
+    print("Insufficient Evidence")
+    if evidence_confidence is not None:
+        print(
+            f"Evidence confidence: {evidence_confidence.percentage:.1f}% "
+            f"(minimum {evidence_confidence.threshold:.1f}%)"
+        )
+    print("\nSafety:")
+    print(safety_message)
 
 
 def print_debug_information(
@@ -204,6 +246,20 @@ def main() -> None:
         help="Hosted API timeout in seconds (default: 60)",
     )
     parser.add_argument(
+        "--confidence-threshold",
+        type=float,
+        default=float(
+            os.getenv(
+                "GUARDRAIL_CONFIDENCE_THRESHOLD",
+                str(DEFAULT_CONFIDENCE_THRESHOLD),
+            )
+        ),
+        help=(
+            "Minimum calibrated top-chunk relevance percentage required before "
+            f"generation (default: {DEFAULT_CONFIDENCE_THRESHOLD:.0f})"
+        ),
+    )
+    parser.add_argument(
         "--retrieval-only",
         action="store_true",
         help="Print reranked chunks without calling a hosted model",
@@ -214,24 +270,28 @@ def main() -> None:
         help="Print the complete retrieved chunks after the generated answer",
     )
     args = parser.parse_args()
-
-    generator = None
-    if not args.retrieval_only:
-        try:
-            if args.provider == "gemini":
-                generator = GeminiGenerator(
-                    model=args.gemini_model,
-                    timeout_seconds=args.api_timeout,
-                )
-            else:
-                generator = GrokGenerator(
-                    model=args.grok_model,
-                    timeout_seconds=args.api_timeout,
-                )
-        except (GeminiConfigurationError, GrokConfigurationError) as exc:
-            parser.error(str(exc))
+    if not 0 <= args.confidence_threshold <= 100:
+        parser.error("--confidence-threshold must be between 0 and 100")
 
     question = input("Enter your question:\n").strip()
+    safety_check = check_query(question)
+    if not safety_check.is_safe_to_answer_normally:
+        recommendation = (
+            "Please seek emergency medical help immediately."
+            if safety_check.category is SafetyCategory.EMERGENCY
+            else (
+                "This request needs personalized guidance from a qualified "
+                "healthcare professional, so I cannot provide a normal "
+                "guideline answer."
+            )
+        )
+        print_guardrail_response(
+            recommendation,
+            safety_check.safety_message
+            or "Please consult a qualified healthcare professional.",
+        )
+        return
+
     with RerankedHybridRetriever(
         reranker_model=args.reranker_model,
         reranker_batch_size=args.reranker_batch_size,
@@ -246,16 +306,51 @@ def main() -> None:
         print_results(results)
         return
     if not results:
-        print("No relevant chunks were found, so no answer was generated.")
+        print_guardrail_response(
+            "No relevant WHO guideline evidence was found for this question.",
+            "Try rephrasing the question or consult a qualified healthcare professional.",
+            estimate_confidence([], threshold=args.confidence_threshold),
+        )
         return
 
-    assert generator is not None
+    evidence_confidence = estimate_confidence(
+        results,
+        threshold=args.confidence_threshold,
+    )
+    if not evidence_confidence.is_confident:
+        print_guardrail_response(
+            (
+                "The retrieved WHO guideline evidence is not relevant enough "
+                "to answer this question reliably."
+            ),
+            (
+                "Try rephrasing the question. For personal medical decisions, "
+                "consult a qualified healthcare professional."
+            ),
+            evidence_confidence,
+        )
+        return
+
+    try:
+        if args.provider == "gemini":
+            generator = GeminiGenerator(
+                model=args.gemini_model,
+                timeout_seconds=args.api_timeout,
+            )
+        else:
+            generator = GrokGenerator(
+                model=args.grok_model,
+                timeout_seconds=args.api_timeout,
+            )
+    except (GeminiConfigurationError, GrokConfigurationError) as exc:
+        parser.error(str(exc))
+
     try:
         answer = generator.generate(question, results)
     except (GeminiGenerationError, GrokGenerationError) as exc:
         raise SystemExit(f"Generation failed: {exc}") from exc
 
-    print_final_response(answer)
+    print_final_response(answer, evidence_confidence)
     print_debug_information(answer, results)
 
     if args.show_evidence:
