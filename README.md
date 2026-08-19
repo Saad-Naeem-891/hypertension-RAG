@@ -251,6 +251,7 @@ kept under `scripts/` so test discovery cannot execute them accidentally.
 
 - Aseel Arif Aleuony — [@Aseel623-ai](https://github.com/Aseel623-ai)
 - Salma Rafat Anwar — [@salmarafat](https://github.com/salmarafat)
+- Saad Naeem — [@Saad-Naeem-891](https://github.com/Saad-Naeem-891)
 
 ## Documentation
 
