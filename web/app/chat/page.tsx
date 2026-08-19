@@ -52,6 +52,96 @@ function loadHistory(): Message[] {
   }
 }
 
+function citationReferences(
+  chunkIds: string[],
+  citations: Citation[] = [],
+): number[] {
+  return chunkIds
+    .map((chunkId) => citations.findIndex((citation) => citation.chunk_id === chunkId) + 1)
+    .filter((reference) => reference > 0);
+}
+
+function pages(citation: Citation): string {
+  if (citation.page_start === null && citation.page_end === null) return "Not available";
+  if (citation.page_start === citation.page_end || citation.page_end === null) {
+    return String(citation.page_start ?? citation.page_end);
+  }
+  return `${citation.page_start ?? "?"} - ${citation.page_end}`;
+}
+
+function StructuredResponse({ message }: { message: Message }) {
+  const citations = message.citations ?? [];
+
+  return (
+    <div className="rag-response">
+      <section className="response-section recommendation-section">
+        <h2>Recommendation</h2>
+        <p>{message.text}</p>
+      </section>
+
+      <section className="response-section supporting-evidence">
+        <h2>Supporting Evidence</h2>
+        {message.supportingEvidence && message.supportingEvidence.length > 0 ? (
+          <ul>
+            {message.supportingEvidence.map((item, evidenceIndex) => {
+              const references = citationReferences(item.chunk_ids, citations);
+              return (
+                <li key={`${evidenceIndex}-${item.chunk_ids.join("-")}`}>
+                  <span>{item.statement}</span>
+                  {references.length > 0 && (
+                    <span className="evidence-references" aria-label="Citation references">
+                      {references.map((reference) => `[${reference}]`).join(" ")}
+                    </span>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p className="not-available">No supporting evidence was provided.</p>
+        )}
+      </section>
+
+      <section className="response-section citations-section">
+        <h2>Citations</h2>
+        {citations.length > 0 ? (
+          <div className="citation-list">
+            {citations.map((citation, citationIndex) => (
+              <article className="citation" key={citation.chunk_id}>
+                <b className="citation-number">[{citationIndex + 1}]</b>
+                <dl>
+                  <div><dt>Document</dt><dd>{citation.document_name || "WHO guideline"}</dd></div>
+                  <div><dt>Section</dt><dd>{citation.section_title || "Not available"}</dd></div>
+                  <div><dt>Pages</dt><dd>{pages(citation)}</dd></div>
+                  <div><dt>Chunk ID</dt><dd>{citation.chunk_id}</dd></div>
+                </dl>
+                <details>
+                  <summary>View Evidence</summary>
+                  <p className="chunk-text">
+                    {citation.text || "Chunk text is unavailable in this saved response. Ask the question again to reload it."}
+                  </p>
+                </details>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p className="not-available">No citations were provided.</p>
+        )}
+      </section>
+
+      <section className="response-section confidence-section">
+        <h2>Confidence</h2>
+        <p>{message.confidence || "Not available"}</p>
+      </section>
+
+      <section className="response-section safety-section">
+        <h2>Safety</h2>
+        <p>{message.safetyMessage || "No safety message was provided."}</p>
+      </section>
+    </div>
+  );
+}
+
 export default function ChatPage() {
   const [messages, setMessages] = useState<Message[]>([starter]);
   const [historyLoaded, setHistoryLoaded] = useState(false);
@@ -143,42 +233,12 @@ export default function ChatPage() {
             <article className={`message ${message.role}`} key={index}>
               <span className="avatar">{message.role === "user" ? "You" : "PE"}</span>
               <div>
-                <p>{message.text}</p>
-
-                {message.supportingEvidence && message.supportingEvidence.length > 0 && (
-                  <section className="supporting-evidence">
-                    <b>Supporting evidence</b>
-                    <ol>
-                      {message.supportingEvidence.map((item, evidenceIndex) => (
-                        <li key={`${evidenceIndex}-${item.chunk_ids.join("-")}`}>
-                          {item.statement}
-                        </li>
-                      ))}
-                    </ol>
-                  </section>
-                )}
-
-                {message.confidence && (
-                  <small className="confidence">Confidence: {message.confidence}</small>
-                )}
-
-                {message.citations?.map((citation) => (
-                  <div className="citation" key={citation.chunk_id}>
-                    <b>{citation.document_name || "WHO guideline"}</b>
-                    <span>
-                      {citation.section_title || "Source section"} · p. {citation.page_start ?? "?"}
-                      {citation.page_end && citation.page_end !== citation.page_start
-                        ? `–${citation.page_end}`
-                        : ""}
-                    </span>
-                    <p className="chunk-text">
-                      {citation.text || "Chunk text is unavailable in this saved response. Ask the question again to reload it."}
-                    </p>
-                  </div>
-                ))}
-
-                {message.safetyMessage && (
-                  <p className="safety-message">Safety: {message.safetyMessage}</p>
+                {message.role === "assistant" && (
+                  message.supportingEvidence || message.citations || message.confidence || message.safetyMessage
+                ) ? (
+                  <StructuredResponse message={message} />
+                ) : (
+                  <p>{message.text}</p>
                 )}
               </div>
             </article>
