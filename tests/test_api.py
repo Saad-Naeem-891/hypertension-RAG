@@ -1,18 +1,52 @@
-import urllib.request
 import json
+import unittest
 
-payload = {
-    "message": "What is the recommended sodium intake?",
-    "top_k": 3
-}
-req = urllib.request.Request(
-    "http://127.0.0.1:8000/chat",
-    data=json.dumps(payload).encode('utf-8'),
-    headers={"Content-Type": "application/json"},
-    method="POST"
-)
-try:
-    with urllib.request.urlopen(req) as response:
-        print(response.read().decode('utf-8'))
-except Exception as e:
-    print("Error calling local API:", e)
+from pydantic import ValidationError
+
+from src.api.app import ChatRequest, _metric_rows, _safe_evaluation_row
+
+
+class ApiContractTests(unittest.TestCase):
+    def test_chat_request_strips_message(self) -> None:
+        request = ChatRequest(message="  What is the sodium recommendation?  ")
+
+        self.assertEqual(request.message, "What is the sodium recommendation?")
+
+    def test_chat_request_rejects_whitespace(self) -> None:
+        with self.assertRaises(ValidationError):
+            ChatRequest(message="   ")
+
+    def test_metric_rows_parse_dynamic_cutoffs(self) -> None:
+        metrics = _metric_rows(
+            json.dumps(
+                {
+                    "5": {
+                        "precision": 0.2,
+                        "recall": 0.7,
+                        "hit": 0.9,
+                        "reciprocal_rank": 0.8,
+                        "ndcg": 0.75,
+                    }
+                }
+            )
+        )
+
+        self.assertEqual(len(metrics), 1)
+        self.assertEqual(metrics[0].cutoff, 5)
+        self.assertEqual(metrics[0].mrr, 0.8)
+
+    def test_evaluation_response_does_not_expose_internal_path(self) -> None:
+        response = _safe_evaluation_row(
+            {
+                "run_id": "eval_1",
+                "ground_truth_path": "/private/project/truth.json",
+                "metrics_json": "{}",
+            }
+        )
+
+        self.assertEqual(response.ground_truth_name, "truth.json")
+        self.assertNotIn("/private/project", response.model_dump_json())
+
+
+if __name__ == "__main__":
+    unittest.main()
