@@ -24,6 +24,8 @@ type Message = {
   supportingEvidence?: SupportingEvidence[];
   confidence?: string;
   safetyMessage?: string;
+  evidenceConfidencePercentage?: number | null;
+  evidenceConfidenceThreshold?: number | null;
 };
 
 const starter: Message = {
@@ -132,6 +134,16 @@ function StructuredResponse({ message }: { message: Message }) {
       <section className="response-section confidence-section">
         <h2>Confidence</h2>
         <p>{message.confidence || "Not available"}</p>
+        {message.evidenceConfidencePercentage !== null &&
+          message.evidenceConfidencePercentage !== undefined && (
+            <small className="evidence-confidence">
+              Evidence confidence: {message.evidenceConfidencePercentage.toFixed(1)}%
+              {message.evidenceConfidenceThreshold !== null &&
+                message.evidenceConfidenceThreshold !== undefined
+                ? ` · minimum ${message.evidenceConfidenceThreshold.toFixed(1)}%`
+                : ""}
+            </small>
+          )}
       </section>
 
       <section className="response-section safety-section">
@@ -186,6 +198,8 @@ export default function ChatPage() {
           supportingEvidence: data.supporting_evidence,
           confidence: data.confidence,
           safetyMessage: data.safety_message,
+          evidenceConfidencePercentage: data.evidence_confidence_percentage,
+          evidenceConfidenceThreshold: data.evidence_confidence_threshold,
         },
       ]);
     } catch (error) {
