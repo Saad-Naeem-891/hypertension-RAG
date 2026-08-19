@@ -9,6 +9,27 @@ citations.
 The project is designed for general guideline education. It does not diagnose,
 prescribe treatment, or provide individualized medical advice.
 
+## Navigation
+
+- [Pipeline](#pipeline)
+- [Technology Stack](#technology-stack)
+- [Current Answer Format](#current-answer-format)
+- [Repository Structure](#repository-structure)
+- [Quick Start](#quick-start)
+  - [1. Verify the environment](#1-verify-the-environment)
+  - [2. Install dependencies](#2-install-dependencies)
+  - [3. Download the local models](#3-download-the-local-models)
+  - [4. Configure Gemini](#4-configure-gemini)
+  - [5. Build the document index](#5-build-the-document-index)
+  - [6. Ask a question](#6-ask-a-question)
+  - [7. Run the web application](#7-run-the-web-application)
+- [Retrieval Evaluation](#retrieval-evaluation)
+- [Tests](#tests)
+- [Safety and Grounding](#safety-and-grounding)
+- [Team](#team)
+- [Documentation](#documentation)
+- [Current Scope](#current-scope)
+
 ## Pipeline
 
 ```mermaid
