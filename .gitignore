@@ -219,3 +219,4 @@ __marimo__/
 artifacts/qdrant_db
 /web/node_modules/
 /web/.next/
+SYSTEM_STUDY_GUIDE.md

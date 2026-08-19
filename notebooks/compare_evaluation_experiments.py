@@ -21,6 +21,10 @@ if you also want PNG copies in ``artifacts/evaluation/charts``.
 #
 # `conda run -n student_rag python -m pip install matplotlib`
 
+'''Run this in a new notebook by" 
+%cd /Plod_presure_Hackathon
+%run notebooks/compare_evaluation_experiments.py'''
+
 # %% Imports and dashboard settings
 from pathlib import Path
 import json
