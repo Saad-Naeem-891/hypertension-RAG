@@ -131,8 +131,12 @@ cp .env.example .env
 ```
 
 ```dotenv
-GEMINI_API_KEY=replace-with-your-gemini-api-key
+GEMINI_API_KEY_1=replace-with-your-first-gemini-project-key
+GEMINI_API_KEY_2=replace-with-your-second-gemini-project-key
+GEMINI_API_KEY_3=replace-with-your-third-gemini-project-key
 GEMINI_MODEL=gemini-3.5-flash-lite
+GEMINI_RPM_LIMIT=15
+GEMINI_SAFE_RPM=14
 GENERATION_PROVIDER=gemini
 RAG_API_TOKEN=replace-with-a-long-random-shared-token
 RAG_RATE_LIMIT_PER_MINUTE=20
@@ -144,6 +148,13 @@ source code or commit `.env` to Git; it is already ignored. `.env.example`
 contains only safe placeholders and can be committed for teammates.
 Generate a unique `RAG_API_TOKEN`; the web server uses it to authenticate to
 the Python chat API and protect hosted-model quota.
+
+Each numbered key must belong to an independent Gemini project. Generation
+uses round-robin scheduling and a separate rolling 60-second request window
+for each configured project. `GEMINI_RPM_LIMIT` documents the provider quota;
+`GEMINI_SAFE_RPM` is the proactive local ceiling and defaults to 14. If every
+project reaches that ceiling, the request waits for the earliest available
+slot. One or two numbered keys are supported when three are not available.
 
 `GUARDRAIL_CONFIDENCE_THRESHOLD` is the minimum calibrated relevance score
 required after reranking and before hosted generation. The default is 70.
@@ -452,9 +463,9 @@ conda run -n student_rag python -m src.embedding.embed_chunks --batch-size 2
 Chunk IDs may change when PDFs or chunking settings change. Regenerate the
 ground-truth evaluation dataset before calculating retrieval metrics.
 
-### `GEMINI_API_KEY is not set`
+### No Gemini API keys are configured
 
-Create `.env` from the safe example and add your real key before running
+Create `.env` from the safe example and add at least `GEMINI_API_KEY_1` before running
 `main.py`:
 
 ```bash

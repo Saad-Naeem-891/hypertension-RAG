@@ -131,11 +131,15 @@ The `models/` directory is intentionally ignored by Git.
 cp .env.example .env
 ```
 
-Add the API key to the local `.env` file:
+Add one independent Google project key per variable to the local `.env` file:
 
 ```dotenv
-GEMINI_API_KEY=replace-with-your-gemini-api-key
+GEMINI_API_KEY_1=replace-with-your-first-gemini-project-key
+GEMINI_API_KEY_2=replace-with-your-second-gemini-project-key
+GEMINI_API_KEY_3=replace-with-your-third-gemini-project-key
 GEMINI_MODEL=gemini-3.5-flash-lite
+GEMINI_RPM_LIMIT=15
+GEMINI_SAFE_RPM=14
 GENERATION_PROVIDER=gemini
 RAG_API_TOKEN=replace-with-a-long-random-shared-token
 RAG_RATE_LIMIT_PER_MINUTE=20
@@ -145,6 +149,10 @@ The web application must use the same `RAG_API_TOKEN` in `web/.env.local`.
 Generate a unique random value for your machine; do not use the placeholder.
 
 Never commit `.env` or paste real API keys into source files, issues, or chat.
+The generation layer schedules requests round-robin across configured projects,
+tracks an independent rolling 60-second window for each key, and proactively
+stays at the safe default of 14 requests per minute per project. One or two
+numbered keys also work; three provide the intended aggregate capacity.
 
 ### 5. Build the document index
 
