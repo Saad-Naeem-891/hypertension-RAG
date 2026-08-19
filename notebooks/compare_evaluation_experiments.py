@@ -21,9 +21,11 @@ if you also want PNG copies in ``artifacts/evaluation/charts``.
 #
 # `conda run -n student_rag python -m pip install matplotlib`
 
-'''Run this in a new notebook by" 
-%cd /Plod_presure_Hackathon
-%run notebooks/compare_evaluation_experiments.py'''
+'''
+Run this in a new notebook by" 
+%cd Plod_presure_Hackathon/
+%run notebooks/compare_evaluation_experiments.py
+'''
 
 # %% Imports and dashboard settings
 from pathlib import Path
@@ -141,7 +143,6 @@ plotted_question_results = question_results.loc[
     question_results["run_id"].isin(plotted_run_ids)
 ].copy()
 
-print(f"Project root: {PROJECT_ROOT}")
 print(f"Successful runs loaded: {len(successful_runs)}")
 print(f"Runs included in charts: {len(plotted_runs)}")
 
