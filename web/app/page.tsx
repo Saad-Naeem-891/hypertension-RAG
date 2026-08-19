@@ -7,26 +7,137 @@ const technologies = [
   ["Vector search", "Qdrant", "Persistent local vector index for dense retrieval.", "Ready"],
   ["Fusion", "Reciprocal Rank Fusion", "Combines dense and keyword candidates before reranking.", "Ready"],
   ["Reranking", "Cross-Encoder MiniLM", "Reorders evidence chunks by question-to-passage relevance.", "Ready"],
-  ["Generation", "Gemini / Grok", "Produces constrained answers with validated citations.", "Configure key"]
+  ["Generation", "Gemini", "Produces constrained answers with validated citations.", "Configure key"],
 ];
 
-const evaluations = [
-  ["Hybrid + Cross-Encoder", "Top 5", "0.76", "0.82", "0.74"],
-  ["Hybrid + Cross-Encoder", "Top 10", "0.85", "0.83", "0.78"],
-  ["Hybrid + Cross-Encoder", "Top 20", "0.92", "0.83", "0.81"]
-];
+type EvaluationMetric = {
+  cutoff: number;
+  precision: number;
+  recall: number;
+  hit_rate: number;
+  mrr: number;
+  ndcg: number;
+};
 
-export default function Dashboard() {
-  return <main className="shell">
-    <nav><Link href="/" className="brand"><span>✦</span> Pulse Evidence</Link><Link href="/chat" className="nav-button">Open RAG chat →</Link></nav>
-    <header className="hero">
-      <p className="eyebrow">HYPERTENSION GUIDELINES · RAG OPERATIONS</p>
-      <h1>Evidence retrieval you can inspect.</h1>
-      <p>Track the clinical knowledge pipeline and evaluate what reaches each answer.</p>
-      <Link href="/chat" className="primary">Ask the guideline assistant <span>→</span></Link>
-    </header>
-    <section className="stats"><div><b>653</b><span>Indexed evidence chunks</span></div><div><b>3</b><span>WHO source documents</span></div><div><b>384</b><span>Embedding dimensions</span></div><div><b>20</b><span>Reviewed evaluation questions</span></div></section>
-    <section className="section"><div className="section-heading"><div><p className="eyebrow">PIPELINE</p><h2>Technologies in use</h2></div><span className="live"><i /> System ready</span></div><div className="technology-grid">{technologies.map(([label, name, detail, state]) => <article className="technology" key={name}><span className="tech-label">{label}</span><h3>{name}</h3><p>{detail}</p><small className={state === "Ready" ? "ready" : "setup"}>{state}</small></article>)}</div></section>
-    <section className="section evaluation"><div className="section-heading"><div><p className="eyebrow">OFFLINE BENCHMARK</p><h2>Retrieval evaluation</h2></div><span>Potassium ground-truth set</span></div><div className="table-wrap"><table><thead><tr><th>Configuration</th><th>Cutoff</th><th>Recall</th><th>MRR</th><th>nDCG</th></tr></thead><tbody>{evaluations.map((row) => <tr key={row[1]}>{row.map((cell) => <td key={cell}>{cell}</td>)}</tr>)}</tbody></table></div><p className="muted">Metrics are read from the latest successful local evaluation. Run the evaluator after changing models or chunking.</p></section>
-  </main>;
+type EvaluationRun = {
+  run_id: string;
+  finished_at_utc: string;
+  retriever_type: string;
+  reranker_enabled: boolean;
+  reranker_model: string | null;
+  candidate_k: number | null;
+  question_count: number | null;
+  chunk_count: number | null;
+  embedding_dimension: number | null;
+  ground_truth_name: string | null;
+  metrics: EvaluationMetric[];
+};
+
+async function loadEvaluationRuns(): Promise<EvaluationRun[]> {
+  const apiUrl = process.env.RAG_API_URL ?? "http://127.0.0.1:8000";
+  try {
+    const response = await fetch(`${apiUrl}/evaluations`, {
+      cache: "no-store",
+      signal: AbortSignal.timeout(5_000),
+    });
+    if (!response.ok) return [];
+    const payload: unknown = await response.json();
+    return Array.isArray(payload) ? payload as EvaluationRun[] : [];
+  } catch {
+    return [];
+  }
+}
+
+function formatScore(score: number): string {
+  return score.toFixed(4);
+}
+
+export default async function Dashboard() {
+  const evaluationRuns = await loadEvaluationRuns();
+  const latest = evaluationRuns.at(-1);
+  const configuration = latest?.reranker_enabled
+    ? "Hybrid + Cross-Encoder"
+    : "Hybrid Retrieval";
+
+  return (
+    <main className="shell">
+      <nav>
+        <Link href="/" className="brand"><span>✦</span> Pulse Evidence</Link>
+        <Link href="/chat" className="nav-button">Open RAG chat →</Link>
+      </nav>
+
+      <header className="hero">
+        <p className="eyebrow">HYPERTENSION GUIDELINES · RAG OPERATIONS</p>
+        <h1>Evidence retrieval you can inspect.</h1>
+        <p>Track the clinical knowledge pipeline and evaluate what reaches each answer.</p>
+        <Link href="/chat" className="primary">Ask the guideline assistant <span>→</span></Link>
+      </header>
+
+      <section className="stats">
+        <div><b>{latest?.chunk_count ?? "—"}</b><span>Indexed evidence chunks</span></div>
+        <div><b>3</b><span>WHO source documents</span></div>
+        <div><b>{latest?.embedding_dimension ?? "—"}</b><span>Embedding dimensions</span></div>
+        <div><b>{latest?.question_count ?? "—"}</b><span>Evaluation questions</span></div>
+      </section>
+
+      <section className="section">
+        <div className="section-heading">
+          <div><p className="eyebrow">PIPELINE</p><h2>Technologies in use</h2></div>
+          <span className="live"><i /> System configured</span>
+        </div>
+        <div className="technology-grid">
+          {technologies.map(([label, name, detail, state]) => (
+            <article className="technology" key={name}>
+              <span className="tech-label">{label}</span>
+              <h3>{name}</h3>
+              <p>{detail}</p>
+              <small className={state === "Ready" ? "ready" : "setup"}>{state}</small>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section evaluation">
+        <div className="section-heading">
+          <div><p className="eyebrow">OFFLINE BENCHMARK</p><h2>Retrieval evaluation</h2></div>
+          <span>{latest?.ground_truth_name ?? "No evaluation loaded"}</span>
+        </div>
+
+        {latest && latest.metrics.length > 0 ? (
+          <>
+            <div className="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Configuration</th><th>Cutoff</th><th>Precision</th>
+                    <th>Recall</th><th>Hit Rate</th><th>MRR</th><th>nDCG</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {latest.metrics.map((metric) => (
+                    <tr key={metric.cutoff}>
+                      <td>{configuration}</td>
+                      <td>Top {metric.cutoff}</td>
+                      <td>{formatScore(metric.precision)}</td>
+                      <td>{formatScore(metric.recall)}</td>
+                      <td>{formatScore(metric.hit_rate)}</td>
+                      <td>{formatScore(metric.mrr)}</td>
+                      <td>{formatScore(metric.ndcg)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="muted">
+              Latest successful run: {latest.run_id}. Metrics are loaded from the local evaluation history.
+            </p>
+          </>
+        ) : (
+          <p className="empty-state">
+            No successful evaluation is available. Start the Python API and run the retrieval evaluator.
+          </p>
+        )}
+      </section>
+    </main>
+  );
 }
