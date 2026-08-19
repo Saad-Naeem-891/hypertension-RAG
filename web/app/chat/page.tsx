@@ -113,12 +113,15 @@ function StructuredResponse({ message }: { message: Message }) {
                 <b className="citation-number">[{citationIndex + 1}]</b>
                 <dl>
                   <div><dt>Document</dt><dd>{citation.document_name || "WHO guideline"}</dd></div>
-                  <div><dt>Section</dt><dd>{citation.section_title || "Not available"}</dd></div>
-                  <div><dt>Pages</dt><dd>{pages(citation)}</dd></div>
-                  <div><dt>Chunk ID</dt><dd>{citation.chunk_id}</dd></div>
+                  <div><dt>Page</dt><dd>{pages(citation)}</dd></div>
                 </dl>
                 <details>
-                  <summary>View Evidence</summary>
+                  <summary>More Evidence</summary>
+                  <dl>
+                    <div><dt>Section</dt><dd>{citation.section_title || "Not available"}</dd></div>
+                    <div><dt>Chunk ID</dt><dd>{citation.chunk_id}</dd></div>
+                  </dl>
+                  <b>Evidence:</b>
                   <p className="chunk-text">
                     {citation.text || "Chunk text is unavailable in this saved response. Ask the question again to reload it."}
                   </p>
@@ -146,10 +149,6 @@ function StructuredResponse({ message }: { message: Message }) {
           )}
       </section>
 
-      <section className="response-section safety-section">
-        <h2>Safety</h2>
-        <p>{message.safetyMessage || "No safety message was provided."}</p>
-      </section>
     </div>
   );
 }
