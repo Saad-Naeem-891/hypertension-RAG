@@ -237,6 +237,11 @@ kept under `scripts/` so test discovery cannot execute them accidentally.
 - Hosted generation runs only when the top reranked evidence meets the
   configurable `GUARDRAIL_CONFIDENCE_THRESHOLD` (70% by default).
 
+## Team
+
+- Aseel Arif Aleuony — [@Aseel623-ai](https://github.com/Aseel623-ai)
+- Salma Rafat Anwar — [@salmarafat](https://github.com/salmarafat)
+
 ## Documentation
 
 See [SETUP_AND_RUN.md](SETUP_AND_RUN.md) for the complete installation,
