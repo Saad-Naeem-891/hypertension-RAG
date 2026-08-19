@@ -1,4 +1,8 @@
 import Link from "next/link";
+import EvaluationCharts, {
+  EvaluationQuestionMetric,
+  EvaluationRun,
+} from "./components/evaluation_charts";
 
 const technologies = [
   ["Document intelligence", "Docling", "Parses WHO guideline PDFs into structured text and metadata.", "Ready"],
@@ -10,39 +14,16 @@ const technologies = [
   ["Generation", "Gemini", "Produces constrained answers with validated citations.", "Configure key"],
 ];
 
-type EvaluationMetric = {
-  cutoff: number;
-  precision: number;
-  recall: number;
-  hit_rate: number;
-  mrr: number;
-  ndcg: number;
-};
-
-type EvaluationRun = {
-  run_id: string;
-  finished_at_utc: string;
-  retriever_type: string;
-  reranker_enabled: boolean;
-  reranker_model: string | null;
-  candidate_k: number | null;
-  question_count: number | null;
-  chunk_count: number | null;
-  embedding_dimension: number | null;
-  ground_truth_name: string | null;
-  metrics: EvaluationMetric[];
-};
-
-async function loadEvaluationRuns(): Promise<EvaluationRun[]> {
+async function loadEvaluationData<T>(endpoint: string): Promise<T[]> {
   const apiUrl = process.env.RAG_API_URL ?? "http://127.0.0.1:8000";
   try {
-    const response = await fetch(`${apiUrl}/evaluations`, {
+    const response = await fetch(`${apiUrl}/${endpoint}`, {
       cache: "no-store",
       signal: AbortSignal.timeout(5_000),
     });
     if (!response.ok) return [];
     const payload: unknown = await response.json();
-    return Array.isArray(payload) ? payload as EvaluationRun[] : [];
+    return Array.isArray(payload) ? payload as T[] : [];
   } catch {
     return [];
   }
@@ -53,7 +34,10 @@ function formatScore(score: number): string {
 }
 
 export default async function Dashboard() {
-  const evaluationRuns = await loadEvaluationRuns();
+  const [evaluationRuns, questionMetrics] = await Promise.all([
+    loadEvaluationData<EvaluationRun>("evaluations"),
+    loadEvaluationData<EvaluationQuestionMetric>("evaluation-question-results"),
+  ]);
   const latest = evaluationRuns.at(-1);
   const configuration = latest?.reranker_enabled
     ? "Hybrid + Cross-Encoder"
@@ -138,6 +122,8 @@ export default async function Dashboard() {
           </p>
         )}
       </section>
+
+      <EvaluationCharts runs={evaluationRuns} questionMetrics={questionMetrics} />
     </main>
   );
 }
