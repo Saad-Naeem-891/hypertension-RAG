@@ -213,6 +213,8 @@ marimo/_lsp/
 __marimo__/
 
 
-# Locally downloaded embedding models
+# Locally downloaded embedding and reranker models
 /models/
 artifacts/qdrant_db
+/web/node_modules/
+/web/.next/
