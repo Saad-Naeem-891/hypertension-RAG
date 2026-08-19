@@ -20,6 +20,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, field_validator
 
 from src.generation import GeminiConfigurationError, GeminiGenerator
+from src.guardrails import (
+    DEFAULT_CONFIDENCE_THRESHOLD,
+    SafetyCategory,
+    check_query,
+    estimate_confidence,
+)
 from src.reranking import RerankedHybridRetriever
 
 
@@ -66,6 +72,23 @@ def _configured_rate_limit() -> int:
 
 
 RATE_LIMITER = _RateLimiter(_configured_rate_limit())
+
+
+def _configured_confidence_threshold() -> float:
+    raw_value = os.getenv(
+        "GUARDRAIL_CONFIDENCE_THRESHOLD",
+        str(DEFAULT_CONFIDENCE_THRESHOLD),
+    )
+    try:
+        threshold = float(raw_value)
+    except ValueError as exc:
+        raise RuntimeError("GUARDRAIL_CONFIDENCE_THRESHOLD must be numeric") from exc
+    if not 0 <= threshold <= 100:
+        raise RuntimeError("GUARDRAIL_CONFIDENCE_THRESHOLD must be between 0 and 100")
+    return threshold
+
+
+CONFIDENCE_THRESHOLD = _configured_confidence_threshold()
 
 
 @asynccontextmanager
@@ -124,6 +147,8 @@ class ChatResponse(BaseModel):
     confidence: str
     safety_message: str
     citations: list[CitationResponse]
+    evidence_confidence_percentage: float | None = None
+    evidence_confidence_threshold: float | None = None
 
 
 class EvaluationMetricResponse(BaseModel):
@@ -299,6 +324,15 @@ def _retriever(request: Request) -> RerankedHybridRetriever:
     return retriever
 
 
+def _guardrail_redirect_message(category: SafetyCategory) -> str:
+    if category is SafetyCategory.EMERGENCY:
+        return "Please seek emergency medical help immediately."
+    return (
+        "This request needs personalized guidance from a qualified healthcare "
+        "professional, so I cannot provide a normal guideline answer."
+    )
+
+
 @app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
@@ -331,6 +365,17 @@ def chat(
     request: ChatRequest,
     retriever: RerankedHybridRetriever = Depends(_retriever),
 ) -> ChatResponse:
+    safety_check = check_query(request.message)
+    if not safety_check.is_safe_to_answer_normally:
+        return ChatResponse(
+            answer=_guardrail_redirect_message(safety_check.category),
+            supporting_evidence=[],
+            confidence="Insufficient Evidence",
+            safety_message=safety_check.safety_message
+            or "Please consult a qualified healthcare professional.",
+            citations=[],
+        )
+
     try:
         evidence = retriever.retrieve(request.message, top_k=request.top_k)
     except Exception:
@@ -346,6 +391,29 @@ def chat(
             confidence="Insufficient Evidence",
             safety_message="This tool provides guideline evidence, not individualized medical advice.",
             citations=[],
+            evidence_confidence_percentage=0.0,
+            evidence_confidence_threshold=CONFIDENCE_THRESHOLD,
+        )
+
+    evidence_confidence = estimate_confidence(
+        evidence,
+        threshold=CONFIDENCE_THRESHOLD,
+    )
+    if not evidence_confidence.is_confident:
+        return ChatResponse(
+            answer=(
+                "The retrieved WHO guideline evidence is not relevant enough "
+                "to answer this question reliably."
+            ),
+            supporting_evidence=[],
+            confidence="Insufficient Evidence",
+            safety_message=(
+                "Try rephrasing the question. For personal medical decisions, "
+                "consult a qualified healthcare professional."
+            ),
+            citations=[],
+            evidence_confidence_percentage=evidence_confidence.percentage,
+            evidence_confidence_threshold=evidence_confidence.threshold,
         )
 
     try:
@@ -386,4 +454,6 @@ def chat(
             )
             for citation in answer.citations
         ],
+        evidence_confidence_percentage=evidence_confidence.percentage,
+        evidence_confidence_threshold=evidence_confidence.threshold,
     )
