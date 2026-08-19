@@ -1,1 +1,75 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+
+from src.generation import FoodAssessment, FoodAssessmentGenerator
+from src.guardrails import SafetyCategory, check_query
+from src.reranking import CrossEncoderReranker
+from src.retrieval import HybridRetriever
+
+
+@dataclass
+class PipelineResult:
+    """Either `assessment` or `safety_message` is set, never both."""
+
+    assessment: FoodAssessment | None = None
+    safety_message: str | None = None
+    safety_category: SafetyCategory = SafetyCategory.OK
+
+
+class FoodGuidancePipeline:
+    def __init__(
+        self,
+        retriever: HybridRetriever | None = None,
+        reranker: CrossEncoderReranker | None = None,
+        generator: FoodAssessmentGenerator | None = None,
+        candidate_k: int = 20,
+        rerank_top_k: int = 5,
+    ) -> None:
+        # Accept pre-built instances so callers (e.g. a Streamlit app) can
+        # reuse one retriever/reranker/generator across many questions
+        # instead of reloading models per request.
+        self._retriever = retriever or HybridRetriever()
+        self._reranker = reranker or CrossEncoderReranker()
+        self._generator = generator or FoodAssessmentGenerator()
+        self._candidate_k = candidate_k
+        self._rerank_top_k = rerank_top_k
+
+    def answer(self, question: str) -> PipelineResult:
+        safety = check_query(question)
+        if not safety.is_safe_to_answer_normally:
+            return PipelineResult(
+                safety_message=safety.safety_message,
+                safety_category=safety.category,
+            )
+
+        hybrid_results = self._retriever.retrieve(
+            question,
+            top_k=self._candidate_k,
+            candidate_k=self._candidate_k,
+        )
+        reranked = self._reranker.rerank(
+            question,
+            hybrid_results,
+            top_k=self._rerank_top_k,
+        )
+        assessment = self._generator.generate(question, reranked)
+        return PipelineResult(assessment=assessment)
+
+    def close(self) -> None:
+        # Only HybridRetriever is known (from main.py) to hold a resource
+        # worth closing explicitly (likely a Qdrant client connection).
+        close = getattr(self._retriever, "close", None) or getattr(
+            self._retriever, "__exit__", None
+        )
+        if close and getattr(self._retriever, "__exit__", None):
+            self._retriever.__exit__(None, None, None)  # type: ignore[misc]
+        elif callable(close):
+            close()
+
+    def __enter__(self) -> "FoodGuidancePipeline":
+        return self
+
+    def __exit__(self, *_exc_info: object) -> None:
+        self.close()
 
