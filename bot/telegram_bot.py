@@ -117,7 +117,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
 
 
 def main() -> None:
-    token = os.environ.get("8926176670:AAHYSqCiJx7JXfeI2bw6EWUVoEYyX7luDu0")
+    token = os.environ.get("TELEGRAM_BOT_TOKEN")
     if not token:
         raise SystemExit(
             "TELEGRAM_BOT_TOKEN is not set. Add it to your .env file "
