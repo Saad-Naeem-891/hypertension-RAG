@@ -6,7 +6,7 @@ application parses guideline PDFs, builds a persistent hybrid retrieval index,
 reranks the evidence, and generates a structured answer with validated
 citations.
 
-The project is designed for general guideline education. It does not diagnose,
+project is designed for general guideline education. It does not diagnose,
 prescribe treatment, or provide individualized medical advice.
 
 [Pipeline](https://github.com/Saad-Naeem-891/hypertension-RAG#pipeline) | [Technology Stack](https://github.com/Saad-Naeem-891/hypertension-RAG#technology-stack) | [Current Answer Format](https://github.com/Saad-Naeem-891/hypertension-RAG#current-answer-format) | [Repository Structure](https://github.com/Saad-Naeem-891/hypertension-RAG#repository-structure) | [Quick Start](https://github.com/Saad-Naeem-891/hypertension-RAG#quick-start) | [Retrieval Evaluation](https://github.com/Saad-Naeem-891/hypertension-RAG#retrieval-evaluation) | [Tests](https://github.com/Saad-Naeem-891/hypertension-RAG#tests) | [Safety and Grounding](https://github.com/Saad-Naeem-891/hypertension-RAG#safety-and-grounding) | [Team](https://github.com/Saad-Naeem-891/hypertension-RAG#team) | [Documentation](https://github.com/Saad-Naeem-891/hypertension-RAG#documentation) | [Current Scope](https://github.com/Saad-Naeem-891/hypertension-RAG#current-scope)
